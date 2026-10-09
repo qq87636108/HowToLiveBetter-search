@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使用条款 · 高性价比人生</title>
+<style>
+  :root { --blue:#4e6ef2; --blue-title:#2440b3; --text:#222; --gray:#999; --line:#ececec; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif; background:#fff; color:var(--text); font-size:14px; line-height:1.8; }
+  .topbar { position:sticky; top:0; z-index:30; background:#fff; border-bottom:1px solid var(--line); padding:12px 20px; display:flex; justify-content:space-between; align-items:center; }
+  .logo-sm { font-size:17px; font-weight:700; color:var(--blue); text-decoration:none; }
+  .nav a { color:#666; text-decoration:none; margin-left:16px; font-size:13px; }
+  .nav a:hover { color:var(--blue); }
+  main { max-width:760px; margin:0 auto; padding:32px 20px 60px; }
+  h1 { font-size:22px; margin-bottom:20px; }
+  h2 { font-size:16px; margin:24px 0 10px; }
+  p { margin:8px 0; color:#333; }
+  ul { margin:8px 0 8px 22px; color:#333; }
+  li { margin:4px 0; }
+  a { color:var(--blue); }
+  .foot { border-top:1px solid var(--line); padding:16px 20px; text-align:center; color:#999; font-size:12px; }
+  .foot a { color:#666; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="logo-sm" href="../index.html">高性价比人生</a>
+  <nav class="nav">
+    <a href="../index.html">首页</a>
+    <a href="about.html">关于我们</a>
+    <a href="privacy.html">隐私政策</a>
+    <a href="terms.html">使用条款</a>
+    <a href="contact.html">联系我们</a>
+  </nav>
+</div>
+<main>
+
+<h1>使用条款</h1>
+<p><strong>最后更新：</strong>2026年10月7日</p>
+
+<h2>一、服务性质</h2>
+<p>本站为免费的信息检索工具，对开源书籍 HowToLiveBetter（CC BY 4.0）提供搜索增强。使用本站即表示您同意本条款。</p>
+
+<h2>二、免责声明</h2>
+<p>1. 本站内容（含原书内容）<strong>不构成专业医疗、法律、财务意见</strong>。涉及健康、法律、财务的具体决策，请咨询执业医生、律师、会计师或以官方机构发布的信息为准。</p>
+<p>2. 条目中的证据等级（A/B/C）与性价比标注<strong>为编辑性标注，非权威认证</strong>，仅供参考。</p>
+<p>3. 本站对上游原书内容的准确性<strong>不另行担保</strong>。原书内容随上游更新，如有出入以原仓库为准。</p>
+
+<h2>三、知识产权</h2>
+<p>原书内容按 CC BY 4.0 协议授权使用，出处与许可链接见页脚。本站的搜索包装、同义词体系等增值部分归本站所有。</p>
+
+<h2>四、广告说明</h2>
+<p>本站展示的广告由 Google AdSense 提供，广告内容不代表本站立场。用户可通过「隐私政策」中的链接管理广告个性化选项。</p>
+</main>
+<div class="foot">
+  数据来源 <a href="https://github.com/eternity4719/HowToLiveBetter" target="_blank" rel="noopener noreferrer">HowToLiveBetter</a>（CC BY 4.0） · 独立增强版 · <span id="syncDate"></span>
+</div>
+<script>
+fetch('../data/meta.json').then(r=>r.json()).then(m=>{var e=document.getElementById('syncDate'); if(e&&m.sync_date) e.textContent='数据同步 '+m.sync_date;});
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /core/
+Disallow: /data/
+
+Sitemap: https://life.daogong.cc/sitemap.xml

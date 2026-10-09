@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高性价比人生</title>
+<meta name="description" content="高性价比人生：遇事莫慌先查一查，人生消费决策指南。帮你把钱花对、把事办明白。">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --link-visited: #771caa;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 首页 ================== */
+  .home {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .home .logo {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--blue);
+    margin-bottom: 14px;
+    user-select: none;
+  }
+  .home .slogan {
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 28px;
+    letter-spacing: 0.5px;
+  }
+
+  /* 搜索框 */
+  .sbox {
+    display: flex;
+    width: 100%;
+    max-width: 620px;
+    height: 44px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .sbox:hover { border-color: #a0a5ad; }
+  .sbox:focus-within { border-color: var(--blue); }
+  .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 16px;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .sbox input::placeholder { color: var(--gray2); }
+  .sbox .btn {
+    width: 108px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 16px;
+    font-family: inherit;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .sbox .btn:hover { background: var(--blue-hover); }
+  .sbox .btn:active { opacity: 0.9; }
+
+  /* 胶囊区（比搜索框宽，倒三角排布） */
+  .pills-wrap {
+    max-width: 900px;
+    width: 100%;
+    margin-top: 42px;
+  }
+  .pill-refresh-row { text-align: center; margin-top: 18px; }
+  .pill-refresh {
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 22px;
+    font-size: 13px;
+    color: var(--gray);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .pill-refresh:hover { color: var(--blue); border-color: var(--blue); }
+  .pill-row {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+  .pill-row:last-child { margin-bottom: 0; }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
+    padding: 0 14px;
+    border-radius: 15px;
+    background: #f5f6f8;
+    border: 1px solid #ebedf0;
+    font-size: 13px;
+    color: #4a4f57;
+    cursor: pointer;
+    font-family: inherit;
+    text-decoration: none;
+    transition: all 0.14s;
+    white-space: nowrap;
+    user-select: none;
+  }
+  .pill:hover {
+    background: #eef3ff;
+    border-color: #c7d4ff;
+    color: var(--blue);
+  }
+  .pill:active {
+    background: #e2eaff;
+  }
+  .pill.hot {
+    color: #c9302c;
+    background: #fff1f0;
+    border-color: #ffd9d6;
+  }
+  .pill.hot:hover {
+    background: #ffe3e1;
+    border-color: #ffb8b3;
+    color: #b91c1c;
+  }
+  .pill.warm {
+    color: #b45309;
+    background: #fff8ec;
+    border-color: #ffe6bf;
+  }
+  .pill.warm:hover {
+    background: #ffefd6;
+    border-color: #ffd591;
+    color: #92400e;
+  }
+
+  /* ================== 结果页 ================== */
+  .result-page { display: none; }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+  }
+  .topbar .sbox {
+    max-width: 540px;
+    height: 40px;
+    border-width: 1.5px;
+  }
+  .topbar .sbox input { font-size: 15px; }
+  .topbar .sbox .btn { width: 90px; font-size: 15px; letter-spacing: 1px; }
+
+  /* 结果区 */
+  .result-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 14px 20px 80px;
+  }
+  @media (min-width: 900px) {
+    .result-wrap { margin-left: max(24px, calc(50vw - 400px)); margin-right: auto; }
+  }
+
+  .result-meta {
+    font-size: 13px;
+    color: var(--gray);
+    padding: 8px 0 4px;
+  }
+  .result-meta .reset {
+    color: var(--blue);
+    cursor: pointer;
+    margin-left: 12px;
+  }
+  .result-meta .reset:hover { text-decoration: underline; }
+
+  /* 单条结果 */
+  .item {
+    padding: 16px 0 20px;
+    border-bottom: 1px solid transparent;
+  }
+  .item .title {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--blue-title);
+    text-decoration: none;
+    margin-bottom: 2px;
+    cursor: pointer;
+  }
+  .item .title:hover { text-decoration: underline; }
+  .item .title:visited { color: var(--link-visited); }
+  .item .title em { font-style: normal; color: var(--hl); }
+
+  .item .src {
+    font-size: 12.5px;
+    color: #6a6a6a;
+    margin-bottom: 6px;
+    line-height: 1.6;
+  }
+  .item .src .url { color: #008000; }
+
+  .item .desc {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--text-desc);
+    margin-bottom: 6px;
+  }
+  .item .desc em { font-style: normal; color: var(--hl); }
+
+  .item .tags {
+    font-size: 12.5px;
+    color: var(--gray);
+    line-height: 1.8;
+  }
+  .item .tags b {
+    font-weight: 400;
+    margin-right: 2px;
+  }
+  .item .tags .sep { color: #ddd; margin: 0 8px; }
+
+  /* 分页 */
+  .pager {
+    text-align: center;
+    padding: 30px 0 10px;
+    font-size: 14px;
+    color: var(--gray);
+  }
+  .pager span {
+    display: inline-block;
+    margin: 0 5px;
+    color: var(--blue-title);
+    cursor: pointer;
+  }
+  .pager span.cur { color: #333; font-weight: 700; cursor: default; }
+  .pager span:hover:not(.cur) { text-decoration: underline; }
+
+  /* 空结果 */
+  .noresult {
+    padding: 50px 0;
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 2;
+  }
+  .noresult .tip { color: var(--gray2); font-size: 13px; }
+
+  /* 页脚 */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  @media (max-width: 940px) {
+    .pills-wrap { max-width: 100%; }
+    .pill-row { flex-wrap: wrap; }
+  }
+
+  @media (max-width: 640px) {
+    .home .logo { font-size: 32px; letter-spacing: 1px; }
+    .home .slogan { font-size: 12px; }
+    .sbox { height: 42px; }
+    .sbox input { font-size: 15px; padding: 0 12px; }
+    .sbox .btn { width: 82px; font-size: 15px; letter-spacing: 1px; }
+    .pills-wrap { margin-top: 32px; }
+    .pill { height: 28px; padding: 0 12px; font-size: 12.5px; }
+    .pill-row { gap: 7px; margin-bottom: 7px; }
+    .topbar {
+      gap: 12px;
+      padding: 10px 14px;
+    }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 38px; }
+    .topbar .sbox input { font-size: 14px; }
+    .topbar .sbox .btn { width: 66px; font-size: 14px; letter-spacing: 0; }
+    .item .title { font-size: 16px; }
+    .item .desc { font-size: 13.5px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 首页 ================== -->
+<div class="home" id="homeView">
+  <div class="logo">高性价比人生</div>
+  <div class="slogan">遇事莫慌，先查一查</div>
+  <div class="sbox">
+    <input type="text" id="homeInput" placeholder="朋友找我担保 / 孩子发烧 / 被裁员了 / 房东不退押金" autocomplete="off" autofocus>
+    <button class="btn" onclick="searchFrom('home')">搜索</button>
+  </div>
+
+  <div class="pills-wrap">
+    <div id="pills"></div>
+    <div class="pill-refresh-row">
+      <button class="pill-refresh" id="pillRefresh">↻ 换一批</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================== 结果页 ================== -->
+<div class="result-page" id="resultView">
+  <div class="topbar">
+    <div class="logo-sm" onclick="goHome()">高性价比人生</div>
+    <div class="sbox">
+      <input type="text" id="resultInput" autocomplete="off">
+      <button class="btn" onclick="searchFrom('result')">搜索</button>
+    </div>
+  </div>
+
+  <div class="result-wrap">
+    <div class="result-meta" id="resultMeta"></div>
+    <div class="ad-slot hidden" id="adHome"></div>
+    <div id="resultList"></div>
+  </div>
+</div>
+
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/search.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>

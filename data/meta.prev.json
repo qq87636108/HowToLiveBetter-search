@@ -1,0 +1,18 @@
+{
+ "sync_date": "2026-10-09",
+ "entry_count": 672,
+ "sec_count": 34,
+ "ev_dist": {
+  "A": 438,
+  "B": 179,
+  "C": 55
+ },
+ "ratio_dist": {
+  "极高": 114,
+  "高": 304,
+  "一般": 254
+ },
+ "upstream": "https://github.com/eternity4719/HowToLiveBetter",
+ "license": "CC BY 4.0",
+ "site_url": "https://life.daogong.cc"
+}

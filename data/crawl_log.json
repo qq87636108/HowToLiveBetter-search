@@ -1,0 +1,64 @@
+{
+ "runs": [
+  {
+   "date": "2026-10-07",
+   "status": "failed",
+   "files_changed": 0,
+   "error": "IncompleteRead(2039838 bytes read, 94834 more expected)"
+  },
+  {
+   "date": "2026-10-07",
+   "status": "failed",
+   "files_changed": 0,
+   "error": "搜索回归失败:\n✗ 「交通事故」0 命中（期望 ['8-1']）\n  ✗ 「李四欠我工资不给」0 命中（期望 ['7-22', '7-2']）\n  ✗ 「朋友借钱让我签字要不要签」0 命中（期望 ['8-18']）\n  ✗ 「担保人有啥风险」0 命中（期望 ['8-18', '12-2']）\n  ✗ 「工资拖着不发怎么办」0 命中（期望 ['7-22', '7-2']）\n  ✗ 「公司欠薪去哪投诉」0 命中（期望 ['7-2']）\n  ✗ 「被辞退能拿多少补偿」0 命中（期望 ['19-4']）\n  ✗ 「签了主动辞职还能要补偿吗」0 命中（期望 ['19-7']）\n  ✗ 「婴儿发烧38度要"
+  },
+  {
+   "date": "2026-10-07",
+   "status": "success",
+   "files_changed": 667,
+   "error": "name 'tmp' is not defined"
+  },
+  {
+   "date": "2026-10-07",
+   "status": "success",
+   "files_changed": 0,
+   "error": null
+  },
+  {
+   "date": "2026-10-07",
+   "status": "success",
+   "files_changed": 0,
+   "error": null
+  },
+  {
+   "date": "2026-10-07",
+   "status": "success",
+   "files_changed": 0,
+   "error": null
+  },
+  {
+   "date": "2026-10-08",
+   "status": "success",
+   "files_changed": 3,
+   "error": null
+  },
+  {
+   "date": "2026-10-08",
+   "status": "success",
+   "files_changed": 2,
+   "error": null
+  },
+  {
+   "date": "2026-10-08",
+   "status": "failed",
+   "files_changed": 0,
+   "error": "搜索回归失败:\n"
+  },
+  {
+   "date": "2026-10-09",
+   "status": "success",
+   "files_changed": 0,
+   "error": null
+  }
+ ]
+}

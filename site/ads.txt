@@ -1,0 +1,2 @@
+# 待 AdSense 过审后填真实 pub-id
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
