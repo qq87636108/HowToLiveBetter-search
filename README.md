@@ -73,7 +73,7 @@ python3 scripts/test_search.py         # 59 句回归（BM25 模式，必须带 
 python3 scripts/verify_entries.py      # 全量入口词：0 结果 / 悬空 / 标点键
 python3 scripts/verify_deploy.py       # 发布物自洽：数据同步 / sitemap 覆盖 / robots 放行渲染链 / 内部文件未发布
 node tests/front_gate.mjs              # 前端正身门禁（需 node，跑 site/core/search.js 真身）
-bash deploy/verify_remote.sh https://你的域名 765   # 远端部署后断言（33 项）
+bash deploy/verify_remote.sh https://你的域名 765   # 远端部署后断言（36 项）
 ```
 
 ## 目录结构

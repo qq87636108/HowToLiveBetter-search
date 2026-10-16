@@ -274,8 +274,16 @@ def main():
     # （Google 明确会忽略长期不可信的 lastmod，整站一起变最容易被判不可信）
     site_url = meta.get('site_url', '').rstrip('/') if isinstance(meta, dict) else ''
     today = datetime.date.today().isoformat()
-    hashes = {e['id']: hashlib.sha256((e['title'] + '|' + e['plain']).encode('utf-8')).hexdigest()[:16]
-              for e in items}
+    # 指纹覆盖**页面里真正会变的全部内容**（2026-10-16 专家复核：只取 title|plain 时，上游只改
+    # 「收益/成本/来源」段也会让页面变了、lastmod 却不刷新 ⇒ sitemap 的新鲜度信号与内容不一致）
+    def entry_fp(e):
+        rel = "|".join(str(r.get("id", "")) for r in (e.get("related") or []) if isinstance(r, dict))
+        parts = [str(e.get(k, "")) for k in ("title", "plain", "gain_html", "cost_html",
+                                            "note_html", "source_html", "ev", "ratio", "lens", "cs")]
+        parts.append(rel)
+        return hashlib.sha256("|".join(parts).encode("utf-8")).hexdigest()[:16]
+
+    hashes = {e['id']: entry_fp(e) for e in items}
     h_path = BASE + "/data/entry_hashes.json"
     l_path = BASE + "/data/entry_lastmod.json"
     old_h = json.load(open(h_path, encoding="utf-8")) if os.path.exists(h_path) else {}
@@ -290,15 +298,27 @@ def main():
             chg += 1
             if i not in old_h:
                 new += 1
+    # 首页与政策页的 lastmod 也按**文件内容 hash** 追踪（2026-10-16 专家复核：硬写 today 等于把
+    # 「每天整站一起变」的假信号长期挂在 priority 最高的首页上）
+    for _rel in ("index.html", "pages/privacy.html", "pages/about.html",
+                 "pages/terms.html", "pages/contact.html"):
+        _fp = BASE + "/site/" + _rel
+        _k = "PAGE:" + _rel
+        if os.path.exists(_fp):
+            hashes[_k] = hashlib.sha256(open(_fp, "rb").read()).hexdigest()[:16]
+            lastmod[_k] = old_l[_k] if (old_h.get(_k) == hashes[_k] and old_l.get(_k)) else today
     json.dump(hashes, open(h_path, "w", encoding="utf-8"), ensure_ascii=False)
     json.dump(lastmod, open(l_path, "w", encoding="utf-8"), ensure_ascii=False)
     print(f"lastmod: 内容变更 {chg} 条（其中新增 {new} 条），其余沿用上次日期")
 
-    urls = [(f"{site_url}/", 'daily', '1.0', today),
-            (f"{site_url}/pages/privacy.html", 'monthly', '0.3', today),
-            (f"{site_url}/pages/about.html", 'monthly', '0.3', today),
-            (f"{site_url}/pages/terms.html", 'monthly', '0.3', today),
-            (f"{site_url}/pages/contact.html", 'monthly', '0.3', today)]
+    def _lm(rel):
+        return lastmod.get("PAGE:" + rel, today)
+
+    urls = [(f"{site_url}/", 'weekly', '1.0', _lm("index.html")),
+            (f"{site_url}/pages/privacy.html", 'monthly', '0.3', _lm("pages/privacy.html")),
+            (f"{site_url}/pages/about.html", 'monthly', '0.3', _lm("pages/about.html")),
+            (f"{site_url}/pages/terms.html", 'monthly', '0.3', _lm("pages/terms.html")),
+            (f"{site_url}/pages/contact.html", 'monthly', '0.3', _lm("pages/contact.html"))]
     for e in items:
         urls.append((f"{site_url}/detail/{e['id']}.html", 'weekly', '0.8', lastmod.get(e['id'], today)))
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
@@ -310,8 +330,9 @@ def main():
     # robots.txt：★2026-10-16 复盘最大发现——旧版 Disallow: /core/ + /data/ 把「本站自己渲染
     # 所需的 JS 与数据」整目录屏蔽了，按 Google 口径被屏蔽文件上的 JS 不渲染 ⇒ 667 个已提交 URL
     # 在搜索引擎眼里是同一张空壳。改为：全站 Allow + **逐文件**屏蔽内部构建文件。
-    internal = ["entry_words.json", "idmap.json", "keymap.json", "scene_map.json",
-                "site_config.json", "meta.prev.json", "license_hashes.json", "crawl_log.json"]
+    internal = ["entry_words.json", "scene_map.json", "site_config.json", "meta.prev.json",
+                "license_hashes.json", "crawl_log.json", "entry_hashes.json", "entry_lastmod.json",
+                "static_pages_state.json", "alert.log", "pipeline.log", "monitor.log"]
     robots = ["User-agent: *", "Allow: /", "",
               "# 渲染链（/core/*.js、/data/*.json）必须允许：被屏蔽的文件其 JS 不会被搜索引擎渲染",
               "# 内部构建文件正常不发布（发布白名单），这里逐文件兜底屏蔽以防误发",

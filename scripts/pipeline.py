@@ -56,6 +56,30 @@ def notify(title, body):
     print("[通知]", line)
 
 
+def publish_sync():
+    """data/ → site/data/ 的发布同步（白名单 + sec-*.json），并清掉站点目录里的内部文件。
+    抽成函数：既让 pipeline 调用，也能被门禁/运维单独触发（python3 -c 'import pipeline; pipeline.publish_sync()'）。"""
+    published = set(PUBLISH_FILES)
+    for f in PUBLISH_FILES:
+        src = os.path.join(DATA_DIR, f)
+        if os.path.exists(src):
+            shutil.copy(src, os.path.join(SITE_DATA_DIR, f))
+    # ★sec-*.json 必须一起拷（2026-10-16 专家复核揪出：原实现既不在拷贝白名单、又在清理里被
+    # `not startswith("sec-")` 豁免 ⇒ 形成「既不更新也不删除」的僵尸副本，上游下次改正文后
+    # 静态页是新的、旧 ?id= 页永远展示过期正文）
+    for src in sorted(glob.glob(DATA_DIR + "/sec-*.json")):
+        b = os.path.basename(src)
+        shutil.copy(src, os.path.join(SITE_DATA_DIR, b))
+        published.add(b)
+    # 清掉站点目录里历史遗留的内部文件（曾把 crawl_log/entry_words 等发到生产，公网可下载）
+    removed = []
+    for f in sorted(os.listdir(SITE_DATA_DIR)):
+        if f.endswith(".json") and f not in published:
+            os.remove(os.path.join(SITE_DATA_DIR, f))
+            removed.append(f)
+    return sorted(published), removed
+
+
 def prune_snapshots(keep=30):
     """上游书稿快照留档保留最近 keep 份（设计 §七；否则 资料/ 每天增约 5MB 永不回收）"""
     dirs = sorted(glob.glob(BASE + "/资料/上游书稿-main-*"))
@@ -67,8 +91,11 @@ def prune_snapshots(keep=30):
 # ★发布白名单（2026-10-16 复盘 P1-9/P1-16）：只把**前端真正 fetch 的**数据发到 site/data/。
 # 旧实现按「排除清单」复制，一旦漏排就把内部文件发上生产+公开仓（crawl_log 还含开发机绝对路径，
 # 公网可直接下载）。改为白名单：新增内部文件天然不会被发出去。
+# idmap.json / keymap.json 必须发布：site/core/detail.js 在旧 id 未命中时会 fetch 它们做
+# 「稳定键两跳兜底」（2026-10-16 专家复核：先前把这两份当内部文件从发布物删除，消费方却没改
+# ⇒ 线上兜底链必然 404）
 PUBLISH_FILES = ["search-index.json", "synonyms.json", "keywords.json", "scenes.json",
-                 "df.json", "meta.json"]
+                 "df.json", "meta.json", "idmap.json", "keymap.json"]
 
 def sha16(b):
     return hashlib.sha256(b).hexdigest()[:16]
@@ -192,16 +219,12 @@ def main():
             raise RuntimeError("gen_keywords 失败: " + r.stderr[-500:])
         print(r.stdout.strip())
 
-        # 同步 data/ → site/data/：按**发布白名单**（前端真正 fetch 的 6 份）
-        for f in PUBLISH_FILES:
-            src = os.path.join(DATA_DIR, f)
-            if os.path.exists(src):
-                shutil.copy(src, os.path.join(SITE_DATA_DIR, f))
-        # 清掉站点目录里历史遗留的内部文件（曾把 crawl_log/entry_words 等发到生产，公网可下载）
-        for f in sorted(os.listdir(SITE_DATA_DIR)):
-            if f.endswith(".json") and f not in PUBLISH_FILES and not f.startswith("sec-"):
-                os.remove(os.path.join(SITE_DATA_DIR, f))
-                print("[清理] site/data/" + f + " 不在发布白名单，已从站点目录删除")
+        # 同步 data/ → site/data/：按**发布白名单** + sec-*.json（正文分片，详情页按需 fetch）
+        _pub, _removed = publish_sync()
+        for f in _removed:
+            print("[清理] site/data/" + f + " 不在发布白名单，已从站点目录删除")
+        print("[发布] site/data 同步 " + str(len(_pub)) + " 份（白名单 " + str(len(PUBLISH_FILES))
+              + " + sec-*.json " + str(len(_pub) - len(PUBLISH_FILES)) + "）")
 
         # 条目数门禁：骤降>10% 疑似解析故障（meta.prev 只在全部门禁通过后写，防失败时基线被推进到脏值）
         new_meta = json.load(open(DATA_DIR + "/meta.json", encoding="utf-8"))
@@ -228,6 +251,19 @@ def main():
                            capture_output=True, text=True, cwd=BASE)
         if r.returncode != 0:
             raise RuntimeError("发布断言失败:\n" + (r.stdout[-600:] + r.stderr[-300:]))
+
+        # 前端正身门禁（2026-10-16 专家复核：改 site/core/search.js 后没有任何自动链路能拦住，
+        # 「JS 正身零门禁」不能靠人工记得去 31.13 跑）。本机有 node 就跑，没有则**显式告警**，
+        # 不允许静默跳过。
+        if shutil.which("node"):
+            r = subprocess.run(["node", BASE + "/tests/front_gate.mjs"],
+                               capture_output=True, text=True, cwd=BASE)
+            if r.returncode != 0:
+                raise RuntimeError("前端正身门禁失败:\n" + (r.stdout[-700:] + r.stderr[-300:]))
+            print("前端正身门禁通过（node 跑 site/core/search.js 正身）")
+        else:
+            print("[告警] 本机无 node，前端正身门禁未跑 —— 请在测试机 31.13 执行："
+                  "node tests/front_gate.mjs（改过 search.js 时必跑）")
 
         # 全部门禁通过 → 才推进 meta.prev 基线（复审可选4：失败时基线不被脏值污染）
         json.dump(new_meta, open(prev_meta_path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)

@@ -51,6 +51,29 @@ def main():
     log = read_json(CRAWL_LOG, {})
     meta = read_json(META, {}) or {}
     today = datetime.date.today()
+    # ④ 读回 pipeline 自己上报过的故障（data/alert.log）。为什么必须在这里读：pipeline 当日报警、
+    # 次日主跑又成功，告警就再没人看得到 —— 「写了没人读的告警等于没告警」（2026-10-16 专家复核）。
+    try:
+        if os.path.exists(ALERT_LOG):
+            pl = []
+            for ln in open(ALERT_LOG, encoding="utf-8").read().splitlines()[-60:]:
+                if "] " not in ln:
+                    continue
+                tag = ln.split("] ", 1)[1]
+                if tag.startswith("[监工]"):
+                    continue        # 本脚本自己写的，读了就是自报自
+                pl.append(ln)
+            if pl:
+                last = pl[-1]
+                try:
+                    age = (today - datetime.date.fromisoformat(last[:10])).days
+                except Exception:
+                    age = 0
+                if age <= 3:
+                    problems.append("pipeline 近期上报过故障（" + str(age) + " 天前）："
+                                    + last.split("]", 1)[-1].strip()[:140])
+    except Exception:
+        pass
     ok_date = last_success(log)
     if not ok_date:
         problems.append("crawl_log 里没有任何成功记录")

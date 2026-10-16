@@ -76,7 +76,6 @@ def build_page(shell, e, site_url):
     desc = re.sub(r"\s+", " ", str(e.get("plain", "")))[:110]
     canon = site_url + "/detail/" + iid + ".html"
     head_add = ('<title>' + esc(raw_title) + ' · 高性价比人生</title>\n'
-                '<base href="/">\n'
                 '<meta name="description" content="' + esc(desc) + '">\n'
                 '<meta name="gvl-prerendered" content="1">\n'
                 '<link rel="canonical" href="' + esc(canon) + '">\n'
@@ -85,6 +84,9 @@ def build_page(shell, e, site_url):
                 '<meta property="og:description" content="' + esc(desc) + '">\n'
                 '<meta property="og:url" content="' + esc(canon) + '">')
     s = shell.replace("<title>高性价比人生 · 条目详情</title>", head_add, 1)
+    # 脚本/CSS 一律改绝对路径：静态页位于 /detail/ 子目录，原先靠 <base href="/"> 兜。
+    # 2026-10-16 专家复核：<base> 与将来 CSP 的 base-uri 'none' 冲突，去掉 base、路径写明。
+    s = s.replace('src="core/', 'src="/core/').replace('href="core/', 'href="/core/')
     crumb = esc(e.get("sec")) + " · 第 " + iid + " 条"
     s = s.replace('<span class="cur" id="crumbSec">条目详情</span>',
                   '<span class="cur" id="crumbSec">' + crumb + '</span>', 1)

@@ -97,10 +97,10 @@
       items.forEach(function (e) { if (e.id === id) d = e; });
       if (!d) {
         // 稳定键兜底：旧 id 查 idmap 得稳定键，再查 keymap 得当前合法展示 id（两跳闭环）
-        fetch('data/idmap.json').then(function (r) { return r.json(); }).then(function (imap) {
+        fetch('/data/idmap.json').then(function (r) { return r.json(); }).then(function (imap) {
           var sk = imap[id];
           if (!sk) throw new Error('no idmap');
-          return fetch('data/keymap.json').then(function (r) { return r.json(); }).then(function (kmap) {
+          return fetch('/data/keymap.json').then(function (r) { return r.json(); }).then(function (kmap) {
             var cur = kmap[sk];
             if (cur) { window.location.href = '/detail/' + encodeURIComponent(cur) + '.html'; return; }
             throw new Error('no keymap');
