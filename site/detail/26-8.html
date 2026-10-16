@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不给未满 16 周岁的人开直播，打赏按年龄分档处理 · 高性价比人生</title>
+<base href="/">
+<meta name="description" content="不满 16 周岁的人，不能在你这里注册开播账号。满 16 周岁的要核验身份，还要父母或其他监护人同意。打赏分三档：不满 8 岁不能打赏，8 到 16 岁要监护人同意，16 岁以上要监护人同意或核验收入证明。孩子背着监护人">
+<meta name="gvl-prerendered" content="1">
+<link rel="canonical" href="https://life.daogong.cc/detail/26-8.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不给未满 16 周岁的人开直播，打赏按年龄分档处理">
+<meta property="og:description" content="不满 16 周岁的人，不能在你这里注册开播账号。满 16 周岁的要核验身份，还要父母或其他监护人同意。打赏分三档：不满 8 岁不能打赏，8 到 16 岁要监护人同意，16 岁以上要监护人同意或核验收入证明。孩子背着监护人">
+<meta property="og:url" content="https://life.daogong.cc/detail/26-8.html">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+    --ev-a: #2e7d32;
+    --ev-b: #b26a00;
+    --ev-c: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 顶部导航栏 ================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .topbar .sbox {
+    display: flex;
+    max-width: 480px;
+    height: 38px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .topbar .sbox:focus-within { border-color: var(--blue); }
+  .topbar .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .topbar .sbox input::placeholder { color: var(--gray2); }
+  .topbar .sbox .btn {
+    width: 80px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .topbar .sbox .btn:hover { background: var(--blue-hover); }
+
+  /* ================== 面包屑 ================== */
+  .breadcrumb {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
+  .breadcrumb .cur { color: var(--text); }
+
+  /* ================== 详情主体 ================== */
+  .detail-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  /* 章节标记 */
+  .sec-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    color: var(--gray);
+    background: #f5f6f8;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 标题 */
+  .detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  /* 徽标行 */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 650;
+    padding: 3px 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
+  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
+  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
+  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
+  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
+  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
+  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
+  .badge.cost { background: #fdecea; color: #c62828; }
+
+  /* 正文 */
+  .detail-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-desc);
+    margin-bottom: 28px;
+  }
+
+  /* 元信息表格 */
+  .meta-table {
+    border-top: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .meta-row .k {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--gray);
+    font-size: 13.5px;
+  }
+  .meta-row .v {
+    flex: 1;
+    color: var(--text-desc);
+    line-height: 1.75;
+  }
+  .meta-row .v a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta-row .v a:hover { text-decoration: underline; }
+
+  /* 相关条目 */
+  .related {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .related .rl-title {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .related .rl-item {
+    display: block;
+    font-size: 13.5px;
+    color: var(--blue-title);
+    text-decoration: none;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+  .related .rl-item:hover { text-decoration: underline; }
+  .related .rl-item .rl-sec {
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-left: 6px;
+  }
+
+  /* 底部操作 */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .actions a, .actions button {
+    font-size: 13.5px;
+    font-family: inherit;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .actions .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .actions .btn-primary:hover { background: var(--blue-hover); }
+  .actions .btn-secondary {
+    background: #fff;
+    color: var(--text-desc);
+    border: 1px solid var(--border);
+  }
+  .actions .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* ================== 页脚 ================== */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  /* ================== 响应式 ================== */
+  @media (max-width: 640px) {
+    .topbar { gap: 12px; padding: 10px 14px; }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 36px; }
+    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
+    .topbar .sbox .btn { width: 60px; font-size: 13px; }
+    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
+    .detail-wrap { padding: 16px 14px 60px; }
+    .detail-title { font-size: 20px; }
+    .detail-body { font-size: 14px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .meta-row .k { width: auto; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 顶部导航栏 ================== -->
+<div class="topbar">
+  <a class="logo-sm" href="index.html">高性价比人生</a>
+  <div class="sbox">
+    <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
+    <button class="btn" onclick="searchFromDetail()">搜索</button>
+  </div>
+</div>
+
+<!-- ================== 面包屑 ================== -->
+<div class="breadcrumb">
+  <a href="index.html">首页</a>
+  <span class="sep">›</span>
+  <span class="cur" id="crumbSec">第 26 章 · 做一个网站或平台 · 第 26-8 条</span>
+</div>
+
+<!-- ================== 详情主体 ================== -->
+<div class="detail-wrap" id="detailWrap">
+
+  <span class="sec-tag" id="dSec">第 26 章 · 做一个网站或平台 · 第 26-8 条</span>
+
+  <h1 class="detail-title" id="dTitle">不给未满 16 周岁的人开直播，打赏按年龄分档处理</h1>
+
+  <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge ">性价比 一般</span><span class="badge gain">换人身自由</span><span class="badge cost">成本 见下方</span></div>
+
+  <div class="detail-body" id="dBody"><p>不满 16 周岁的人，不能在你这里注册开播账号。满 16 周岁的要核验身份，还要父母或其他监护人同意。打赏分三档：不满 8 岁不能打赏，8 到 16 岁要监护人同意，16 岁以上要监护人同意或核验收入证明。孩子背着监护人打赏的钱，监护人来要，法院会判退还。</p><p><strong>换来什么：</strong>法律原话是「网络直播服务提供者不得为未满十六周岁的未成年人提供网络直播发布者账号注册服务；为年满十六周岁的未成年人提供网络直播发布者账号注册服务时，应当对其身份信息进行认证，并征得其父母或者其他监护人同意」。条例还要求「建立网络直播发布者真实身份信息动态核验机制」，开播的人的身份，你要能随时复核一遍。另外要「合理限制不同年龄阶段未成年人在使用其服务中的单次消费数额和单日累计消费数额」，按年龄给未成年人设单笔和单日的花钱上限。打赏现在分三档：「不得向八周岁以下的未成年人提供打赏服务。向八周岁至十六周岁的未成年人提供打赏服务，应征得其监护人同意。向十六周岁以上的未成年人提供打赏服务，应征得其监护人同意或核验其收入证明材料」。还有一条：限制民事行为能力人没经监护人同意就打赏的，监护人来要钱，法院应予支持，钱能要回去。限制民事行为能力人指法律上还不能完全自己做主的未成年人（全国）</p><p><strong>要花什么：</strong>不花钱。在注册和付款这两步各加一道流程：先判断年龄，再确认监护人同意过</p></div>
+
+  <div class="ad-slot hidden" id="adDetail"></div>
+
+  <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">真起了退款争议，按对未成年人最有利的方向处理。这件事的说法改过。2022 年四部门的意见和广电总局 2020 年的通知，说的都是未成年人一律不得打赏。2026 年 4 月的新通知改成按 8 岁、16 岁分档，却没写明前两份作废，官方也没说两者怎么衔接。所以「未成年人一律禁止打赏」这句话现在不准确</span></div><div class="meta-row"><span class="k">出处</span><span class="v">全国人大常委会 (2020). 未成年人保护法（第七十四、七十六条）. <a href="https://www.cac.gov.cn/2020-10/22/c_1604928959588622.htm" target="_blank" rel="noopener noreferrer">https://www.cac.gov.cn/2020-10/22/c_1604928959588622.htm</a> ; 国务院 (2023). 未成年人网络保护条例（国务院令第 766 号，第三十一、四十四条）. <a href="https://www.gov.cn/gongbao/2023/issue_10806/202311/content_6913813.html" target="_blank" rel="noopener noreferrer">https://www.gov.cn/gongbao/2023/issue_10806/202311/content_6913813.html</a> ; 中央网信办秘书局 (2026). 关于加强网络直播打赏规范管理的通知（第 7 项）. <a href="https://www.cac.gov.cn/2026-04/13/c_1777815804150225.htm" target="_blank" rel="noopener noreferrer">https://www.cac.gov.cn/2026-04/13/c_1777815804150225.htm</a> ; 最高人民法院 (2020). 关于依法妥善审理涉新冠肺炎疫情民事案件若干问题的指导意见（二）（法发〔2020〕17 号，第九条）. <a href="https://www.court.gov.cn/fabu/xiangqing/230181.html" target="_blank" rel="noopener noreferrer">https://www.court.gov.cn/fabu/xiangqing/230181.html</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 26 章 · 做一个网站或平台</span></div></div>
+
+  <!-- 相关条目 -->
+  <div class="related" id="dRelated" style="display:none"></div>
+
+  <!-- 底部操作 -->
+  <div class="actions">
+    <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/26-做一个网站或平台.md#8-不给未满-16-周岁的人开直播打赏按年龄分档处理" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
+    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
+    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+  </div>
+
+</div>
+
+<!-- ================== 页脚 ================== -->
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/detail.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>

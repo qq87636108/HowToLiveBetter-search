@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>住院时要来费用清单逐项对，医保不报的自费项目先问清再同意，对不上先找医院价格投诉，再不行向医保部门举报 · 高性价比人生</title>
+<base href="/">
+<meta name="description" content="住院时可以要费用清单，上面写着每样药、每次检查的单价、数量和日期。医保不报的药和检查，除了急诊抢救，医院要先得到你或家属同意。发现重复收费、没做的项目也收了钱，先打医院的价格投诉电话，医院不认再向医保部门举报。">
+<meta name="gvl-prerendered" content="1">
+<link rel="canonical" href="https://life.daogong.cc/detail/24-15.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="住院时要来费用清单逐项对，医保不报的自费项目先问清再同意，对不上先找医院价格投诉，再不行向医保部门举报">
+<meta property="og:description" content="住院时可以要费用清单，上面写着每样药、每次检查的单价、数量和日期。医保不报的药和检查，除了急诊抢救，医院要先得到你或家属同意。发现重复收费、没做的项目也收了钱，先打医院的价格投诉电话，医院不认再向医保部门举报。">
+<meta property="og:url" content="https://life.daogong.cc/detail/24-15.html">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+    --ev-a: #2e7d32;
+    --ev-b: #b26a00;
+    --ev-c: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 顶部导航栏 ================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .topbar .sbox {
+    display: flex;
+    max-width: 480px;
+    height: 38px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .topbar .sbox:focus-within { border-color: var(--blue); }
+  .topbar .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .topbar .sbox input::placeholder { color: var(--gray2); }
+  .topbar .sbox .btn {
+    width: 80px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .topbar .sbox .btn:hover { background: var(--blue-hover); }
+
+  /* ================== 面包屑 ================== */
+  .breadcrumb {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
+  .breadcrumb .cur { color: var(--text); }
+
+  /* ================== 详情主体 ================== */
+  .detail-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  /* 章节标记 */
+  .sec-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    color: var(--gray);
+    background: #f5f6f8;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 标题 */
+  .detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  /* 徽标行 */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 650;
+    padding: 3px 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
+  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
+  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
+  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
+  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
+  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
+  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
+  .badge.cost { background: #fdecea; color: #c62828; }
+
+  /* 正文 */
+  .detail-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-desc);
+    margin-bottom: 28px;
+  }
+
+  /* 元信息表格 */
+  .meta-table {
+    border-top: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .meta-row .k {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--gray);
+    font-size: 13.5px;
+  }
+  .meta-row .v {
+    flex: 1;
+    color: var(--text-desc);
+    line-height: 1.75;
+  }
+  .meta-row .v a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta-row .v a:hover { text-decoration: underline; }
+
+  /* 相关条目 */
+  .related {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .related .rl-title {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .related .rl-item {
+    display: block;
+    font-size: 13.5px;
+    color: var(--blue-title);
+    text-decoration: none;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+  .related .rl-item:hover { text-decoration: underline; }
+  .related .rl-item .rl-sec {
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-left: 6px;
+  }
+
+  /* 底部操作 */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .actions a, .actions button {
+    font-size: 13.5px;
+    font-family: inherit;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .actions .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .actions .btn-primary:hover { background: var(--blue-hover); }
+  .actions .btn-secondary {
+    background: #fff;
+    color: var(--text-desc);
+    border: 1px solid var(--border);
+  }
+  .actions .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* ================== 页脚 ================== */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  /* ================== 响应式 ================== */
+  @media (max-width: 640px) {
+    .topbar { gap: 12px; padding: 10px 14px; }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 36px; }
+    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
+    .topbar .sbox .btn { width: 60px; font-size: 13px; }
+    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
+    .detail-wrap { padding: 16px 14px 60px; }
+    .detail-title { font-size: 20px; }
+    .detail-body { font-size: 14px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .meta-row .k { width: auto; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 顶部导航栏 ================== -->
+<div class="topbar">
+  <a class="logo-sm" href="index.html">高性价比人生</a>
+  <div class="sbox">
+    <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
+    <button class="btn" onclick="searchFromDetail()">搜索</button>
+  </div>
+</div>
+
+<!-- ================== 面包屑 ================== -->
+<div class="breadcrumb">
+  <a href="index.html">首页</a>
+  <span class="sep">›</span>
+  <span class="cur" id="crumbSec">第 24 章 · 看病 · 第 24-15 条</span>
+</div>
+
+<!-- ================== 详情主体 ================== -->
+<div class="detail-wrap" id="detailWrap">
+
+  <span class="sec-tag" id="dSec">第 24 章 · 看病 · 第 24-15 条</span>
+
+  <h1 class="detail-title" id="dTitle">住院时要来费用清单逐项对，医保不报的自费项目先问清再同意，对不上先找医院价格投诉，再不行向医保部门举报</h1>
+
+  <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge ">性价比 一般</span><span class="badge gain">换钱</span><span class="badge cost">成本 见下方</span></div>
+
+  <div class="detail-body" id="dBody"><p>住院时可以要费用清单，上面写着每样药、每次检查的单价、数量和日期。医保不报的药和检查，除了急诊抢救，医院要先得到你或家属同意。发现重复收费、没做的项目也收了钱，先打医院的价格投诉电话，医院不认再向医保部门举报。</p><p><strong>换来什么：</strong>《医疗保障基金使用监督管理条例》规定，定点医院要「向参保人员如实出具费用单据和相关资料」。参保人也有权要求医院如实出具。医院不得过度检查，不得重复收费、超标准收费、分解项目收费。医保基金支付范围以外的药和服务，除了急诊、抢救，要经参保人或者近亲属、监护人同意。违反这几条的，由医保部门责令改正。造成医保基金损失的，责令退回，再罚损失金额的 1 到 2 倍。没经同意就用医保不报的项目、拒不改正的，罚 1 万到 5 万元。国家卫健委 2019 年的《医疗机构内部价格行为管理规定》要求医院建立费用清单制度，含电子清单。患者需要时，医院要给打印。清单要写明项目、药品、耗材的名称和编码，还有单价、计价单位、使用日期、数量、金额。按病种、按 DRG（按疾病分组打包付费）收费的，不在这项要求里。医院要在显著位置公布价格咨询和投诉电话，投诉实行首问负责制，接待的人要记下内容和处理结果。向医保部门举报，走它公布的网站、电话、传真、邮寄地址。可以匿名，实名举报的个人信息要保密。查证属实的，按国家规定给举报人奖励（全国，截至 2026 年 10 月）</p><p><strong>要花什么：</strong>不花钱。住院期间隔几天要一次清单，对一遍十几分钟。难在拉下脸去问医生和护士。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+
+  <div class="ad-slot hidden" id="adDetail"></div>
+
+  <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">向医保部门举报，管的是医院违规用医保基金。条例写的是责令改正、退回医保基金和罚款，没写把多收你的那部分退给你。想把自己多掏的钱要回来，主要靠医院自己更正收费，所以先找医院的价格投诉窗口，清单和沟通记录都留着。为几百元去法院起诉，一审普通程序 6 个月起，律师费自己出，多半不划算。举报要写清具体线索：清单上哪一项、哪天、收了几次。只是想问报销政策的，打医保咨询电话，不算举报。看不懂的项目先问护士站或住院处，不一定是乱收费。医保不报的药不一定不该用，问清每天多少钱、有没有能报的替代药再签字。出院时要一份总清单，和病历一起存好，见第 5 条（病历和影像自己存一份）。收益量级定为中，是凭判断：没查到官方给出单个病人多付的金额，按本书阈值，几百到几千元算中。受益人主要是你自己和家人，替住院的老人对账尤其要紧</span></div><div class="meta-row"><span class="k">出处</span><span class="v">国务院 (2021). 医疗保障基金使用监督管理条例（国务院令第 735 号，第十五、十七、三十五、三十八、三十九条）. <a href="https://www.gov.cn/zhengce/zhengceku/2021-02/19/content_5587668.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/2021-02/19/content_5587668.htm</a>：「除急诊、抢救等特殊情形外，提供医疗保障基金支付范围以外的医药服务的，应当经参保人员或者其近亲属、监护人同意。」「参保人员有权要求定点医药机构如实出具费用单据和相关资料。」；国家卫生健康委、国家中医药局 (2019). 关于印发医疗机构内部价格行为管理规定的通知（国卫财务发〔2019〕64 号，第十五、十六、十八条）. <a href="https://www.gov.cn/zhengce/zhengceku/2020-01/02/content_5466052.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/2020-01/02/content_5466052.htm</a>：「医疗机构应当建立费用清单（含电子清单）制度，以多种形式向患者提供医疗服务、药品、医用耗材等费用清单（病种、DRG除外），并在患者需要时提供打印服务。」；国家医疗保障局 (2022). 医疗保障基金使用监督管理举报处理暂行办法（国家医疗保障局令第 5 号，第六、七、八、十六、二十一、二十五条）. <a href="http://www.gov.cn/gongbao/content/2022/content_5687509.htm" target="_blank" rel="noopener noreferrer">http://www.gov.cn/gongbao/content/2022/content_5687509.htm</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 24 章 · 看病</span></div></div>
+
+  <!-- 相关条目 -->
+  <div class="related" id="dRelated" style="display:none"></div>
+
+  <!-- 底部操作 -->
+  <div class="actions">
+    <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/24-看病.md#15-住院时要来费用清单逐项对医保不报的自费项目先问清再同意对不上先找医院价格投诉再不行向医保部门举报" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
+    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
+    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+  </div>
+
+</div>
+
+<!-- ================== 页脚 ================== -->
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/detail.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>

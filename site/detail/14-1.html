@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>邮箱、支付、社交账号都开二次验证，优先用手机弹窗确认，其次才是短信验证码 · 高性价比人生</title>
+<base href="/">
+<meta name="description" content="二次验证是指登录时除了密码，还要再确认一次是不是本人。用手机上弹个窗、你点一下确认的办法，九成以上的钓鱼盗号都被拦住了，短信验证码比弹窗容易被骗走。靠回答「上次在哪登的」「备用邮箱是什么」这种老办法，钓鱼盗号最少的只拦下">
+<meta name="gvl-prerendered" content="1">
+<link rel="canonical" href="https://life.daogong.cc/detail/14-1.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="邮箱、支付、社交账号都开二次验证，优先用手机弹窗确认，其次才是短信验证码">
+<meta property="og:description" content="二次验证是指登录时除了密码，还要再确认一次是不是本人。用手机上弹个窗、你点一下确认的办法，九成以上的钓鱼盗号都被拦住了，短信验证码比弹窗容易被骗走。靠回答「上次在哪登的」「备用邮箱是什么」这种老办法，钓鱼盗号最少的只拦下">
+<meta property="og:url" content="https://life.daogong.cc/detail/14-1.html">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+    --ev-a: #2e7d32;
+    --ev-b: #b26a00;
+    --ev-c: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 顶部导航栏 ================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .topbar .sbox {
+    display: flex;
+    max-width: 480px;
+    height: 38px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .topbar .sbox:focus-within { border-color: var(--blue); }
+  .topbar .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .topbar .sbox input::placeholder { color: var(--gray2); }
+  .topbar .sbox .btn {
+    width: 80px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .topbar .sbox .btn:hover { background: var(--blue-hover); }
+
+  /* ================== 面包屑 ================== */
+  .breadcrumb {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
+  .breadcrumb .cur { color: var(--text); }
+
+  /* ================== 详情主体 ================== */
+  .detail-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  /* 章节标记 */
+  .sec-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    color: var(--gray);
+    background: #f5f6f8;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 标题 */
+  .detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  /* 徽标行 */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 650;
+    padding: 3px 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
+  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
+  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
+  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
+  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
+  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
+  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
+  .badge.cost { background: #fdecea; color: #c62828; }
+
+  /* 正文 */
+  .detail-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-desc);
+    margin-bottom: 28px;
+  }
+
+  /* 元信息表格 */
+  .meta-table {
+    border-top: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .meta-row .k {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--gray);
+    font-size: 13.5px;
+  }
+  .meta-row .v {
+    flex: 1;
+    color: var(--text-desc);
+    line-height: 1.75;
+  }
+  .meta-row .v a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta-row .v a:hover { text-decoration: underline; }
+
+  /* 相关条目 */
+  .related {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .related .rl-title {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .related .rl-item {
+    display: block;
+    font-size: 13.5px;
+    color: var(--blue-title);
+    text-decoration: none;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+  .related .rl-item:hover { text-decoration: underline; }
+  .related .rl-item .rl-sec {
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-left: 6px;
+  }
+
+  /* 底部操作 */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .actions a, .actions button {
+    font-size: 13.5px;
+    font-family: inherit;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .actions .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .actions .btn-primary:hover { background: var(--blue-hover); }
+  .actions .btn-secondary {
+    background: #fff;
+    color: var(--text-desc);
+    border: 1px solid var(--border);
+  }
+  .actions .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* ================== 页脚 ================== */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  /* ================== 响应式 ================== */
+  @media (max-width: 640px) {
+    .topbar { gap: 12px; padding: 10px 14px; }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 36px; }
+    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
+    .topbar .sbox .btn { width: 60px; font-size: 13px; }
+    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
+    .detail-wrap { padding: 16px 14px 60px; }
+    .detail-title { font-size: 20px; }
+    .detail-body { font-size: 14px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .meta-row .k { width: auto; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 顶部导航栏 ================== -->
+<div class="topbar">
+  <a class="logo-sm" href="index.html">高性价比人生</a>
+  <div class="sbox">
+    <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
+    <button class="btn" onclick="searchFromDetail()">搜索</button>
+  </div>
+</div>
+
+<!-- ================== 面包屑 ================== -->
+<div class="breadcrumb">
+  <a href="index.html">首页</a>
+  <span class="sep">›</span>
+  <span class="cur" id="crumbSec">第 14 章 · 账号与信息安全 · 第 14-1 条</span>
+</div>
+
+<!-- ================== 详情主体 ================== -->
+<div class="detail-wrap" id="detailWrap">
+
+  <span class="sec-tag" id="dSec">第 14 章 · 账号与信息安全 · 第 14-1 条</span>
+
+  <h1 class="detail-title" id="dTitle">邮箱、支付、社交账号都开二次验证，优先用手机弹窗确认，其次才是短信验证码</h1>
+
+  <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-top">性价比 极高</span><span class="badge gain">换钱</span><span class="badge cost-zero">成本 零</span></div>
+
+  <div class="detail-body" id="dBody"><p>二次验证是指登录时除了密码，还要再确认一次是不是本人。用手机上弹个窗、你点一下确认的办法，九成以上的钓鱼盗号都被拦住了，短信验证码比弹窗容易被骗走。靠回答「上次在哪登的」「备用邮箱是什么」这种老办法，钓鱼盗号最少的只拦下一成。</p><p><strong>换来什么：</strong>谷歌统计了 35 万次真实的盗号尝试（也叫账号劫持）。一类是靠设备来验证，比如手机上弹窗让你点确认，或者插一把安全密钥。这一类拦下了「超过 94% 源于钓鱼的劫持尝试和 100% 的自动化劫持尝试」。钓鱼是指骗你在假网站上输密码，自动化是指机器拿泄露的密码批量去试。另一类是靠回答问题来验证，比如问你上次在哪登录、备用邮箱是什么。这一类「只拦下了低至 10% 的钓鱼劫持和 73% 的自动化劫持」。同属设备验证，短信验证码比手机弹窗弱。钓鱼的人答对了 4% 的短信验证码，弹窗只骗到 1%。专门盯着某个人的定向攻击里，短信只拦下 76%，弹窗拦下 90%</p><p><strong>要花什么：</strong>不花钱。每个账号设置一次，两三分钟就设完。</p></div>
+
+  <div class="ad-slot hidden" id="adDetail"></div>
+
+  <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">同一项研究也发现，这类验证有时会把本人挡在外面。52% 的真用户第一次没登进去，不过最后有 97% 还是进去了。先给邮箱开这个功能，因为别的账号大多能用邮箱找回密码。验证码只自己用，替别人报码、刷脸会背上什么，见第 8 节第 45 条（念验证码）</span></div><div class="meta-row"><span class="k">出处</span><span class="v">Doerfler P, Thomas K, Marincenko M, et al. (2019). Evaluating Login Challenges as a Defense Against Account Takeover. The World Wide Web Conference (WWW &#x27;19). <a href="https://doi.org/10.1145/3308558.3313481" target="_blank" rel="noopener noreferrer">https://doi.org/10.1145/3308558.3313481</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 14 章 · 账号与信息安全</span></div></div>
+
+  <!-- 相关条目 -->
+  <div class="related" id="dRelated"><div class="rl-title">相关条目</div><a class="rl-item" target="_blank" rel="noopener" href="/detail/8-45.html">熟人让你「帮忙刷个脸、做个见证」去办贷款，或者要你念验证码，别答应：这叫 AB 贷，借款人是你，不是担保人<span class="rl-sec">第 8 章 · 别把自己搭进去</span></a></div>
+
+  <!-- 底部操作 -->
+  <div class="actions">
+    <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/14-账号与信息安全.md#1-邮箱支付社交账号都开二次验证优先用手机弹窗确认其次才是短信验证码" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
+    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
+    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+  </div>
+
+</div>
+
+<!-- ================== 页脚 ================== -->
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/detail.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>

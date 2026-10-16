@@ -1,6 +1,15 @@
 User-agent: *
 Allow: /
-Disallow: /core/
-Disallow: /data/
+
+# 渲染链（/core/*.js、/data/*.json）必须允许：被屏蔽的文件其 JS 不会被搜索引擎渲染
+# 内部构建文件正常不发布（发布白名单），这里逐文件兜底屏蔽以防误发
+Disallow: /data/entry_words.json
+Disallow: /data/idmap.json
+Disallow: /data/keymap.json
+Disallow: /data/scene_map.json
+Disallow: /data/site_config.json
+Disallow: /data/meta.prev.json
+Disallow: /data/license_hashes.json
+Disallow: /data/crawl_log.json
 
 Sitemap: https://life.daogong.cc/sitemap.xml

@@ -33,12 +33,16 @@
       '<span class="badge ' + evCls + '">证据等级 ' + escapeHtml(d.ev) + '</span>'
       + '<span class="badge ' + cpCls + '">性价比 ' + escapeHtml(d.ratio) + '</span>'
       + '<span class="badge gain">' + escapeHtml(d.lens || '') + '</span>'
-      + '<span class="badge ' + (costZero ? 'cost-zero' : 'cost') + '">成本 ' + (costZero ? '零' : '见正文') + '</span>';
+      + '<span class="badge ' + (costZero ? 'cost-zero' : 'cost') + '">成本 ' + (costZero ? '零' : '见下方') + '</span>';
 
-    // 正文：说人话段 + 收益段（两段均为管线侧白名单净化输出，直接渲染）
+    // 正文：说人话段 + 收益段 + 花费段（三段均为管线侧白名单净化输出，直接渲染）
+    // 2026-10-16 修 P1：原实现只有 plain+gain，cost_html 全站零引用，而徽标却写「成本 见正文」
     var bodyHtml = '<p>' + escapeHtml(d.plain) + '</p>';
     if (d.gain_html) {
       bodyHtml += '<p><strong>换来什么：</strong>' + d.gain_html + '</p>';
+    }
+    if (d.cost_html) {
+      bodyHtml += '<p><strong>要花什么：</strong>' + d.cost_html + '</p>';
     }
     document.getElementById('dBody').innerHTML = bodyHtml;
 
@@ -61,7 +65,7 @@
     if (d.related && d.related.length) {
       document.getElementById('dRelated').innerHTML = '<div class="rl-title">相关条目</div>'
         + d.related.map(function (r) {
-          return '<a class="rl-item" href="detail.html?id=' + encodeURIComponent(r.id) + '">'
+          return '<a class="rl-item" target="_blank" rel="noopener" href="/detail/' + encodeURIComponent(r.id) + '.html">'
             + escapeHtml(r.title) + '<span class="rl-sec">' + escapeHtml(r.sec || '') + '</span></a>';
         }).join('');
     } else {
@@ -71,8 +75,15 @@
     // GitHub 原文链接（带锚点）
     document.getElementById('btnGithub').href = d.book_url || 'https://github.com/eternity4719/HowToLiveBetter';
 
-    // 页面标题
+    // 页面标题 + canonical 指向静态页（旧 ?id= URL 与 /detail/<id>.html 内容重复，
+    // 用 canonical 归并信号；2026-10-16 静态化）
     document.title = d.title + ' · 高性价比人生';
+    if (!document.querySelector('link[rel="canonical"]')) {
+      var lk = document.createElement('link');
+      lk.rel = 'canonical';
+      lk.href = window.location.origin + '/detail/' + encodeURIComponent(id) + '.html';
+      document.head.appendChild(lk);
+    }
   }
 
   function load() {
@@ -91,7 +102,7 @@
           if (!sk) throw new Error('no idmap');
           return fetch('data/keymap.json').then(function (r) { return r.json(); }).then(function (kmap) {
             var cur = kmap[sk];
-            if (cur) { window.location.href = 'detail.html?id=' + encodeURIComponent(cur); return; }
+            if (cur) { window.location.href = '/detail/' + encodeURIComponent(cur) + '.html'; return; }
             throw new Error('no keymap');
           });
         }).catch(function () {
@@ -121,7 +132,12 @@
     window.location.href = 'index.html';
   }
 
-  document.addEventListener('DOMContentLoaded', load);
+  document.addEventListener('DOMContentLoaded', function () {
+    // 预渲染页（/detail/<id>.html）：正文/标题/相关条目已在 HTML 里，跳过 fetch+render，
+    // 只保留顶栏搜索、返回按钮等交互（2026-10-16 静态化）
+    if (document.querySelector('meta[name="gvl-prerendered"]')) return;
+    load();
+  });
   window.searchFromDetail = searchFromDetail;
   window.goBack = goBack;
   window.goHomeBtn = goHomeBtn;

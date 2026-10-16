@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不帮人发起 DDoS 流量攻击，不卖、不租「压力测试」打流量平台，打游戏输了也别去打对方的服务器 · 高性价比人生</title>
+<base href="/">
+<meta name="description" content="用 DDoS 让别人的网站、服务器、游戏打不开，算破坏计算机信息系统罪。后果严重的判 5 年以下，特别严重的判 5 年以上。花钱下单让平台去打的人，也算共同犯罪。有人开 DDoS 网站收会员费接单，被判了 10 个月到 ">
+<meta name="gvl-prerendered" content="1">
+<link rel="canonical" href="https://life.daogong.cc/detail/11-21.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不帮人发起 DDoS 流量攻击，不卖、不租「压力测试」打流量平台，打游戏输了也别去打对方的服务器">
+<meta property="og:description" content="用 DDoS 让别人的网站、服务器、游戏打不开，算破坏计算机信息系统罪。后果严重的判 5 年以下，特别严重的判 5 年以上。花钱下单让平台去打的人，也算共同犯罪。有人开 DDoS 网站收会员费接单，被判了 10 个月到 ">
+<meta property="og:url" content="https://life.daogong.cc/detail/11-21.html">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+    --ev-a: #2e7d32;
+    --ev-b: #b26a00;
+    --ev-c: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 顶部导航栏 ================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .topbar .sbox {
+    display: flex;
+    max-width: 480px;
+    height: 38px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .topbar .sbox:focus-within { border-color: var(--blue); }
+  .topbar .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .topbar .sbox input::placeholder { color: var(--gray2); }
+  .topbar .sbox .btn {
+    width: 80px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .topbar .sbox .btn:hover { background: var(--blue-hover); }
+
+  /* ================== 面包屑 ================== */
+  .breadcrumb {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
+  .breadcrumb .cur { color: var(--text); }
+
+  /* ================== 详情主体 ================== */
+  .detail-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  /* 章节标记 */
+  .sec-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    color: var(--gray);
+    background: #f5f6f8;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 标题 */
+  .detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  /* 徽标行 */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 650;
+    padding: 3px 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
+  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
+  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
+  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
+  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
+  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
+  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
+  .badge.cost { background: #fdecea; color: #c62828; }
+
+  /* 正文 */
+  .detail-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-desc);
+    margin-bottom: 28px;
+  }
+
+  /* 元信息表格 */
+  .meta-table {
+    border-top: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .meta-row .k {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--gray);
+    font-size: 13.5px;
+  }
+  .meta-row .v {
+    flex: 1;
+    color: var(--text-desc);
+    line-height: 1.75;
+  }
+  .meta-row .v a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta-row .v a:hover { text-decoration: underline; }
+
+  /* 相关条目 */
+  .related {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .related .rl-title {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .related .rl-item {
+    display: block;
+    font-size: 13.5px;
+    color: var(--blue-title);
+    text-decoration: none;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+  .related .rl-item:hover { text-decoration: underline; }
+  .related .rl-item .rl-sec {
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-left: 6px;
+  }
+
+  /* 底部操作 */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .actions a, .actions button {
+    font-size: 13.5px;
+    font-family: inherit;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .actions .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .actions .btn-primary:hover { background: var(--blue-hover); }
+  .actions .btn-secondary {
+    background: #fff;
+    color: var(--text-desc);
+    border: 1px solid var(--border);
+  }
+  .actions .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* ================== 页脚 ================== */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  /* ================== 响应式 ================== */
+  @media (max-width: 640px) {
+    .topbar { gap: 12px; padding: 10px 14px; }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 36px; }
+    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
+    .topbar .sbox .btn { width: 60px; font-size: 13px; }
+    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
+    .detail-wrap { padding: 16px 14px 60px; }
+    .detail-title { font-size: 20px; }
+    .detail-body { font-size: 14px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .meta-row .k { width: auto; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 顶部导航栏 ================== -->
+<div class="topbar">
+  <a class="logo-sm" href="index.html">高性价比人生</a>
+  <div class="sbox">
+    <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
+    <button class="btn" onclick="searchFromDetail()">搜索</button>
+  </div>
+</div>
+
+<!-- ================== 面包屑 ================== -->
+<div class="breadcrumb">
+  <a href="index.html">首页</a>
+  <span class="sep">›</span>
+  <span class="cur" id="crumbSec">第 11 章 · 程序员和技术人容易踩的红线 · 第 11-21 条</span>
+</div>
+
+<!-- ================== 详情主体 ================== -->
+<div class="detail-wrap" id="detailWrap">
+
+  <span class="sec-tag" id="dSec">第 11 章 · 程序员和技术人容易踩的红线 · 第 11-21 条</span>
+
+  <h1 class="detail-title" id="dTitle">不帮人发起 DDoS 流量攻击，不卖、不租「压力测试」打流量平台，打游戏输了也别去打对方的服务器</h1>
+
+  <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-high">性价比 高</span><span class="badge gain">换人身自由</span><span class="badge cost">成本 见下方</span></div>
+
+  <div class="detail-body" id="dBody"><p>用 DDoS 让别人的网站、服务器、游戏打不开，算破坏计算机信息系统罪。后果严重的判 5 年以下，特别严重的判 5 年以上。花钱下单让平台去打的人，也算共同犯罪。有人开 DDoS 网站收会员费接单，被判了 10 个月到 5 年 6 个月。</p><p><strong>换来什么：</strong>干扰计算机信息系统的功能，造成系统不能正常运行，后果严重的，判 5 年以下有期徒刑或者拘役。后果特别严重的，判 5 年以上。法院把 DDoS 当成这里说的「干扰」。「后果严重」有几条标准。一条是 10 台以上计算机信息系统的主要软件或者硬件不能正常运行。一条是违法所得 5000 元以上，或者造成经济损失 1 万元以上。还有一条是给 1 万以上用户提供服务的系统，累计 1 小时以上不能正常运行。台数、钱数到这些数的 5 倍，算后果特别严重。明知别人在搞这种破坏，还给他提供破坏用的程序、工具，按共同犯罪处罚。门槛是违法所得 5000 元以上，或者提供 10 人次以上。替他提供服务器托管、技术支持这类帮助，违法所得 5000 元以上的，也一样。有人提供专门用于侵入、非法控制计算机信息系统的程序、工具。提供 20 人次以上，或者违法所得 5000 元以上的，判 3 年以下，并处或单处罚金。够不上犯罪的，干扰计算机信息系统功能、提供这类工具，造成危害的拘留 5 日以下，情节较重的拘留 5 到 15 日。官方案例一（检例第 69 号）：2017 年初，姚晓杰等人受雇在境外成立「暗夜小组」。他们买来大量服务器资源，用木马软件操控发起 DDoS。他们三次攻击某互联网公司云服务器上三家游戏公司的 IP，游戏无法登录、用户频繁掉线。被害公司抢修花了 4 万余元。2018 年 6 月，深圳南山法院以破坏计算机信息系统罪判 11 人 1 到 2 年。官方案例二：唐某、王某 2017 年 3 月建了一个 DDoS 网站，能充值会员、提交攻击任务。他们接单对 80 余个目标 IP 发起流量攻击。南通海门法院以破坏计算机信息系统罪，判唐某等人 10 个月到 5 年 6 个月。在这个网站下单的张某，为了打压同行，对同行公司的 11 个 IP 或者域名提交了百余次攻击任务。法院认定，下单的人和网站经营者是共同犯罪。下单的人是起意的一方，属于主犯。官方案例三：王某建了 DDoS 平台，按「青铜」「白银」「黄金」「钻石」套餐明码卖攻击。他被北京海淀检察院以非法利用信息网络罪起诉，2020 年一审判 1 年，罚金 5 万元（全国）</p><p><strong>要花什么：</strong>不花钱。DDoS 是控制大量机器同时往目标发请求，把服务器堵到用不了。代价是放掉按次收费、按套餐卖流量的生意，也要忍住一时的气。在游戏里、生意上跟人起了冲突，走举报、投诉、报警，别自己花钱找人去打</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+
+  <div class="ad-slot hidden" id="adDetail"></div>
+
+  <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">受益人是你自己。这类平台打着「压力测试」的招牌。测的是你自己的系统，或者对方书面授权你测的系统，才叫压力测试。打别人的服务器，跟第 9 条（没有书面授权不测别人的系统）是同一个道理。开平台接单的，各地按什么罪办不统一。海门那起判的是破坏计算机信息系统罪，最重 5 年 6 个月；海淀那起按非法利用信息网络罪，判 1 年。人民法院报的评析说，这类案子司法实践做法不尽一致，入库案例把它定为破坏计算机信息系统罪。检例第 69 号里，被打的互联网公司报了案。公安把它提供的电子数据送到国家计算机网络应急技术处理协调中心广东分中心分析，查出了 14 台控制端服务器。聊天记录和银行流水证实了买这些服务器控制权的事。卖控制别人电脑的木马，见本节第 8 条（不在别人的机器上跑自己的程序）。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">全国人大 (2020). 刑法（根据刑法修正案（十一）修正，第二百八十五条第三款、第二百八十六条、第二百八十七条之一）. <a href="https://jtgl.beijing.gov.cn/jgj/jgxx/flfg/fl/11033925/index.html" target="_blank" rel="noopener noreferrer">https://jtgl.beijing.gov.cn/jgj/jgxx/flfg/fl/11033925/index.html</a>；最高人民法院、最高人民检察院 (2011). 关于办理危害计算机信息系统安全刑事案件应用法律若干问题的解释（法释〔2011〕19 号，第二、三、四、九、十一条）. <a href="https://ga.sz.gov.cn/ZWGK/ZCFG/ZCJD/content/post_1304363.html" target="_blank" rel="noopener noreferrer">https://ga.sz.gov.cn/ZWGK/ZCFG/ZCJD/content/post_1304363.html</a>（深圳市公安局转载）；全国人大常委会 (2025). 治安管理处罚法（2025 年修订，第三十三条）. <a href="https://www.spp.gov.cn/spp/fl/202506/t20250627_699863.shtml" target="_blank" rel="noopener noreferrer">https://www.spp.gov.cn/spp/fl/202506/t20250627_699863.shtml</a>；最高人民检察院 (2020). 第十八批指导性案例（检例第 69 号，姚晓杰等 11 人破坏计算机信息系统案）. <a href="https://www.spp.gov.cn/spp/jczdal/202004/t20200408_458415.shtml" target="_blank" rel="noopener noreferrer">https://www.spp.gov.cn/spp/jczdal/202004/t20200408_458415.shtml</a>；江苏省高级人民法院 (2020-09-24). 江苏法院发布危害网络安全犯罪典型案例（案例二：唐某等人犯破坏计算机信息系统案）. <a href="https://www.jsfy.gov.cn/article/91613.html" target="_blank" rel="noopener noreferrer">https://www.jsfy.gov.cn/article/91613.html</a>；人民法院报 (2025-02-08). 通过 DDoS 网站实施网络攻击行为的定罪量刑（人民法院案例库入库参考案例 2024-18-1-254-001 评析，山东法院网转载）. <a href="http://www.sdcourt.gov.cn/dyzy/372897/372899/33201805/index.html" target="_blank" rel="noopener noreferrer">http://www.sdcourt.gov.cn/dyzy/372897/372899/33201805/index.html</a>；最高人民检察院 (2020). 北京海淀区：DDoS 攻击平台案嫌疑人获刑. <a href="https://www.spp.gov.cn/spp/zdgz/202009/t20200901_478510.shtml" target="_blank" rel="noopener noreferrer">https://www.spp.gov.cn/spp/zdgz/202009/t20200901_478510.shtml</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 11 章 · 程序员和技术人容易踩的红线</span></div></div>
+
+  <!-- 相关条目 -->
+  <div class="related" id="dRelated" style="display:none"></div>
+
+  <!-- 底部操作 -->
+  <div class="actions">
+    <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/11-程序员和技术人容易踩的红线.md#21-不帮人发起-ddos-流量攻击不卖不租压力测试打流量平台打游戏输了也别去打对方的服务器" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
+    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
+    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+  </div>
+
+</div>
+
+<!-- ================== 页脚 ================== -->
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/detail.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>

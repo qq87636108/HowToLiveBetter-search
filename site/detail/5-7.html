@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不用信用卡最低还款，不为消费开分期或消费贷；非借不可，先把利息换成年化利率再比 · 高性价比人生</title>
+<base href="/">
+<meta name="description" content="最低还款是按天算利息的贷款，按 2020 年以前的上限折合一年约 18%，用了它，免息期作废。分期写「每月手续费 0.6%」，按年算约 13.8%，不是 7.2%。因为本金每月在还，手续费却一直按最初的数收。比哪笔贷款贵">
+<meta name="gvl-prerendered" content="1">
+<link rel="canonical" href="https://life.daogong.cc/detail/5-7.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不用信用卡最低还款，不为消费开分期或消费贷；非借不可，先把利息换成年化利率再比">
+<meta property="og:description" content="最低还款是按天算利息的贷款，按 2020 年以前的上限折合一年约 18%，用了它，免息期作废。分期写「每月手续费 0.6%」，按年算约 13.8%，不是 7.2%。因为本金每月在还，手续费却一直按最初的数收。比哪笔贷款贵">
+<meta property="og:url" content="https://life.daogong.cc/detail/5-7.html">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+    --ev-a: #2e7d32;
+    --ev-b: #b26a00;
+    --ev-c: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 顶部导航栏 ================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .topbar .sbox {
+    display: flex;
+    max-width: 480px;
+    height: 38px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .topbar .sbox:focus-within { border-color: var(--blue); }
+  .topbar .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .topbar .sbox input::placeholder { color: var(--gray2); }
+  .topbar .sbox .btn {
+    width: 80px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .topbar .sbox .btn:hover { background: var(--blue-hover); }
+
+  /* ================== 面包屑 ================== */
+  .breadcrumb {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
+  .breadcrumb .cur { color: var(--text); }
+
+  /* ================== 详情主体 ================== */
+  .detail-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  /* 章节标记 */
+  .sec-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    color: var(--gray);
+    background: #f5f6f8;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 标题 */
+  .detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  /* 徽标行 */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 650;
+    padding: 3px 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
+  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
+  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
+  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
+  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
+  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
+  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
+  .badge.cost { background: #fdecea; color: #c62828; }
+
+  /* 正文 */
+  .detail-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-desc);
+    margin-bottom: 28px;
+  }
+
+  /* 元信息表格 */
+  .meta-table {
+    border-top: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .meta-row .k {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--gray);
+    font-size: 13.5px;
+  }
+  .meta-row .v {
+    flex: 1;
+    color: var(--text-desc);
+    line-height: 1.75;
+  }
+  .meta-row .v a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta-row .v a:hover { text-decoration: underline; }
+
+  /* 相关条目 */
+  .related {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .related .rl-title {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .related .rl-item {
+    display: block;
+    font-size: 13.5px;
+    color: var(--blue-title);
+    text-decoration: none;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+  .related .rl-item:hover { text-decoration: underline; }
+  .related .rl-item .rl-sec {
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-left: 6px;
+  }
+
+  /* 底部操作 */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .actions a, .actions button {
+    font-size: 13.5px;
+    font-family: inherit;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .actions .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .actions .btn-primary:hover { background: var(--blue-hover); }
+  .actions .btn-secondary {
+    background: #fff;
+    color: var(--text-desc);
+    border: 1px solid var(--border);
+  }
+  .actions .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* ================== 页脚 ================== */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  /* ================== 响应式 ================== */
+  @media (max-width: 640px) {
+    .topbar { gap: 12px; padding: 10px 14px; }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 36px; }
+    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
+    .topbar .sbox .btn { width: 60px; font-size: 13px; }
+    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
+    .detail-wrap { padding: 16px 14px 60px; }
+    .detail-title { font-size: 20px; }
+    .detail-body { font-size: 14px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .meta-row .k { width: auto; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 顶部导航栏 ================== -->
+<div class="topbar">
+  <a class="logo-sm" href="index.html">高性价比人生</a>
+  <div class="sbox">
+    <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
+    <button class="btn" onclick="searchFromDetail()">搜索</button>
+  </div>
+</div>
+
+<!-- ================== 面包屑 ================== -->
+<div class="breadcrumb">
+  <a href="index.html">首页</a>
+  <span class="sep">›</span>
+  <span class="cur" id="crumbSec">第 5 章 · 不要浪费钱 · 第 5-7 条</span>
+</div>
+
+<!-- ================== 详情主体 ================== -->
+<div class="detail-wrap" id="detailWrap">
+
+  <span class="sec-tag" id="dSec">第 5 章 · 不要浪费钱 · 第 5-7 条</span>
+
+  <h1 class="detail-title" id="dTitle">不用信用卡最低还款，不为消费开分期或消费贷；非借不可，先把利息换成年化利率再比</h1>
+
+  <div class="badges" id="dBadges"><span class="badge ev-c">证据等级 C</span><span class="badge ">性价比 一般</span><span class="badge gain">换钱</span><span class="badge cost">成本 见下方</span></div>
+
+  <div class="detail-body" id="dBody"><p>最低还款是按天算利息的贷款，按 2020 年以前的上限折合一年约 18%，用了它，免息期作废。分期写「每月手续费 0.6%」，按年算约 13.8%，不是 7.2%。因为本金每月在还，手续费却一直按最初的数收。比哪笔贷款贵，只看年化利率，别看日息月费率。</p><p><strong>换来什么：</strong>信用卡透支利率在 2020 年以前有上下限：上限是「日利率万分之五」，下限是上限的 0.7 倍。万分之五折合成一年是 18.25%，这是单利：按一年 18.25% 算，利息不再滚进本金里。2021 年起改成由发卡机构和持卡人自己商量定价。用了最低还款以后，没还的那部分本金每天全额算利息，免息期同时作废。央行已经要求发卡机构用明显的方式展示年化利率（按整年折算的利率），「不得仅展示日利率、日还款额」。2021 年起，所有放贷的机构做广告、签合同，都要明显写出年化利率。日利率、月利率可以一起写，但不能比年化利率更显眼。年化利率要把利息和跟贷款直接有关的各种费用都算进去。分期还本的，按每期还完后剩下的本金算你实际用了多少钱。人民银行给过一个算例：借 10 万元，分 12 个月还，每月交最初本金的 0.5% 作分期费。借款当时还要交 1000 元服务费。按单利算，年化约 12.80%。按复利算（内部收益率法），年化约 13.58%。光看费率，会以为一年只花 0.5% × 12 + 1% = 7%。实际差不多是它的两倍，因为本金每月在减少，分期费却一直按 10 万元收。照同样的算法，信用卡分 12 期、每期手续费 0.6%、没有别的费用，名义上是一年 7.2%。按复利算，年化约 13.8%，是名义数字的 1.9 倍左右。分 6 到 36 期，都在 1.8 到 2 倍之间。借给你钱的是个人或普通公司，就是民间借贷。约定的利率超过签合同时一年期 LPR 4 倍，法院不支持超出的部分。2026 年 8 月 20 日的一年期 LPR 是 3.0%，4 倍就是 12%。先从借款里扣掉的利息，法院按实际到手的钱算本金。这条线管不到银行、消费金融公司这些持牌金融机构。小额贷款公司、典当行、融资租赁公司等七类地方金融组织也不适用。所以不能拿 12% 去套它们的贷款，要看合同上写的年化利率（中国，2020、2021 年）</p><p><strong>要花什么：</strong>不花钱。要在账单日之前留够全额还款的现金。难的是忍住不用分期把大额开销摊薄。非借不可时，花几分钟问清每笔贷款的年化利率。</p></div>
+
+  <div class="ad-slot hidden" id="adDetail"></div>
+
+  <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">18.25% 是拿「万分之五 × 365」直接乘出来的，没有算利滚利。真按月滚起来还要更高。个别银行有折扣，以你自己账单上写明的年化利率为准。真周转不开的时候，优先去找利率更低的正规渠道借，不要拖着最低还款滚利息。比两笔贷款时，让对方给按复利算的年化利率。对方给的是单利，按规定要写明「单利」，单利会比复利低一些。13.8% 和 1.8 到 2 倍是本书照人民银行的算法自己算的，算法写在核实记录里。民间借贷别碰高利贷，另见第 7 节第 15 条（不借高利贷）。买车办贷款时店家另收的钱，见本节第 49 条（4S 店的金融服务费）。已经还不上的，见第 7 节第 23 条（信用卡、网贷已经还不上）。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">中国人民银行 (2020). 关于推进信用卡透支利率市场化改革的通知（银发〔2020〕327 号）. <a href="https://xining.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693549/4159909/index.html" target="_blank" rel="noopener noreferrer">https://xining.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693549/4159909/index.html</a>；中国人民银行 (2021). 中国人民银行公告〔2021〕第 3 号（第一、三、四条，附件《采用内部收益率法计算贷款年化利率示例》第三例）. <a href="https://www.gov.cn/zhengce/zhengceku/2021-03/31/content_5597156.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/2021-03/31/content_5597156.htm</a>；最高人民法院 (2020 年第二次修正). 关于审理民间借贷案件适用法律若干问题的规定（第一、二十五、二十六条）. <a href="http://gongbao.court.gov.cn/Details/94b6623974526df7d2430a3c73f050.html" target="_blank" rel="noopener noreferrer">http://gongbao.court.gov.cn/Details/94b6623974526df7d2430a3c73f050.html</a>（最高人民法院公报）；最高人民法院 (2020). 关于新民间借贷司法解释适用范围问题的批复（法释〔2020〕27 号）. <a href="https://www.court.gov.cn/fabu/xiangqing/285171.html" target="_blank" rel="noopener noreferrer">https://www.court.gov.cn/fabu/xiangqing/285171.html</a>；全国银行间同业拆借中心受中国人民银行授权 (2026). 2026 年 8 月 20 日贷款市场报价利率（LPR）公告. <a href="https://www.chinamoney.com.cn/chinese/rdgz/20260820/3399885.html" target="_blank" rel="noopener noreferrer">https://www.chinamoney.com.cn/chinese/rdgz/20260820/3399885.html</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 5 章 · 不要浪费钱</span></div></div>
+
+  <!-- 相关条目 -->
+  <div class="related" id="dRelated"><div class="rl-title">相关条目</div><a class="rl-item" target="_blank" rel="noopener" href="/detail/7-15.html">不交押金、不押证件、不签「培训贷」、不进传销、不借高利贷<span class="rl-sec">第 7 章 · 没钱的时候怎么活</span></a><a class="rl-item" target="_blank" rel="noopener" href="/detail/7-23.html">信用卡、网贷已经还不上，自己打银行或平台客服申请个性化分期或延期，别借新还旧，也别付钱找「停息挂账」「征信修复」「反催收」中介<span class="rl-sec">第 7 章 · 没钱的时候怎么活</span></a></div>
+
+  <!-- 底部操作 -->
+  <div class="actions">
+    <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/05-不要浪费钱.md#7-不用信用卡最低还款不为消费开分期或消费贷非借不可先把利息换成年化利率再比" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
+    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
+    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+  </div>
+
+</div>
+
+<!-- ================== 页脚 ================== -->
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/detail.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>

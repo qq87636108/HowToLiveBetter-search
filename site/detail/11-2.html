@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不做、不卖游戏外挂和辅助，包括「只读屏幕不碰内存」的 AI 辅助，也不卖给微信这类软件加功能的改版 · 高性价比人生</title>
+<base href="/">
+<meta name="description" content="外挂卖出 20 人次，或者挣到 5000 元，就够判 3 年以下，特别严重的判 3 到 7 年。有人做透视、自瞄外挂，3 个月卖了 8 万多，判 1 年缓 1 年、罚 5000 元。有人拿服务端程序开私服，收了 2000">
+<meta name="gvl-prerendered" content="1">
+<link rel="canonical" href="https://life.daogong.cc/detail/11-2.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不做、不卖游戏外挂和辅助，包括「只读屏幕不碰内存」的 AI 辅助，也不卖给微信这类软件加功能的改版">
+<meta property="og:description" content="外挂卖出 20 人次，或者挣到 5000 元，就够判 3 年以下，特别严重的判 3 到 7 年。有人做透视、自瞄外挂，3 个月卖了 8 万多，判 1 年缓 1 年、罚 5000 元。有人拿服务端程序开私服，收了 2000">
+<meta property="og:url" content="https://life.daogong.cc/detail/11-2.html">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+    --ev-a: #2e7d32;
+    --ev-b: #b26a00;
+    --ev-c: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 顶部导航栏 ================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .topbar .sbox {
+    display: flex;
+    max-width: 480px;
+    height: 38px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .topbar .sbox:focus-within { border-color: var(--blue); }
+  .topbar .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .topbar .sbox input::placeholder { color: var(--gray2); }
+  .topbar .sbox .btn {
+    width: 80px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .topbar .sbox .btn:hover { background: var(--blue-hover); }
+
+  /* ================== 面包屑 ================== */
+  .breadcrumb {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
+  .breadcrumb .cur { color: var(--text); }
+
+  /* ================== 详情主体 ================== */
+  .detail-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  /* 章节标记 */
+  .sec-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    color: var(--gray);
+    background: #f5f6f8;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 标题 */
+  .detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  /* 徽标行 */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 650;
+    padding: 3px 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
+  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
+  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
+  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
+  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
+  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
+  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
+  .badge.cost { background: #fdecea; color: #c62828; }
+
+  /* 正文 */
+  .detail-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-desc);
+    margin-bottom: 28px;
+  }
+
+  /* 元信息表格 */
+  .meta-table {
+    border-top: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .meta-row .k {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--gray);
+    font-size: 13.5px;
+  }
+  .meta-row .v {
+    flex: 1;
+    color: var(--text-desc);
+    line-height: 1.75;
+  }
+  .meta-row .v a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta-row .v a:hover { text-decoration: underline; }
+
+  /* 相关条目 */
+  .related {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .related .rl-title {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .related .rl-item {
+    display: block;
+    font-size: 13.5px;
+    color: var(--blue-title);
+    text-decoration: none;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+  .related .rl-item:hover { text-decoration: underline; }
+  .related .rl-item .rl-sec {
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-left: 6px;
+  }
+
+  /* 底部操作 */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .actions a, .actions button {
+    font-size: 13.5px;
+    font-family: inherit;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .actions .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .actions .btn-primary:hover { background: var(--blue-hover); }
+  .actions .btn-secondary {
+    background: #fff;
+    color: var(--text-desc);
+    border: 1px solid var(--border);
+  }
+  .actions .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* ================== 页脚 ================== */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  /* ================== 响应式 ================== */
+  @media (max-width: 640px) {
+    .topbar { gap: 12px; padding: 10px 14px; }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 36px; }
+    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
+    .topbar .sbox .btn { width: 60px; font-size: 13px; }
+    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
+    .detail-wrap { padding: 16px 14px 60px; }
+    .detail-title { font-size: 20px; }
+    .detail-body { font-size: 14px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .meta-row .k { width: auto; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 顶部导航栏 ================== -->
+<div class="topbar">
+  <a class="logo-sm" href="index.html">高性价比人生</a>
+  <div class="sbox">
+    <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
+    <button class="btn" onclick="searchFromDetail()">搜索</button>
+  </div>
+</div>
+
+<!-- ================== 面包屑 ================== -->
+<div class="breadcrumb">
+  <a href="index.html">首页</a>
+  <span class="sep">›</span>
+  <span class="cur" id="crumbSec">第 11 章 · 程序员和技术人容易踩的红线 · 第 11-2 条</span>
+</div>
+
+<!-- ================== 详情主体 ================== -->
+<div class="detail-wrap" id="detailWrap">
+
+  <span class="sec-tag" id="dSec">第 11 章 · 程序员和技术人容易踩的红线 · 第 11-2 条</span>
+
+  <h1 class="detail-title" id="dTitle">不做、不卖游戏外挂和辅助，包括「只读屏幕不碰内存」的 AI 辅助，也不卖给微信这类软件加功能的改版</h1>
+
+  <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-high">性价比 高</span><span class="badge gain">换人身自由</span><span class="badge cost">成本 见下方</span></div>
+
+  <div class="detail-body" id="dBody"><p>外挂卖出 20 人次，或者挣到 5000 元，就够判 3 年以下，特别严重的判 3 到 7 年。有人做透视、自瞄外挂，3 个月卖了 8 万多，判 1 年缓 1 年、罚 5000 元。有人拿服务端程序开私服，收了 2000 多万充值，最重判 4 年，罚金最高 1000 万元。</p><p><strong>换来什么：</strong>提供专门用于侵入、非法控制计算机信息系统的程序、工具，情节严重的判 3 年以下，并处或单处罚金。并处是判刑的同时罚钱，单处是只罚钱。情节特别严重的判 3 到 7 年并处罚金。「情节严重」的门槛是提供工具 20 人次以上，或者违法所得 5000 元以上。违法所得就是靠这件事挣到的钱。故意绕开或者破坏权利人设的技术保护措施，还可能构成侵犯著作权罪，判 3 年以下，严重的判 3 到 10 年。官方案例：王某等人制售外挂，靠读取和修改游戏内存实现透视、自瞄。3 个月卖了 8 万余元，获利 3 万余元。判 1 年缓 1 年、罚 5000 元。缓 1 年就是判了 1 年但先不关，这一年里不再犯事就不用去坐牢。项某等人卖「TZ」系列外挂，销售额 20 余万元，项某判 3 年缓 3 年、罚 2 万元。刘某某等人拿到游戏服务端程序，改参数开私服，收了充值 2000 余万元。判 4 年到 2 年 6 个月，罚 1000 万到 130 万元。不只是游戏。上海一家公司做了刷机包，让手机里的微信多出自动转发、点赞、群发等几十种功能。这些手机被当成「营销手机」卖了 2381 台。2019 年上海徐汇法院按侵犯著作权罪判公司罚金 50 万元，负责人判 1 年 6 个月缓 1 年 6 个月（全国）</p><p><strong>要花什么：</strong>不花钱。代价是放弃这类接单和「小工具」的收入。难在这笔钱来得快，又看不出谁会来追究</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+
+  <div class="ad-slot hidden" id="adDetail"></div>
+
+  <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">已经公布的外挂判例，都是读写游戏内存、绕过反作弊的那种。「只截屏、只模拟按键」的辅助还没见过官方判例。但第 3 条的抢票案说明，不碰内存、只发请求，一样能定非法获取数据罪。最后算不算犯罪、按哪个罪算，由办案机关根据厂商报案时交上去的材料定，不是作者说了算。卖 20 人次就够「情节严重」，这个量很小。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">全国人大 (2020). 刑法（根据刑法修正案（十一）修正，第二百八十五条第三款、第二百一十七条第六项）. <a href="https://jtgl.beijing.gov.cn/jgj/jgxx/flfg/fl/11033925/index.html" target="_blank" rel="noopener noreferrer">https://jtgl.beijing.gov.cn/jgj/jgxx/flfg/fl/11033925/index.html</a>；最高人民法院、最高人民检察院 (2011). 关于办理危害计算机信息系统安全刑事案件应用法律若干问题的解释（第三条）. <a href="https://ga.sz.gov.cn/ZWGK/ZCFG/ZCJD/content/post_1304363.html" target="_blank" rel="noopener noreferrer">https://ga.sz.gov.cn/ZWGK/ZCFG/ZCJD/content/post_1304363.html</a>（深圳市公安局转载）；最高人民检察院 (2026). 上海静安：严惩制售游戏外挂黑灰产共护清朗网络空间. <a href="https://www.spp.gov.cn/spp/zdgz/202608/t20260825_735480.shtml" target="_blank" rel="noopener noreferrer">https://www.spp.gov.cn/spp/zdgz/202608/t20260825_735480.shtml</a>；最高人民检察院 (2021). 2020 年度检察机关保护知识产权典型案例（案例五）. <a href="https://www.spp.gov.cn/spp/xwfbh/wsfbt/202104/t20210425_516525.shtml" target="_blank" rel="noopener noreferrer">https://www.spp.gov.cn/spp/xwfbh/wsfbt/202104/t20210425_516525.shtml</a>；国家版权局 (2020). 2019 年度上海十大版权典型案件发布（上海市版权局发布，案例八：上海昱宫网络科技有限公司等侵犯著作权案）. <a href="https://www.ncac.gov.cn/xxfb/ywxx/202004/t20200430_47269.html" target="_blank" rel="noopener noreferrer">https://www.ncac.gov.cn/xxfb/ywxx/202004/t20200430_47269.html</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 11 章 · 程序员和技术人容易踩的红线</span></div></div>
+
+  <!-- 相关条目 -->
+  <div class="related" id="dRelated" style="display:none"></div>
+
+  <!-- 底部操作 -->
+  <div class="actions">
+    <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/11-程序员和技术人容易踩的红线.md#2-不做不卖游戏外挂和辅助包括只读屏幕不碰内存的-ai-辅助也不卖给微信这类软件加功能的改版" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
+    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
+    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+  </div>
+
+</div>
+
+<!-- ================== 页脚 ================== -->
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/detail.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>

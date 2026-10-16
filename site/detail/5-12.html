@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>优先选通过一致性评价的仿制药和集采中选药 · 高性价比人生</title>
+<base href="/">
+<meta name="description" content="集采第二批药平均降价 53%，降得最多的降了 93%。到 2026 年 4 月，已经做了 11 批，覆盖 490 种药。开药买药时多问一句「有没有集采的、通用名的」，成分一样，钱能少花一大截。">
+<meta name="gvl-prerendered" content="1">
+<link rel="canonical" href="https://life.daogong.cc/detail/5-12.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="优先选通过一致性评价的仿制药和集采中选药">
+<meta property="og:description" content="集采第二批药平均降价 53%，降得最多的降了 93%。到 2026 年 4 月，已经做了 11 批，覆盖 490 种药。开药买药时多问一句「有没有集采的、通用名的」，成分一样，钱能少花一大截。">
+<meta property="og:url" content="https://life.daogong.cc/detail/5-12.html">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+    --ev-a: #2e7d32;
+    --ev-b: #b26a00;
+    --ev-c: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 顶部导航栏 ================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .topbar .sbox {
+    display: flex;
+    max-width: 480px;
+    height: 38px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .topbar .sbox:focus-within { border-color: var(--blue); }
+  .topbar .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .topbar .sbox input::placeholder { color: var(--gray2); }
+  .topbar .sbox .btn {
+    width: 80px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .topbar .sbox .btn:hover { background: var(--blue-hover); }
+
+  /* ================== 面包屑 ================== */
+  .breadcrumb {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
+  .breadcrumb .cur { color: var(--text); }
+
+  /* ================== 详情主体 ================== */
+  .detail-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  /* 章节标记 */
+  .sec-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    color: var(--gray);
+    background: #f5f6f8;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 标题 */
+  .detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  /* 徽标行 */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 650;
+    padding: 3px 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
+  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
+  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
+  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
+  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
+  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
+  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
+  .badge.cost { background: #fdecea; color: #c62828; }
+
+  /* 正文 */
+  .detail-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-desc);
+    margin-bottom: 28px;
+  }
+
+  /* 元信息表格 */
+  .meta-table {
+    border-top: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .meta-row .k {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--gray);
+    font-size: 13.5px;
+  }
+  .meta-row .v {
+    flex: 1;
+    color: var(--text-desc);
+    line-height: 1.75;
+  }
+  .meta-row .v a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta-row .v a:hover { text-decoration: underline; }
+
+  /* 相关条目 */
+  .related {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .related .rl-title {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .related .rl-item {
+    display: block;
+    font-size: 13.5px;
+    color: var(--blue-title);
+    text-decoration: none;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+  .related .rl-item:hover { text-decoration: underline; }
+  .related .rl-item .rl-sec {
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-left: 6px;
+  }
+
+  /* 底部操作 */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .actions a, .actions button {
+    font-size: 13.5px;
+    font-family: inherit;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .actions .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .actions .btn-primary:hover { background: var(--blue-hover); }
+  .actions .btn-secondary {
+    background: #fff;
+    color: var(--text-desc);
+    border: 1px solid var(--border);
+  }
+  .actions .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* ================== 页脚 ================== */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  /* ================== 响应式 ================== */
+  @media (max-width: 640px) {
+    .topbar { gap: 12px; padding: 10px 14px; }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 36px; }
+    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
+    .topbar .sbox .btn { width: 60px; font-size: 13px; }
+    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
+    .detail-wrap { padding: 16px 14px 60px; }
+    .detail-title { font-size: 20px; }
+    .detail-body { font-size: 14px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .meta-row .k { width: auto; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 顶部导航栏 ================== -->
+<div class="topbar">
+  <a class="logo-sm" href="index.html">高性价比人生</a>
+  <div class="sbox">
+    <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
+    <button class="btn" onclick="searchFromDetail()">搜索</button>
+  </div>
+</div>
+
+<!-- ================== 面包屑 ================== -->
+<div class="breadcrumb">
+  <a href="index.html">首页</a>
+  <span class="sep">›</span>
+  <span class="cur" id="crumbSec">第 5 章 · 不要浪费钱 · 第 5-12 条</span>
+</div>
+
+<!-- ================== 详情主体 ================== -->
+<div class="detail-wrap" id="detailWrap">
+
+  <span class="sec-tag" id="dSec">第 5 章 · 不要浪费钱 · 第 5-12 条</span>
+
+  <h1 class="detail-title" id="dTitle">优先选通过一致性评价的仿制药和集采中选药</h1>
+
+  <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-top">性价比 极高</span><span class="badge gain">换钱</span><span class="badge cost-zero">成本 零</span></div>
+
+  <div class="detail-body" id="dBody"><p>集采第二批药平均降价 53%，降得最多的降了 93%。到 2026 年 4 月，已经做了 11 批，覆盖 490 种药。开药买药时多问一句「有没有集采的、通用名的」，成分一样，钱能少花一大截。</p><p><strong>换来什么：</strong>国家组织的药品集采，第二批平均降价 53%，最高降 93%。截至 2026 年 4 月，已经开展了 11 批，覆盖 490 种药品。通过或者视同通过一致性评价的药品达到 1695 个。这大约占临床常用化学药的 2/3（中国，2020 到 2026 年官方数据）</p><p><strong>要花什么：</strong>不花钱。医生开药、你去买药的时候，多问一句「有没有集采的、通用名的药」。</p></div>
+
+  <div class="ad-slot hidden" id="adDetail"></div>
+
+  <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">争议：常有人说「一致性评价只比成分，不比疗效」。这话对了一半。过评的做法是找健康人来吃药，抽血看药进到血液里以后的浓度曲线。再拿这条曲线和原研药的比，落在 80% 到 125% 之间就算过关。剂量差一点就出事的那类药，要求更严。辅料指有效成分之外的填充和包衣，允许和原研药不一样。法规只要求有效成分、剂型、吃法和治疗作用相同。所以它确实不是「找病人吃一段时间，看病好没好」。病人身上的效果由另一套研究来回答。国家医保局组织医院做过真实世界研究。到 2024 年 12 月，覆盖了 63 种集采药、近百家三甲医院、30 多万病人。结果都是和原研药没差别。比如二甲双胍，糖化血红蛋白达标率是仿制组 83.4%、原研组 78.9%。空腹血糖达标率反过来，仿制组 83.8%、原研组 87.6%。两组互有高低。2025 年 1 月，有医生公开说集采药「血压不降、麻药不睡、泻药不泻」。医保和药监去上海 7 家医院查过，结论是这些说法多半来自转述和个人感觉。被点名的那种泻药，当时还没开始在医院用。同一次也承认确实抽到过问题药。前 9 批 1600 多个中选产品里，有 9 个因为质量风险被取消资格。这 9 个里，6 个是进口药（含 3 个原研药），3 个是国产药。有两件事你能落实。一是想继续用原研药，通常还是开得到的。集采只占医院采购量的 60% 到 80%，剩下的由医院自己定。原研药没有被禁，代价是自己多掏钱。二是慢病换了药以后别凭感觉判断，按第 16 节第 3 条（把每次指标记在同一个本子上）盯住血压、血糖、糖化。真变差了就去找医生，请医生上报药品不良反应，别自己停药。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">国家医疗保障局 (2020). 第二批国家组织药品集中采购和使用工作答记者问. <a href="https://www.nhsa.gov.cn/art/2020/1/17/art_38_2264.html" target="_blank" rel="noopener noreferrer">https://www.nhsa.gov.cn/art/2020/1/17/art_38_2264.html</a>；国家医疗保障局 (2026). 国务院政策例行吹风会：健全全周期全渠道药品价格形成机制. <a href="http://www.nhsa.gov.cn/art/2026/4/15/art_14_20221.html" target="_blank" rel="noopener noreferrer">http://www.nhsa.gov.cn/art/2026/4/15/art_14_20221.html</a>；国务院办公厅 (2016). 关于开展仿制药质量和疗效一致性评价的意见（国办发〔2016〕8 号）. <a href="https://www.gov.cn/zhengce/zhengceku/2016-03/05/content_5049364.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/2016-03/05/content_5049364.htm</a>；国家食品药品监督管理总局 (2016). 关于发布普通口服固体制剂参比制剂选择和确定等 3 个技术指导原则的通告（2016 年第 61 号）附件 1、附件 3，海南省药品监督管理局转载. <a href="https://amr.hainan.gov.cn/himpa/ztzl/fzy/201607/t20160720_1591587.html" target="_blank" rel="noopener noreferrer">https://amr.hainan.gov.cn/himpa/ztzl/fzy/201607/t20160720_1591587.html</a>；国家医疗保障局 (2024). 集采药品质量严格监管，企业检查和品种抽检两个「全覆盖」. <a href="https://www.nhsa.gov.cn/art/2024/12/30/art_52_15287.html" target="_blank" rel="noopener noreferrer">https://www.nhsa.gov.cn/art/2024/12/30/art_52_15287.html</a>；国家医疗保障局 (2025). 医保部门、药监部门有关同志就集采药品相关问题接受人民日报健康客户端记者采访. <a href="https://www.nhsa.gov.cn/art/2025/2/9/art_14_15647.html" target="_blank" rel="noopener noreferrer">https://www.nhsa.gov.cn/art/2025/2/9/art_14_15647.html</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 5 章 · 不要浪费钱</span></div></div>
+
+  <!-- 相关条目 -->
+  <div class="related" id="dRelated"><div class="rl-title">相关条目</div><a class="rl-item" target="_blank" rel="noopener" href="/detail/16-3.html">复查按医生给的间隔做，把每次的指标记在同一个本子上<span class="rl-sec">第 16 章 · 得了慢性病之后怎么活</span></a></div>
+
+  <!-- 底部操作 -->
+  <div class="actions">
+    <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/05-不要浪费钱.md#12-优先选通过一致性评价的仿制药和集采中选药" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
+    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
+    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+  </div>
+
+</div>
+
+<!-- ================== 页脚 ================== -->
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/detail.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>

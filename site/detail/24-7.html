@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>急重的伤病直奔急诊预检分诊台，别去挂号窗口排队 · 高性价比人生</title>
+<base href="/">
+<meta name="description" content="急诊不按先来后到，按病情轻重分四级排。定级的地方是急诊入口的预检分诊台，不是挂号窗口。到了先报最危险的那一条：大出血、喘不上气、意识不清、像心脏病那样的胸痛、疼得受不了。">
+<meta name="gvl-prerendered" content="1">
+<link rel="canonical" href="https://life.daogong.cc/detail/24-7.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="急重的伤病直奔急诊预检分诊台，别去挂号窗口排队">
+<meta property="og:description" content="急诊不按先来后到，按病情轻重分四级排。定级的地方是急诊入口的预检分诊台，不是挂号窗口。到了先报最危险的那一条：大出血、喘不上气、意识不清、像心脏病那样的胸痛、疼得受不了。">
+<meta property="og:url" content="https://life.daogong.cc/detail/24-7.html">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+    --ev-a: #2e7d32;
+    --ev-b: #b26a00;
+    --ev-c: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 顶部导航栏 ================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .topbar .sbox {
+    display: flex;
+    max-width: 480px;
+    height: 38px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .topbar .sbox:focus-within { border-color: var(--blue); }
+  .topbar .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .topbar .sbox input::placeholder { color: var(--gray2); }
+  .topbar .sbox .btn {
+    width: 80px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .topbar .sbox .btn:hover { background: var(--blue-hover); }
+
+  /* ================== 面包屑 ================== */
+  .breadcrumb {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
+  .breadcrumb .cur { color: var(--text); }
+
+  /* ================== 详情主体 ================== */
+  .detail-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  /* 章节标记 */
+  .sec-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    color: var(--gray);
+    background: #f5f6f8;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 标题 */
+  .detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  /* 徽标行 */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 650;
+    padding: 3px 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
+  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
+  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
+  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
+  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
+  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
+  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
+  .badge.cost { background: #fdecea; color: #c62828; }
+
+  /* 正文 */
+  .detail-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-desc);
+    margin-bottom: 28px;
+  }
+
+  /* 元信息表格 */
+  .meta-table {
+    border-top: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .meta-row .k {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--gray);
+    font-size: 13.5px;
+  }
+  .meta-row .v {
+    flex: 1;
+    color: var(--text-desc);
+    line-height: 1.75;
+  }
+  .meta-row .v a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta-row .v a:hover { text-decoration: underline; }
+
+  /* 相关条目 */
+  .related {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .related .rl-title {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .related .rl-item {
+    display: block;
+    font-size: 13.5px;
+    color: var(--blue-title);
+    text-decoration: none;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+  .related .rl-item:hover { text-decoration: underline; }
+  .related .rl-item .rl-sec {
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-left: 6px;
+  }
+
+  /* 底部操作 */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .actions a, .actions button {
+    font-size: 13.5px;
+    font-family: inherit;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .actions .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .actions .btn-primary:hover { background: var(--blue-hover); }
+  .actions .btn-secondary {
+    background: #fff;
+    color: var(--text-desc);
+    border: 1px solid var(--border);
+  }
+  .actions .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* ================== 页脚 ================== */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  /* ================== 响应式 ================== */
+  @media (max-width: 640px) {
+    .topbar { gap: 12px; padding: 10px 14px; }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 36px; }
+    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
+    .topbar .sbox .btn { width: 60px; font-size: 13px; }
+    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
+    .detail-wrap { padding: 16px 14px 60px; }
+    .detail-title { font-size: 20px; }
+    .detail-body { font-size: 14px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .meta-row .k { width: auto; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 顶部导航栏 ================== -->
+<div class="topbar">
+  <a class="logo-sm" href="index.html">高性价比人生</a>
+  <div class="sbox">
+    <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
+    <button class="btn" onclick="searchFromDetail()">搜索</button>
+  </div>
+</div>
+
+<!-- ================== 面包屑 ================== -->
+<div class="breadcrumb">
+  <a href="index.html">首页</a>
+  <span class="sep">›</span>
+  <span class="cur" id="crumbSec">第 24 章 · 看病 · 第 24-7 条</span>
+</div>
+
+<!-- ================== 详情主体 ================== -->
+<div class="detail-wrap" id="detailWrap">
+
+  <span class="sec-tag" id="dSec">第 24 章 · 看病 · 第 24-7 条</span>
+
+  <h1 class="detail-title" id="dTitle">急重的伤病直奔急诊预检分诊台，别去挂号窗口排队</h1>
+
+  <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-high">性价比 高</span><span class="badge gain">换时间精力</span><span class="badge cost-zero">成本 零</span></div>
+
+  <div class="detail-body" id="dBody"><p>急诊不按先来后到，按病情轻重分四级排。定级的地方是急诊入口的预检分诊台，不是挂号窗口。到了先报最危险的那一条：大出血、喘不上气、意识不清、像心脏病那样的胸痛、疼得受不了。</p><p><strong>换来什么：</strong>国家卫生健康委 2024 年版急诊医学质控指标规定，急诊预检分诊要「按病情危重程度将患者分为四级」。「I 级为急危患者，需要立即得到救治」。「II 级为急重患者，往往评估与救治同时进行」。「III 级为急症患者，需要短时间内得到诊治」。「IV 级为非急症患者或亚急症患者，在普通诊疗区顺序就诊」。预检分诊就是进急诊先由专人评一遍病情轻重，定下看病顺序。北京市的执行标准给出了各级的响应要求。1 级「立即进行评估和救治，安排患者进入复苏室或抢救室」。2 级「立即监护生命体征，10 分钟内得到救治，安排患者进入抢救室」。3 级「先于 4 级患者优先诊治，安排患者在普通诊疗区候诊；若候诊时间大于 30 分钟，需再次评估」。4 级「顺序就诊，除非病情变化，否则候诊时间较长；若候诊时间大于 4 小时，可再次评估」。北京标准里，1 级的人工评定指标包括「急性意识障碍」。2 级的包括「活动性或严重失血」「严重呼吸困难」「类似心脏因素的胸痛」「所有原因所致严重疼痛（7～10分）」。分诊要「坚持急危重症优先就诊原则」，急诊科入口显著位置应设预检分诊区域（四级标准为全国口径，响应时间为北京市标准）</p><p><strong>要花什么：</strong>不花钱。进门多走几步找到预检分诊台。把最要命的那个症状，用一句话说清。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+
+  <div class="ad-slot hidden" id="adDetail"></div>
+
+  <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">分成四级是全国统一的。每一级多久得到处理，由各省市自己定，北京这份是能逐字核对的一版。定级看的是心跳、血压、血氧这些指标和症状，疼痛程度也是其中一项，疼到 7 到 10 分可以定到 2 级。1 级的硬指标包括这么几条。一是心率大于 180 次/分，或者小于 40 次/分。二是收缩压低于 70 mmHg，收缩压就是血压里的高压。三是血氧低于 80%。四是休克、明确心肌梗死、急性意识障碍。觉得分诊把你定低了，就补充说清最危险的那个症状。候诊中病情有变化，立刻回分诊台重新评一次。真正危重的时候打 120（见第 13 节）。北京的方案要求院前急救医生按标准先给病人初步分级，1、2 级的及时通知要送去的医院急诊科准备接诊。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">国家卫生健康委办公厅 (2024). 关于印发急诊医学等 6 个专业医疗质量控制指标（2024 年版）的通知（国卫办医政函〔2024〕150 号）附件 1，指标四「急诊分级分诊执行率」. <a href="https://www.gov.cn/zhengce/zhengceku/202405/content_6951260.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/202405/content_6951260.htm</a>；北京市卫生健康委员会 (2019). 北京市加强急诊预检分诊分级工作方案及附件《北京市医院急诊预检分诊分级标准（试行）》：「坚持急危重症优先就诊原则。按照患者病情的严重程度，遵循从重到轻、从病情迅速变化到相对稳定的原则，合理安排患者就诊顺序。」「在急诊科入口的显著位置，设置急诊预检分诊区域」「院前医疗急救医生应按照相关标准对患者进行初步分级，对1、2级患者需及时通知所送医院急诊科做好接诊准备」. <a href="http://wjw.beijing.gov.cn/zwgk_20040/ylws/201912/t20191216_1242338.html" target="_blank" rel="noopener noreferrer">http://wjw.beijing.gov.cn/zwgk_20040/ylws/201912/t20191216_1242338.html</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 24 章 · 看病</span></div></div>
+
+  <!-- 相关条目 -->
+  <div class="related" id="dRelated" style="display:none"></div>
+
+  <!-- 底部操作 -->
+  <div class="actions">
+    <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/24-看病.md#7-急重的伤病直奔急诊预检分诊台别去挂号窗口排队" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
+    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
+    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+  </div>
+
+</div>
+
+<!-- ================== 页脚 ================== -->
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/detail.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>

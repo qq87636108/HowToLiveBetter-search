@@ -1,16 +1,16 @@
 {
- "sync_date": "2026-10-09",
- "entry_count": 672,
+ "sync_date": "2026-10-16",
+ "entry_count": 765,
  "sec_count": 34,
  "ev_dist": {
-  "A": 438,
-  "B": 179,
-  "C": 55
+  "A": 495,
+  "B": 218,
+  "C": 52
  },
  "ratio_dist": {
-  "极高": 114,
-  "高": 304,
-  "一般": 254
+  "极高": 122,
+  "高": 344,
+  "一般": 299
  },
  "upstream": "https://github.com/eternity4719/HowToLiveBetter",
  "license": "CC BY 4.0",

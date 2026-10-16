@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>戒烟，越早越好 · 高性价比人生</title>
+<base href="/">
+<meta name="description" content="美国的研究里，吸烟的人平均比不吸烟的人少活十年以上。40 岁前戒掉，能把接着吸烟带来的死亡风险抹掉九成左右。戒得越早，捡回来的越多。骨折以后接着抽，骨头长不上的几率约是不抽的 2.3 倍，所以骨头没长好之前别抽。">
+<meta name="gvl-prerendered" content="1">
+<link rel="canonical" href="https://life.daogong.cc/detail/2-1.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="戒烟，越早越好">
+<meta property="og:description" content="美国的研究里，吸烟的人平均比不吸烟的人少活十年以上。40 岁前戒掉，能把接着吸烟带来的死亡风险抹掉九成左右。戒得越早，捡回来的越多。骨折以后接着抽，骨头长不上的几率约是不抽的 2.3 倍，所以骨头没长好之前别抽。">
+<meta property="og:url" content="https://life.daogong.cc/detail/2-1.html">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+    --ev-a: #2e7d32;
+    --ev-b: #b26a00;
+    --ev-c: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 顶部导航栏 ================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .topbar .sbox {
+    display: flex;
+    max-width: 480px;
+    height: 38px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .topbar .sbox:focus-within { border-color: var(--blue); }
+  .topbar .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .topbar .sbox input::placeholder { color: var(--gray2); }
+  .topbar .sbox .btn {
+    width: 80px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .topbar .sbox .btn:hover { background: var(--blue-hover); }
+
+  /* ================== 面包屑 ================== */
+  .breadcrumb {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
+  .breadcrumb .cur { color: var(--text); }
+
+  /* ================== 详情主体 ================== */
+  .detail-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  /* 章节标记 */
+  .sec-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    color: var(--gray);
+    background: #f5f6f8;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 标题 */
+  .detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  /* 徽标行 */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 650;
+    padding: 3px 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
+  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
+  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
+  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
+  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
+  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
+  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
+  .badge.cost { background: #fdecea; color: #c62828; }
+
+  /* 正文 */
+  .detail-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-desc);
+    margin-bottom: 28px;
+  }
+
+  /* 元信息表格 */
+  .meta-table {
+    border-top: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .meta-row .k {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--gray);
+    font-size: 13.5px;
+  }
+  .meta-row .v {
+    flex: 1;
+    color: var(--text-desc);
+    line-height: 1.75;
+  }
+  .meta-row .v a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta-row .v a:hover { text-decoration: underline; }
+
+  /* 相关条目 */
+  .related {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .related .rl-title {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .related .rl-item {
+    display: block;
+    font-size: 13.5px;
+    color: var(--blue-title);
+    text-decoration: none;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+  .related .rl-item:hover { text-decoration: underline; }
+  .related .rl-item .rl-sec {
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-left: 6px;
+  }
+
+  /* 底部操作 */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .actions a, .actions button {
+    font-size: 13.5px;
+    font-family: inherit;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .actions .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .actions .btn-primary:hover { background: var(--blue-hover); }
+  .actions .btn-secondary {
+    background: #fff;
+    color: var(--text-desc);
+    border: 1px solid var(--border);
+  }
+  .actions .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* ================== 页脚 ================== */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  /* ================== 响应式 ================== */
+  @media (max-width: 640px) {
+    .topbar { gap: 12px; padding: 10px 14px; }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 36px; }
+    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
+    .topbar .sbox .btn { width: 60px; font-size: 13px; }
+    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
+    .detail-wrap { padding: 16px 14px 60px; }
+    .detail-title { font-size: 20px; }
+    .detail-body { font-size: 14px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .meta-row .k { width: auto; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 顶部导航栏 ================== -->
+<div class="topbar">
+  <a class="logo-sm" href="index.html">高性价比人生</a>
+  <div class="sbox">
+    <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
+    <button class="btn" onclick="searchFromDetail()">搜索</button>
+  </div>
+</div>
+
+<!-- ================== 面包屑 ================== -->
+<div class="breadcrumb">
+  <a href="index.html">首页</a>
+  <span class="sep">›</span>
+  <span class="cur" id="crumbSec">第 2 章 · 不要慢慢死 · 第 2-1 条</span>
+</div>
+
+<!-- ================== 详情主体 ================== -->
+<div class="detail-wrap" id="detailWrap">
+
+  <span class="sec-tag" id="dSec">第 2 章 · 不要慢慢死 · 第 2-1 条</span>
+
+  <h1 class="detail-title" id="dTitle">戒烟，越早越好</h1>
+
+  <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-high">性价比 高</span><span class="badge gain">换寿命</span><span class="badge cost">成本 见下方</span></div>
+
+  <div class="detail-body" id="dBody"><p>美国的研究里，吸烟的人平均比不吸烟的人少活十年以上。40 岁前戒掉，能把接着吸烟带来的死亡风险抹掉九成左右。戒得越早，捡回来的越多。骨折以后接着抽，骨头长不上的几率约是不抽的 2.3 倍，所以骨头没长好之前别抽。</p><p><strong>换来什么：</strong>美国一项跟踪一群人的研究（只记录、不分组）发现：现在还吸烟的人，比从不吸烟的人预期寿命短 10 年以上。40 岁前戒掉，可以消除继续吸烟所带来死亡风险的约 90%。25–34 岁戒烟约多活 10 年，35–44 岁约多活 9 年，45–54 岁约多活 6 年（原文以寿命年报告）。中国的同类研究：2010 年代，城市男性吸烟者的死亡风险是不吸烟者的 1.65 倍（RR 1.65），农村男性是 1.22 倍。主动戒烟满 10 年后，吸烟带来的这部分风险接近消失。骨折之后也一样。19 项只记录、不分组的研究合起来算，吸烟的人骨折不愈合（骨头长不上）的几率约是不吸烟者的 2.3 倍（OR 2.32，95% CI 1.76–3.06，已扣除其他因素）。小腿胫骨骨折和开放性骨折里同样偏高。瑞典一项随机试验里，骨折急诊手术后参加 6 周戒烟项目的 50 人，20% 出现至少一种术后并发症。没参加的 55 人是 38%。提前约好的手术，可以在术前 4 到 8 周开始戒烟，每周有人辅导，配尼古丁替代品。这样做术后并发症低约 58%（RR 0.42，95% CI 0.27–0.65，2 项试验、210 人）。</p><p><strong>要花什么：</strong>不花钱，反过来还省钱。一天一包烟约 20–30 元，戒了这笔钱就留下了。难在戒断期要熬，一般是几周到几个月。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+
+  <div class="ad-slot hidden" id="adDetail"></div>
+
+  <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">吸别人的烟同样会死人：2004 年全球约有 60.3 万人死于二手烟，占当年全球总死亡的约 1%。自己不吸，也要躲开别人的烟，尤其别让孩子吸到。怎么戒，具体办法在后面四条：第 3 条（戒烟药）、第 4 条（定一个戒烟日）、第 5 条（去戒烟门诊）、第 6 条（电子烟）。骨不愈合那个数字来自只记录、不分组的研究，吸烟的人在别的方面也可能和不吸烟的人不同，没法全部扣干净。骨折后那项戒烟试验只有 105 人。作者换成比值比又算了一遍，差别就不显著了（OR 2.51，95% CI 0.96–6.9）。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">Jha P 等 (2013). 21st-century hazards of smoking and benefits of cessation in the United States. NEJM. <a href="https://doi.org/10.1056/NEJMsa1211128" target="_blank" rel="noopener noreferrer">https://doi.org/10.1056/NEJMsa1211128</a>；Chen Z 等 (2015). Contrasting male and female trends in tobacco-attributed mortality in China: evidence from successive nationwide prospective cohort studies. Lancet. <a href="https://doi.org/10.1016/S0140-6736(15)00340-2" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/S0140-6736(15)00340-2</a>；Oberg M 等 (2011). Worldwide burden of disease from exposure to second-hand smoke: a retrospective analysis of data from 192 countries. Lancet. <a href="https://doi.org/10.1016/S0140-6736(10)61388-8" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/S0140-6736(10)61388-8</a>（二手烟那两个数字）；Scolaro JA 等 (2014). Cigarette smoking increases complications following fracture: a systematic review. J Bone Joint Surg Am. <a href="https://doi.org/10.2106/JBJS.M.00081" target="_blank" rel="noopener noreferrer">https://doi.org/10.2106/JBJS.M.00081</a>；Nåsell H 等 (2010). Effect of smoking cessation intervention on results of acute fracture surgery: a randomized controlled trial. J Bone Joint Surg Am. <a href="https://doi.org/10.2106/JBJS.I.00627" target="_blank" rel="noopener noreferrer">https://doi.org/10.2106/JBJS.I.00627</a>；Thomsen T 等 (2014). Interventions for preoperative smoking cessation. Cochrane Database Syst Rev. <a href="https://doi.org/10.1002/14651858.CD002294.pub4" target="_blank" rel="noopener noreferrer">https://doi.org/10.1002/14651858.CD002294.pub4</a>（骨折和手术那几个数字）</span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 2 章 · 不要慢慢死</span></div></div>
+
+  <!-- 相关条目 -->
+  <div class="related" id="dRelated" style="display:none"></div>
+
+  <!-- 底部操作 -->
+  <div class="actions">
+    <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/02-不要慢慢死.md#1-戒烟越早越好" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
+    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
+    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+  </div>
+
+</div>
+
+<!-- ================== 页脚 ================== -->
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/detail.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>

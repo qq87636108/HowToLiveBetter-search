@@ -9,6 +9,8 @@ import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from search_core import load, search
 
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # 每句：query → 期望 Top3 至少包含的条目 id（正解；id 以 2026-10-07 上游真实 667 条实测校正）
 CASES = [
     # === 3 句实测基线（2026-10-07 用户/实测确认）===
@@ -82,13 +84,30 @@ def has_hit(hay_ids, expect):
     return any(e in hay_ids for e in expect)
 
 def main():
-    import json
+    import json, os
+    # --dump-cases：把用例导出为 tests/cases.json，供前端正身门禁（node tests/front_gate.mjs）复用，
+    # 保证「双端跑同一套用例」，避免两份用例各自漂移（2026-10-16 复盘：JS 正身零门禁覆盖）
+    if "--dump-cases" in sys.argv:
+        out = BASE + "/tests/cases.json"
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        json.dump([{"q": q, "expect": e} for q, e in CASES], open(out, "w", encoding="utf-8"),
+                  ensure_ascii=False, indent=1)
+        print(f"已导出 {len(CASES)} 句 → {out}")
+        return
     idx, syn, kws = load()
     # 门禁与生产同一评分模式（评审 R2：回归门禁须带 df_meta 跑 BM25 模式，与前端口径一致）
+    # 2026-10-16 复核修正：df.json 必须用 BASE 绝对路径；加载失败**不得静默降级**
+    # （静默 None ⇒ 每个 idf 恒等 ln(10)，测的是另一个评分模式，门禁失去与线上一致的含义）
+    df_path = BASE + "/data/df.json"
     try:
-        df_meta = json.load(open("data/df.json", encoding="utf-8"))
-    except Exception:
-        df_meta = None
+        df_meta = json.load(open(df_path, encoding="utf-8"))
+    except Exception as e:
+        print(f"[门禁错误] 无法加载 {df_path}：{e}")
+        print("回归门禁必须在 BM25 模式下运行——缺 df.json 直接判失败（不静默降级）")
+        sys.exit(2)
+    if not df_meta.get("N") or not df_meta.get("df"):
+        print(f"[门禁错误] {df_path} 结构异常（N={df_meta.get('N')}，df 词数={len(df_meta.get('df') or {})}）")
+        sys.exit(2)
     print(f"数据: {len(idx)} 条 | 同义词: {len(syn)} 组 | 条目关键词: {'有' if kws else '无（首版无 keywords.json）'}")
     fails, soft = [], []
     for q, expect in CASES:

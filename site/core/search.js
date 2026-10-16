@@ -200,8 +200,8 @@
     var costZero = d.cs === '0' || d.cs === 0;
     var costText = costZero ? '成本 零' : '成本 见正文';
     return '<div class="item">'
-      + '<a class="title" href="detail.html?id=' + encodeURIComponent(d.id) + '" data-id="' + escapeAttr(d.id) + '">' + hl(d.title, keywords) + '</a>'
-      + '<div class="src"><span class="url">' + escapeHtml(window.GVL_META.domain || '本站收录') + '</span>'
+      + '<a class="title" target="_blank" rel="noopener" href="/detail/' + encodeURIComponent(d.id) + '.html" data-id="' + escapeAttr(d.id) + '">' + hl(d.title, keywords) + '</a>'
+      + '<div class="src"><span class="url">' + escapeHtml((window.GVL_META && (window.GVL_META.domain || (window.GVL_META.site_url || '').replace(/^https?:\/\//, ''))) || '本站收录') + '</span>'
       + ' · ' + escapeHtml(d.sec) + ' · 第 ' + escapeHtml(d.id) + ' 条</div>'
       + '<div class="desc">' + hl(d.plain, keywords) + '</div>'
       + '<div class="tags"><b' + (evCls ? ' class="' + evCls + '"' : '') + '>证据等级 ' + escapeHtml(d.ev) + '</b>'

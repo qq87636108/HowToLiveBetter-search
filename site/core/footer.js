@@ -10,20 +10,22 @@
       var sync = meta.sync_date || '';
       // 百度式两行：第一行站务链接 · 第二行版权+出处+数据同步
       e.innerHTML = '<div class="foot-links">'
-        + '<a href="pages/about.html">关于我们</a>'
+        + '<a href="/pages/about.html">关于我们</a>'
         + '<span class="sep">·</span>'
-        + '<a href="pages/privacy.html">隐私政策</a>'
+        + '<a href="/pages/privacy.html">隐私政策</a>'
         + '<span class="sep">·</span>'
-        + '<a href="pages/terms.html">使用条款</a>'
+        + '<a href="/pages/terms.html">使用条款</a>'
         + '<span class="sep">·</span>'
-        + '<a href="pages/contact.html">联系我们</a>'
+        + '<a href="/pages/contact.html">联系我们</a>'
+        + '<span class="sep">·</span>'
+        + '<a href="https://daogong.cc" target="_blank" rel="noopener noreferrer">道工主站</a>'
         + '<span class="sep">·</span>'
         + '<a href="https://github.com/eternity4719/HowToLiveBetter" target="_blank" rel="noopener noreferrer">数据来源 HowToLiveBetter</a>'
         + '</div>'
         + '<div class="foot-copy">©2026 高性价比人生 · 数据来源 <a href="https://github.com/eternity4719/HowToLiveBetter" target="_blank" rel="noopener noreferrer">HowToLiveBetter</a>（CC BY 4.0） · 独立增强版 · 数据同步 ' + sync + '</div>';
     }
     if (window.GVL_META) fill(el);
-    else fetch('data/meta.json').then(function (r) { return r.json(); }).then(function (m) { window.GVL_META = m; fill(el); });
+    else fetch('/data/meta.json').then(function (r) { return r.json(); }).then(function (m) { window.GVL_META = m; fill(el); });
   }
   document.addEventListener('DOMContentLoaded', render);
 })();

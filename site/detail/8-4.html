@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>视频里看见脸、电话里听见声音都不算核实，涉及转账先挂断，用自己通讯录里的旧号码打回去 · 高性价比人生</title>
+<base href="/">
+<meta name="description" content="看见脸、听见声音，都不算核实。只要涉及转账就先挂断，再用自己通讯录里存的旧号码打回去，或者找共同认识的人问一句。对方说「信号不好」「在开会」，不肯当面视频，直接当骗局处理。">
+<meta name="gvl-prerendered" content="1">
+<link rel="canonical" href="https://life.daogong.cc/detail/8-4.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="视频里看见脸、电话里听见声音都不算核实，涉及转账先挂断，用自己通讯录里的旧号码打回去">
+<meta property="og:description" content="看见脸、听见声音，都不算核实。只要涉及转账就先挂断，再用自己通讯录里存的旧号码打回去，或者找共同认识的人问一句。对方说「信号不好」「在开会」，不肯当面视频，直接当骗局处理。">
+<meta property="og:url" content="https://life.daogong.cc/detail/8-4.html">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+    --ev-a: #2e7d32;
+    --ev-b: #b26a00;
+    --ev-c: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 顶部导航栏 ================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .topbar .sbox {
+    display: flex;
+    max-width: 480px;
+    height: 38px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .topbar .sbox:focus-within { border-color: var(--blue); }
+  .topbar .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .topbar .sbox input::placeholder { color: var(--gray2); }
+  .topbar .sbox .btn {
+    width: 80px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .topbar .sbox .btn:hover { background: var(--blue-hover); }
+
+  /* ================== 面包屑 ================== */
+  .breadcrumb {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
+  .breadcrumb .cur { color: var(--text); }
+
+  /* ================== 详情主体 ================== */
+  .detail-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  /* 章节标记 */
+  .sec-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    color: var(--gray);
+    background: #f5f6f8;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 标题 */
+  .detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  /* 徽标行 */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 650;
+    padding: 3px 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
+  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
+  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
+  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
+  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
+  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
+  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
+  .badge.cost { background: #fdecea; color: #c62828; }
+
+  /* 正文 */
+  .detail-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-desc);
+    margin-bottom: 28px;
+  }
+
+  /* 元信息表格 */
+  .meta-table {
+    border-top: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .meta-row .k {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--gray);
+    font-size: 13.5px;
+  }
+  .meta-row .v {
+    flex: 1;
+    color: var(--text-desc);
+    line-height: 1.75;
+  }
+  .meta-row .v a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta-row .v a:hover { text-decoration: underline; }
+
+  /* 相关条目 */
+  .related {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .related .rl-title {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .related .rl-item {
+    display: block;
+    font-size: 13.5px;
+    color: var(--blue-title);
+    text-decoration: none;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+  .related .rl-item:hover { text-decoration: underline; }
+  .related .rl-item .rl-sec {
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-left: 6px;
+  }
+
+  /* 底部操作 */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .actions a, .actions button {
+    font-size: 13.5px;
+    font-family: inherit;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .actions .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .actions .btn-primary:hover { background: var(--blue-hover); }
+  .actions .btn-secondary {
+    background: #fff;
+    color: var(--text-desc);
+    border: 1px solid var(--border);
+  }
+  .actions .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* ================== 页脚 ================== */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  /* ================== 响应式 ================== */
+  @media (max-width: 640px) {
+    .topbar { gap: 12px; padding: 10px 14px; }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 36px; }
+    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
+    .topbar .sbox .btn { width: 60px; font-size: 13px; }
+    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
+    .detail-wrap { padding: 16px 14px 60px; }
+    .detail-title { font-size: 20px; }
+    .detail-body { font-size: 14px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .meta-row .k { width: auto; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 顶部导航栏 ================== -->
+<div class="topbar">
+  <a class="logo-sm" href="index.html">高性价比人生</a>
+  <div class="sbox">
+    <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
+    <button class="btn" onclick="searchFromDetail()">搜索</button>
+  </div>
+</div>
+
+<!-- ================== 面包屑 ================== -->
+<div class="breadcrumb">
+  <a href="index.html">首页</a>
+  <span class="sep">›</span>
+  <span class="cur" id="crumbSec">第 8 章 · 别把自己搭进去 · 第 8-4 条</span>
+</div>
+
+<!-- ================== 详情主体 ================== -->
+<div class="detail-wrap" id="detailWrap">
+
+  <span class="sec-tag" id="dSec">第 8 章 · 别把自己搭进去 · 第 8-4 条</span>
+
+  <h1 class="detail-title" id="dTitle">视频里看见脸、电话里听见声音都不算核实，涉及转账先挂断，用自己通讯录里的旧号码打回去</h1>
+
+  <div class="badges" id="dBadges"><span class="badge ev-b">证据等级 B</span><span class="badge cp-high">性价比 高</span><span class="badge gain">换钱</span><span class="badge cost">成本 见下方</span></div>
+
+  <div class="detail-body" id="dBody"><p>看见脸、听见声音，都不算核实。只要涉及转账就先挂断，再用自己通讯录里存的旧号码打回去，或者找共同认识的人问一句。对方说「信号不好」「在开会」，不肯当面视频，直接当骗局处理。</p><p><strong>换来什么：</strong>公安部网安局给了三条办法。第一条是动作验证：请对方做一个连贯的转头动作，或者用手掌完全遮住脸再快速移开。原文说「目前的 AI 技术在模拟这些复杂的面部遮挡和光影变化时，容易出现卡顿、模糊或扭曲」。第二条是听声音细节：「AI 生成的语音有时会缺乏自然的呼吸停顿、情感起伏，或者带有轻微的机械感、背景杂音异常」。第三条是多渠道核实。原文说这是「最核心的一招」：「挂断后直接拨打对方常用且你熟悉的电话号码（不要回拨可疑来电号码），或者通过你们共同认识的第三人进行侧面核实」。口诀是「视频语音莫轻信，动作验证多核实」。法律上，换脸换声早就被禁止用于诈骗。人脸生成、人脸替换、合成人声、仿声这几类服务，平台必须打上显著标识。任何组织和个人不得恶意删除、篡改、伪造、隐匿这个标识。但守规矩的是平台，骗子不会加，所以「没看到 AI 标识」不能反过来当成对方是真人的证据。公安部刑侦局公布过一起案件。14 人团伙被查获合成动态人脸视频 5 万多条，公民个人信息 50 多万条。警方还扣押了云服务器 60 台（全国，标识义务自 2025 年 9 月 1 日起）</p><p><strong>要花什么：</strong>不花钱。多打一个电话，多等几分钟。平时少在公开账号上发正脸视频和大段语音。难在对方常常催得很急，你要忍住不当场转账。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+
+  <div class="ad-slot hidden" id="adDetail"></div>
+
+  <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">回拨要用自己通讯录里存的旧号码。不要回拨来电显示的那个号码，也不要用对方在聊天里发来的新号码。对方以「信号不好」「在开会」为由不肯当面视频、不肯做指定动作的，直接当骗局处理。动作验证法只是辅助，AI 一直在变好，唯一稳的是第三条核实。已经转了钱，见本节第 2 条（立刻打 110 要求止付）。防止自己的人脸和声音被采集见第 14 节。定 B 级是因为官方给的是识别办法和案例，没有「按这个方法核实后被骗率下降多少」的数字。公安部官网（mps.gov.cn）这次仍然全站 521 打不开。公安部网安局和刑侦局的原文取自福建省公安厅的转载页。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">公安部网安局 (2025). 眼见≠为实，警惕 AI 新型诈骗！<a href="http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202509/t20250922_7013008.htm" target="_blank" rel="noopener noreferrer">http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202509/t20250922_7013008.htm</a>（福建省公安厅转载）；国家互联网信息办公室、工业和信息化部、公安部 (2022). 互联网信息服务深度合成管理规定（第六、十六、十七条，2023 年 1 月 10 日施行）. <a href="https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm</a>；国家互联网信息办公室、工业和信息化部、公安部、国家广播电视总局 (2025). 人工智能生成合成内容标识办法（第十条，2025 年 9 月 1 日施行）. <a href="https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm" target="_blank" rel="noopener noreferrer">https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm</a>；公安部刑侦局、央视新闻 (2026). 警方查获 5 万多条合成动态人脸视频 谁在「复制」你的脸？<a href="http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202603/t20260330_7117146.htm" target="_blank" rel="noopener noreferrer">http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202603/t20260330_7117146.htm</a>（福建省公安厅转载）</span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 8 章 · 别把自己搭进去</span></div></div>
+
+  <!-- 相关条目 -->
+  <div class="related" id="dRelated" style="display:none"></div>
+
+  <!-- 底部操作 -->
+  <div class="actions">
+    <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/08-别把自己搭进去.md#4-视频里看见脸电话里听见声音都不算核实涉及转账先挂断用自己通讯录里的旧号码打回去" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
+    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
+    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+  </div>
+
+</div>
+
+<!-- ================== 页脚 ================== -->
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/detail.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>

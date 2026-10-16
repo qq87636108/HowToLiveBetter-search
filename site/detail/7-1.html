@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>失业了先在线申领失业保险金 · 高性价比人生</title>
+<base href="/">
+<meta name="description" content="单位和你自己交满 1 年、又不是你主动提的辞职，办完失业登记、愿意找工作的，就能领钱。交满 1 年不到 5 年最多领 12 个月，满 5 年不到 10 年最多 18 个月，10 年以上最多 24 个月。领钱这段时间，职工">
+<meta name="gvl-prerendered" content="1">
+<link rel="canonical" href="https://life.daogong.cc/detail/7-1.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="失业了先在线申领失业保险金">
+<meta property="og:description" content="单位和你自己交满 1 年、又不是你主动提的辞职，办完失业登记、愿意找工作的，就能领钱。交满 1 年不到 5 年最多领 12 个月，满 5 年不到 10 年最多 18 个月，10 年以上最多 24 个月。领钱这段时间，职工">
+<meta property="og:url" content="https://life.daogong.cc/detail/7-1.html">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+    --ev-a: #2e7d32;
+    --ev-b: #b26a00;
+    --ev-c: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 顶部导航栏 ================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .topbar .sbox {
+    display: flex;
+    max-width: 480px;
+    height: 38px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .topbar .sbox:focus-within { border-color: var(--blue); }
+  .topbar .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .topbar .sbox input::placeholder { color: var(--gray2); }
+  .topbar .sbox .btn {
+    width: 80px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .topbar .sbox .btn:hover { background: var(--blue-hover); }
+
+  /* ================== 面包屑 ================== */
+  .breadcrumb {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
+  .breadcrumb .cur { color: var(--text); }
+
+  /* ================== 详情主体 ================== */
+  .detail-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  /* 章节标记 */
+  .sec-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    color: var(--gray);
+    background: #f5f6f8;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 标题 */
+  .detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  /* 徽标行 */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 650;
+    padding: 3px 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
+  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
+  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
+  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
+  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
+  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
+  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
+  .badge.cost { background: #fdecea; color: #c62828; }
+
+  /* 正文 */
+  .detail-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-desc);
+    margin-bottom: 28px;
+  }
+
+  /* 元信息表格 */
+  .meta-table {
+    border-top: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .meta-row .k {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--gray);
+    font-size: 13.5px;
+  }
+  .meta-row .v {
+    flex: 1;
+    color: var(--text-desc);
+    line-height: 1.75;
+  }
+  .meta-row .v a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta-row .v a:hover { text-decoration: underline; }
+
+  /* 相关条目 */
+  .related {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .related .rl-title {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .related .rl-item {
+    display: block;
+    font-size: 13.5px;
+    color: var(--blue-title);
+    text-decoration: none;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+  .related .rl-item:hover { text-decoration: underline; }
+  .related .rl-item .rl-sec {
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-left: 6px;
+  }
+
+  /* 底部操作 */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .actions a, .actions button {
+    font-size: 13.5px;
+    font-family: inherit;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .actions .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .actions .btn-primary:hover { background: var(--blue-hover); }
+  .actions .btn-secondary {
+    background: #fff;
+    color: var(--text-desc);
+    border: 1px solid var(--border);
+  }
+  .actions .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* ================== 页脚 ================== */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  /* ================== 响应式 ================== */
+  @media (max-width: 640px) {
+    .topbar { gap: 12px; padding: 10px 14px; }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 36px; }
+    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
+    .topbar .sbox .btn { width: 60px; font-size: 13px; }
+    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
+    .detail-wrap { padding: 16px 14px 60px; }
+    .detail-title { font-size: 20px; }
+    .detail-body { font-size: 14px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .meta-row .k { width: auto; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 顶部导航栏 ================== -->
+<div class="topbar">
+  <a class="logo-sm" href="index.html">高性价比人生</a>
+  <div class="sbox">
+    <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
+    <button class="btn" onclick="searchFromDetail()">搜索</button>
+  </div>
+</div>
+
+<!-- ================== 面包屑 ================== -->
+<div class="breadcrumb">
+  <a href="index.html">首页</a>
+  <span class="sep">›</span>
+  <span class="cur" id="crumbSec">第 7 章 · 没钱的时候怎么活 · 第 7-1 条</span>
+</div>
+
+<!-- ================== 详情主体 ================== -->
+<div class="detail-wrap" id="detailWrap">
+
+  <span class="sec-tag" id="dSec">第 7 章 · 没钱的时候怎么活 · 第 7-1 条</span>
+
+  <h1 class="detail-title" id="dTitle">失业了先在线申领失业保险金</h1>
+
+  <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-top">性价比 极高</span><span class="badge gain">换钱</span><span class="badge cost-zero">成本 零</span></div>
+
+  <div class="detail-body" id="dBody"><p>单位和你自己交满 1 年、又不是你主动提的辞职，办完失业登记、愿意找工作的，就能领钱。交满 1 年不到 5 年最多领 12 个月，满 5 年不到 10 年最多 18 个月，10 年以上最多 24 个月。领钱这段时间，职工医保有失业保险替你交。</p><p><strong>换来什么：</strong>要同时满足三个条件。一是单位和你本人交失业保险累计满 1 年。二是不是你自己主动提的辞职（法律叫「非因本人意愿中断就业」）。三是已经办了失业登记，并且有找工作的意愿。能领多久按缴费年限算。累计满 1 年不足 5 年，最长领 12 个月。满 5 年不足 10 年，最长 18 个月。10 年以上，最长 24 个月。每月发多少由省级政府定，各省不一样。金额低于当地最低工资，高于城市低保。国家的目标是逐步提到最低工资标准的 90%。领失业保险金这段时间，你照样参加职工基本医疗保险、享受基本医疗保险待遇。该交的那笔基本医疗保险费从失业保险基金里出，你个人不交（全国，条例 1999 年起施行）</p><p><strong>要花什么：</strong>不花钱。用手机就能交申请，三个入口都行：「掌上 12333」App、微信或支付宝里的电子社保卡小程序、国家社会保险公共服务平台。手上有社保卡或者身份证就能办，多数地区不用跑现场。前提是先办好失业登记。</p></div>
+
+  <div class="ad-slot hidden" id="adDetail"></div>
+
+  <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">自己主动辞职的，不算「非因本人意愿」，领不了。所以离职时别签「个人原因主动辞职」，见第 19 节第 7 条。失业保险金从办失业登记那天起算，晚办就晚拿。走人之后第一件事就是去登记。登记要用单位开的离职证明，见第 19 节第 17 条（离职证明）。竞业协议要不要守、公司不给补偿怎么办，见第 11 节第 12 条（签了竞业协议）。领取期间的职工医保由失业保险替你交。各省金额差得多，以你参保那个地方公布的为准。「最低工资 90%」出自人社部、财政部 2017 年的指导意见（人社部发〔2017〕71 号），原话是「逐步将失业保险金标准提高到最低工资标准的90%」。这是目标，不是现在就按 90% 发。人社部官网的原文页在本机打不开，这句按辽宁省人社厅文件里的引文核对。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">国务院 (1999). 失业保险条例（国务院令第 258 号，第十四、十六、十七、十八条；第十六条：「失业保险金自办理失业登记之日起计算」）. <a href="https://xzfg.moj.gov.cn/front/law/detail?LawID=517" target="_blank" rel="noopener noreferrer">https://xzfg.moj.gov.cn/front/law/detail?LawID=517</a>；人力资源社会保障部. 全国人社政务服务平台·失业保险待遇申领办事指南. <a href="https://www.12333.gov.cn/portal/common/bszn/sydysl?pfaId=202105281700000004" target="_blank" rel="noopener noreferrer">https://www.12333.gov.cn/portal/common/bszn/sydysl?pfaId=202105281700000004</a>；国家发展改革委就业司 (2022). 失业保险金标准，将逐步提高至最低工资的 90%. <a href="https://www.ndrc.gov.cn/fggz/jyysr/jysrsbxf/202206/t20220627_1328819.html" target="_blank" rel="noopener noreferrer">https://www.ndrc.gov.cn/fggz/jyysr/jysrsbxf/202206/t20220627_1328819.html</a>；辽宁省人力资源和社会保障厅 (2019). 关于进一步调整失业保险金标准的通知：「为落实《人力资源社会保障部财政部关于调整失业保险金标准的指导意见》(人社部发〔2017〕71号〕&quot;逐步将失业保险金标准提高到最低工资标准的90%&quot;等要求」. <a href="https://rst.ln.gov.cn/rst/zfxx/zc/ywfl/shbx/2024092014161280895/index.shtml" target="_blank" rel="noopener noreferrer">https://rst.ln.gov.cn/rst/zfxx/zc/ywfl/shbx/2024092014161280895/index.shtml</a>；全国人大常委会 (2010). 社会保险法（第四十八条）. <a href="https://fgk.chinatax.gov.cn/zcfgk/c100009/c5192937/content.html" target="_blank" rel="noopener noreferrer">https://fgk.chinatax.gov.cn/zcfgk/c100009/c5192937/content.html</a>（国家税务总局政策法规库）</span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 7 章 · 没钱的时候怎么活</span></div></div>
+
+  <!-- 相关条目 -->
+  <div class="related" id="dRelated"><div class="rl-title">相关条目</div><a class="rl-item" target="_blank" rel="noopener" href="/detail/19-7.html">不要签「个人原因主动辞职」，那一签就没有 N 了<span class="rl-sec">第 19 章 · 在职离职和工伤</span></a><a class="rl-item" target="_blank" rel="noopener" href="/detail/19-17.html">离职时找单位要一份离职证明，写明合同期限、离职日期、岗位和工作年限<span class="rl-sec">第 19 章 · 在职离职和工伤</span></a><a class="rl-item" target="_blank" rel="noopener" href="/detail/11-12.html">签了竞业协议，离职后公司不按月给补偿就书面催告，满 3 个月没给可以解除；没接触过商业秘密的岗位可请求确认条款不生效<span class="rl-sec">第 11 章 · 程序员和技术人容易踩的红线</span></a></div>
+
+  <!-- 底部操作 -->
+  <div class="actions">
+    <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/07-没钱的时候怎么活.md#1-失业了先在线申领失业保险金" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
+    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
+    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+  </div>
+
+</div>
+
+<!-- ================== 页脚 ================== -->
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/detail.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>

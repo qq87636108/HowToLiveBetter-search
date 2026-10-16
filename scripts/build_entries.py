@@ -232,8 +232,23 @@ def main():
     idmap = {e['id']: e['key'] for e in items}
     json.dump(idmap, open(BASE + "/data/idmap.json", "w", encoding="utf-8"), ensure_ascii=False)
     # keymap.json：稳定键 → 展示 id（反向映射；detail.js 兜底两跳闭环，评审阻塞吸收）
+    # 保留旧映射链（2026-10-08 根因修复：作者改标题 → stable_key 变 → 老 key 悬空；
+    # 旧 keymap 里失效的 key 用「老位置 → 展示 id」续接——位置 id 稳定，标题 hash 不稳定）
+    # ★2026-10-16 双消费者修正：续接值必须是**展示 id**，不能写新 stable_key。
+    #   契约是「稳定键 → 展示 id」，detail.js 直接拿 keymap[sk] 当 ?id= 用；写 stable_key 会让
+    #   两跳闭环断掉（老 key 查到的是另一个 key，不是可跳转的 id）。
+    #   gen_keywords 需要「老 key → 新 stable_key」时自行用 idmap 再跳一跳（见 gen_keywords.py）。
     keymap = {e['key']: e['id'] for e in items}
-    json.dump(keymap, open(BASE + "/data/keymap.json", "w", encoding="utf-8"), ensure_ascii=False)
+    km_path = BASE + "/data/keymap.json"
+    if os.path.exists(km_path):
+        try:
+            old_km = json.load(open(km_path, encoding="utf-8"))
+            for old_key, old_pos in old_km.items():
+                if old_key not in keymap and old_pos in idmap:
+                    keymap[old_key] = old_pos      # 老 key → 展示 id（位置 id 稳定，可续接）
+        except Exception as _e:
+            print(f"[warn] keymap 旧映射续接失败: {_e}")
+    json.dump(keymap, open(km_path, "w", encoding="utf-8"), ensure_ascii=False)
 
     # meta.json（site_url 从 data/site_config.json 读，避免每次重建清空生产域名）
     import datetime
@@ -253,24 +268,56 @@ def main():
     }
     json.dump(meta, open(meta_path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
-    # sitemap.xml：每条 detail 页 + 首页 + 四件套政策页；lastmod=sync_date
-    # 域名从 meta.site_url 读（部署后填；空=相对路径占位，域名变了重跑本脚本自动更新）
+    # sitemap.xml：每条 detail 页 + 首页 + 四件套政策页
+    # ★lastmod 真实化（2026-10-16）：按条目内容 hash 做变更追踪——只有内容真变了的条目才刷新
+    # lastmod。否则每次全量重建都把 765 个 URL 的 lastmod 刷成「今天」= 对搜索引擎的假信号
+    # （Google 明确会忽略长期不可信的 lastmod，整站一起变最容易被判不可信）
     site_url = meta.get('site_url', '').rstrip('/') if isinstance(meta, dict) else ''
     today = datetime.date.today().isoformat()
-    urls = [(f"{site_url}/", 'daily', '1.0'), (f"{site_url}/pages/privacy.html", 'monthly', '0.3'),
-            (f"{site_url}/pages/about.html", 'monthly', '0.3'), (f"{site_url}/pages/terms.html", 'monthly', '0.3'),
-            (f"{site_url}/pages/contact.html", 'monthly', '0.3')]
+    hashes = {e['id']: hashlib.sha256((e['title'] + '|' + e['plain']).encode('utf-8')).hexdigest()[:16]
+              for e in items}
+    h_path = BASE + "/data/entry_hashes.json"
+    l_path = BASE + "/data/entry_lastmod.json"
+    old_h = json.load(open(h_path, encoding="utf-8")) if os.path.exists(h_path) else {}
+    old_l = json.load(open(l_path, encoding="utf-8")) if os.path.exists(l_path) else {}
+    lastmod = {}
+    chg = new = 0
+    for i, h in hashes.items():
+        if old_h.get(i) == h and old_l.get(i):
+            lastmod[i] = old_l[i]
+        else:
+            lastmod[i] = today
+            chg += 1
+            if i not in old_h:
+                new += 1
+    json.dump(hashes, open(h_path, "w", encoding="utf-8"), ensure_ascii=False)
+    json.dump(lastmod, open(l_path, "w", encoding="utf-8"), ensure_ascii=False)
+    print(f"lastmod: 内容变更 {chg} 条（其中新增 {new} 条），其余沿用上次日期")
+
+    urls = [(f"{site_url}/", 'daily', '1.0', today),
+            (f"{site_url}/pages/privacy.html", 'monthly', '0.3', today),
+            (f"{site_url}/pages/about.html", 'monthly', '0.3', today),
+            (f"{site_url}/pages/terms.html", 'monthly', '0.3', today),
+            (f"{site_url}/pages/contact.html", 'monthly', '0.3', today)]
     for e in items:
-        urls.append((f"{site_url}/detail.html?id={e['id']}", 'weekly', '0.8'))
+        urls.append((f"{site_url}/detail/{e['id']}.html", 'weekly', '0.8', lastmod.get(e['id'], today)))
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for u, freq, pri in urls:
-        sm.append(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod><changefreq>{freq}</changefreq><priority>{pri}</priority></url>")
+    for u, freq, pri, lm in urls:
+        sm.append(f"  <url><loc>{u}</loc><lastmod>{lm}</lastmod><changefreq>{freq}</changefreq><priority>{pri}</priority></url>")
     sm.append('</urlset>')
     open(BASE + "/site/sitemap.xml", "w", encoding="utf-8").write('\n'.join(sm) + '\n')
-    # robots.txt：全站 Allow + 数据文件 Disallow + Sitemap 指向
-    robots = ["User-agent: *", "Allow: /", "Disallow: /core/", "Disallow: /data/", "",
-              f"Sitemap: {site_url}/sitemap.xml" if site_url else "Sitemap: /sitemap.xml", ""]
+    # robots.txt：★2026-10-16 复盘最大发现——旧版 Disallow: /core/ + /data/ 把「本站自己渲染
+    # 所需的 JS 与数据」整目录屏蔽了，按 Google 口径被屏蔽文件上的 JS 不渲染 ⇒ 667 个已提交 URL
+    # 在搜索引擎眼里是同一张空壳。改为：全站 Allow + **逐文件**屏蔽内部构建文件。
+    internal = ["entry_words.json", "idmap.json", "keymap.json", "scene_map.json",
+                "site_config.json", "meta.prev.json", "license_hashes.json", "crawl_log.json"]
+    robots = ["User-agent: *", "Allow: /", "",
+              "# 渲染链（/core/*.js、/data/*.json）必须允许：被屏蔽的文件其 JS 不会被搜索引擎渲染",
+              "# 内部构建文件正常不发布（发布白名单），这里逐文件兜底屏蔽以防误发",
+              ]
+    robots += [f"Disallow: /data/{f}" for f in internal]
+    robots += ["", f"Sitemap: {site_url}/sitemap.xml" if site_url else "Sitemap: /sitemap.xml", ""]
     open(BASE + "/site/robots.txt", "w", encoding="utf-8").write('\n'.join(robots))
 
     print(f"OK: {len(items)} 条 / {len(by_sec)} 节 / ev={meta['ev_dist']} / ratio={meta['ratio_dist']}")

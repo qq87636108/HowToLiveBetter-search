@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不要指望靠 AI 聊天机器人自己判断病情和法律问题，看病、打官司、花大钱之前，把它说的依据找到原文核一遍 · 高性价比人生</title>
+<base href="/">
+<meta name="description" content="把完整病例交给 AI，九成以上它能认出是什么病。但普通人拿它问症状，认出病的反而比自己上网查的人少，该不该去急诊也没判得更准。问法律问题，通用 AI 至少 58% 的回答有编的内容，还会顺着你问题里的错误说法往下讲。">
+<meta name="gvl-prerendered" content="1">
+<link rel="canonical" href="https://life.daogong.cc/detail/6-31.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不要指望靠 AI 聊天机器人自己判断病情和法律问题，看病、打官司、花大钱之前，把它说的依据找到原文核一遍">
+<meta property="og:description" content="把完整病例交给 AI，九成以上它能认出是什么病。但普通人拿它问症状，认出病的反而比自己上网查的人少，该不该去急诊也没判得更准。问法律问题，通用 AI 至少 58% 的回答有编的内容，还会顺着你问题里的错误说法往下讲。">
+<meta property="og:url" content="https://life.daogong.cc/detail/6-31.html">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+    --ev-a: #2e7d32;
+    --ev-b: #b26a00;
+    --ev-c: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 顶部导航栏 ================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .topbar .sbox {
+    display: flex;
+    max-width: 480px;
+    height: 38px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .topbar .sbox:focus-within { border-color: var(--blue); }
+  .topbar .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .topbar .sbox input::placeholder { color: var(--gray2); }
+  .topbar .sbox .btn {
+    width: 80px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .topbar .sbox .btn:hover { background: var(--blue-hover); }
+
+  /* ================== 面包屑 ================== */
+  .breadcrumb {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
+  .breadcrumb .cur { color: var(--text); }
+
+  /* ================== 详情主体 ================== */
+  .detail-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  /* 章节标记 */
+  .sec-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    color: var(--gray);
+    background: #f5f6f8;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 标题 */
+  .detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  /* 徽标行 */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 650;
+    padding: 3px 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
+  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
+  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
+  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
+  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
+  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
+  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
+  .badge.cost { background: #fdecea; color: #c62828; }
+
+  /* 正文 */
+  .detail-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-desc);
+    margin-bottom: 28px;
+  }
+
+  /* 元信息表格 */
+  .meta-table {
+    border-top: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .meta-row .k {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--gray);
+    font-size: 13.5px;
+  }
+  .meta-row .v {
+    flex: 1;
+    color: var(--text-desc);
+    line-height: 1.75;
+  }
+  .meta-row .v a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta-row .v a:hover { text-decoration: underline; }
+
+  /* 相关条目 */
+  .related {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .related .rl-title {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .related .rl-item {
+    display: block;
+    font-size: 13.5px;
+    color: var(--blue-title);
+    text-decoration: none;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+  .related .rl-item:hover { text-decoration: underline; }
+  .related .rl-item .rl-sec {
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-left: 6px;
+  }
+
+  /* 底部操作 */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .actions a, .actions button {
+    font-size: 13.5px;
+    font-family: inherit;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .actions .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .actions .btn-primary:hover { background: var(--blue-hover); }
+  .actions .btn-secondary {
+    background: #fff;
+    color: var(--text-desc);
+    border: 1px solid var(--border);
+  }
+  .actions .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* ================== 页脚 ================== */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  /* ================== 响应式 ================== */
+  @media (max-width: 640px) {
+    .topbar { gap: 12px; padding: 10px 14px; }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 36px; }
+    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
+    .topbar .sbox .btn { width: 60px; font-size: 13px; }
+    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
+    .detail-wrap { padding: 16px 14px 60px; }
+    .detail-title { font-size: 20px; }
+    .detail-body { font-size: 14px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .meta-row .k { width: auto; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 顶部导航栏 ================== -->
+<div class="topbar">
+  <a class="logo-sm" href="index.html">高性价比人生</a>
+  <div class="sbox">
+    <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
+    <button class="btn" onclick="searchFromDetail()">搜索</button>
+  </div>
+</div>
+
+<!-- ================== 面包屑 ================== -->
+<div class="breadcrumb">
+  <a href="index.html">首页</a>
+  <span class="sep">›</span>
+  <span class="cur" id="crumbSec">第 6 章 · 反面清单 · 第 6-31 条</span>
+</div>
+
+<!-- ================== 详情主体 ================== -->
+<div class="detail-wrap" id="detailWrap">
+
+  <span class="sec-tag" id="dSec">第 6 章 · 反面清单 · 第 6-31 条</span>
+
+  <h1 class="detail-title" id="dTitle">不要指望靠 AI 聊天机器人自己判断病情和法律问题，看病、打官司、花大钱之前，把它说的依据找到原文核一遍</h1>
+
+  <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge ">性价比 一般</span><span class="badge gain">换寿命</span><span class="badge cost">成本 见下方</span></div>
+
+  <div class="detail-body" id="dBody"><p>把完整病例交给 AI，九成以上它能认出是什么病。但普通人拿它问症状，认出病的反而比自己上网查的人少，该不该去急诊也没判得更准。问法律问题，通用 AI 至少 58% 的回答有编的内容，还会顺着你问题里的错误说法往下讲。</p><p><strong>换来什么：</strong>先看看病。2026 年 Nature Medicine 发表了一项随机分组的试验，1298 名英国普通人参加，方案事先登记过。每人拿到两个编好的病例，要判断是什么病、该去急诊还是在家观察。一部分人用 AI 聊天机器人帮忙，用的是 GPT-4o、Llama 3、Command R+。对照组用自己平时的办法，多数是上网搜，或者看英国国家医疗服务体系（NHS）的官网。把完整病例直接交给 AI，它 94.9% 的情况能认出相关的病，56.3% 能判对该去哪看。普通人用同样的 AI，认出相关疾病的不到 34.5%，判对去哪看的不到 44.2%。对照组认出相关疾病的几率是用 AI 的人的 1.76 倍（95% CI 1.45–2.13，可信范围）。认出危险信号类重病的几率是 1.57 倍（1.28–1.92）。判断该去哪看，两边差不多。作者翻了对话记录，问题出在两处：用户没把症状说全，AI 提到了对的病，用户却没采纳。再看法律。一个美国研究团队 2024 年用 ChatGPT 4 等公开模型，问美国联邦法院的判例。ChatGPT 4 有 58% 的回答有编造，Llama 2 高到 88%。编造指和法律事实对不上的内容，论文把它叫「幻觉」。模型分不清自己哪句是编的。用户问题里带着错误的法律前提时，它常常照单全收。同一团队 2025 年又测了律师用的专业法律 AI 工具。这些工具号称不会编，实际 17% 到 33% 的回答有编造。它看起来划算，是因为 AI 随叫随到、不收钱，说话又像医生律师一样肯定</p><p><strong>要花什么：</strong>不花钱。每次核对要多花几分钟到半小时。让 AI 写出它依据的法条、指南或论文，你自己打开原文，找到那句话。要改的习惯是，别因为它说得肯定就照做。</p></div>
+
+  <div class="ad-slot hidden" id="adDetail"></div>
+
+  <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">争议。2023 年一项研究从美国论坛抽了 195 个患者提问，让医疗人员不看来源打分。78.6% 的评分认为 ChatGPT 答得比医生好。但它比的是回答写得好不好，没看提问的人最后判断对没有。2026 年那项试验用的是 2024 年的模型，新模型可能更强。不过同一项试验也发现，AI 单独考试的成绩预测不了普通人用它的效果。AI 为什么会编，OpenAI 的研究人员 2025 年在一篇未经同行评审的论文里解释过。训练和打分的方式奖励「猜一个答案」，答「不知道」拿不到分，所以它没把握时也说得很肯定。核对的办法是让它写出法条名称和条号、指南或论文题目，你去官方网站打开原文找那句话，找不到就当它没说过。提问时别把自己的结论写进去，问「这种情况法律怎么规定」，别问「这种情况我是不是赢定了」。突然嘴歪、一侧没劲、胸口压着疼这类信号，别先问 AI，直接打 120。见第 13 节第 3 条（嘴歪、一侧胳膊没劲）和第 13 节第 7 条（胸口压着疼）。打官司没钱请律师的，见第 7 节第 3 条（申请法律援助）。收益定小，因为只有「认没认出病」这类中间指标，没有少死人的数字。受益人是你自己和家里人。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">Bean AM, Payne RE, Parsons G, et al. (2026). Reliability of LLMs as medical assistants for the general public: a randomized preregistered study. Nature Medicine, 32(2), 609–615. <a href="https://doi.org/10.1038/s41591-025-04074-y" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/s41591-025-04074-y</a>；Dahl M, Magesh V, Suzgun M, Ho DE (2024). Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models. Journal of Legal Analysis, 16(1), 64–93. <a href="https://doi.org/10.1093/jla/laae003" target="_blank" rel="noopener noreferrer">https://doi.org/10.1093/jla/laae003</a>；Magesh V, Surani F, Dahl M, Suzgun M, Manning CD, Ho DE (2025). Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools. Journal of Empirical Legal Studies, 22(2), 216–242. <a href="https://doi.org/10.1111/jels.12413" target="_blank" rel="noopener noreferrer">https://doi.org/10.1111/jels.12413</a>；Kalai AT, Nachum O, Vempala SS, Zhang E (2025). Why Language Models Hallucinate. arXiv:2509.04664（预印本，备注里那项）. <a href="https://arxiv.org/abs/2509.04664" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2509.04664</a>；反方：Ayers JW, Poliak A, Dredze M, et al. (2023). Comparing Physician and Artificial Intelligence Chatbot Responses to Patient Questions Posted to a Public Social Media Forum. JAMA Internal Medicine, 183(6), 589. <a href="https://doi.org/10.1001/jamainternmed.2023.1838" target="_blank" rel="noopener noreferrer">https://doi.org/10.1001/jamainternmed.2023.1838</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 6 章 · 反面清单</span></div></div>
+
+  <!-- 相关条目 -->
+  <div class="related" id="dRelated"><div class="rl-title">相关条目</div><a class="rl-item" target="_blank" rel="noopener" href="/detail/13-3.html">突然嘴歪、一侧胳膊没劲、说话说不清，立刻打 120，不要等、不要自己开车去<span class="rl-sec">第 13 章 · 紧急情况</span></a><a class="rl-item" target="_blank" rel="noopener" href="/detail/13-7.html">胸口压着疼、闷、发紧超过 15 分钟不缓解，或者疼时出冷汗、恶心、喘不上气，打 120，不要自己扛也不要自己开车<span class="rl-sec">第 13 章 · 紧急情况</span></a><a class="rl-item" target="_blank" rel="noopener" href="/detail/7-3.html">打不起官司就申请法律援助，讨薪、赡养费、工伤这类案子本来就在范围内<span class="rl-sec">第 7 章 · 没钱的时候怎么活</span></a></div>
+
+  <!-- 底部操作 -->
+  <div class="actions">
+    <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/06-反面清单.md#31-不要指望靠-ai-聊天机器人自己判断病情和法律问题看病打官司花大钱之前把它说的依据找到原文核一遍" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
+    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
+    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+  </div>
+
+</div>
+
+<!-- ================== 页脚 ================== -->
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/detail.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>

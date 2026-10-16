@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>记住反诈硬规则：来电不轻信、信息不透露、链接不点击、转账多核实，七种最常见的骗局都是这个形状 · 高性价比人生</title>
+<base href="/">
+<meta name="description" content="凡是让你转账、共享屏幕、下载陌生 App、点链接、报验证码的，先挂断，再用官方号码打回去核实。刷单返利、虚假投资理财、网络贷款、冒充客服、冒充公检法、杀猪盘、色诱刷单这七类，都是要你先转钱。事前认出来，比事后追钱便宜得多">
+<meta name="gvl-prerendered" content="1">
+<link rel="canonical" href="https://life.daogong.cc/detail/8-3.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记住反诈硬规则：来电不轻信、信息不透露、链接不点击、转账多核实，七种最常见的骗局都是这个形状">
+<meta property="og:description" content="凡是让你转账、共享屏幕、下载陌生 App、点链接、报验证码的，先挂断，再用官方号码打回去核实。刷单返利、虚假投资理财、网络贷款、冒充客服、冒充公检法、杀猪盘、色诱刷单这七类，都是要你先转钱。事前认出来，比事后追钱便宜得多">
+<meta property="og:url" content="https://life.daogong.cc/detail/8-3.html">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+    --ev-a: #2e7d32;
+    --ev-b: #b26a00;
+    --ev-c: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 顶部导航栏 ================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .topbar .sbox {
+    display: flex;
+    max-width: 480px;
+    height: 38px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .topbar .sbox:focus-within { border-color: var(--blue); }
+  .topbar .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .topbar .sbox input::placeholder { color: var(--gray2); }
+  .topbar .sbox .btn {
+    width: 80px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .topbar .sbox .btn:hover { background: var(--blue-hover); }
+
+  /* ================== 面包屑 ================== */
+  .breadcrumb {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
+  .breadcrumb .cur { color: var(--text); }
+
+  /* ================== 详情主体 ================== */
+  .detail-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  /* 章节标记 */
+  .sec-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    color: var(--gray);
+    background: #f5f6f8;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 标题 */
+  .detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  /* 徽标行 */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 650;
+    padding: 3px 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
+  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
+  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
+  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
+  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
+  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
+  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
+  .badge.cost { background: #fdecea; color: #c62828; }
+
+  /* 正文 */
+  .detail-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-desc);
+    margin-bottom: 28px;
+  }
+
+  /* 元信息表格 */
+  .meta-table {
+    border-top: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .meta-row .k {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--gray);
+    font-size: 13.5px;
+  }
+  .meta-row .v {
+    flex: 1;
+    color: var(--text-desc);
+    line-height: 1.75;
+  }
+  .meta-row .v a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta-row .v a:hover { text-decoration: underline; }
+
+  /* 相关条目 */
+  .related {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .related .rl-title {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .related .rl-item {
+    display: block;
+    font-size: 13.5px;
+    color: var(--blue-title);
+    text-decoration: none;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+  .related .rl-item:hover { text-decoration: underline; }
+  .related .rl-item .rl-sec {
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-left: 6px;
+  }
+
+  /* 底部操作 */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .actions a, .actions button {
+    font-size: 13.5px;
+    font-family: inherit;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .actions .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .actions .btn-primary:hover { background: var(--blue-hover); }
+  .actions .btn-secondary {
+    background: #fff;
+    color: var(--text-desc);
+    border: 1px solid var(--border);
+  }
+  .actions .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* ================== 页脚 ================== */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  /* ================== 响应式 ================== */
+  @media (max-width: 640px) {
+    .topbar { gap: 12px; padding: 10px 14px; }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 36px; }
+    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
+    .topbar .sbox .btn { width: 60px; font-size: 13px; }
+    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
+    .detail-wrap { padding: 16px 14px 60px; }
+    .detail-title { font-size: 20px; }
+    .detail-body { font-size: 14px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .meta-row .k { width: auto; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 顶部导航栏 ================== -->
+<div class="topbar">
+  <a class="logo-sm" href="index.html">高性价比人生</a>
+  <div class="sbox">
+    <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
+    <button class="btn" onclick="searchFromDetail()">搜索</button>
+  </div>
+</div>
+
+<!-- ================== 面包屑 ================== -->
+<div class="breadcrumb">
+  <a href="index.html">首页</a>
+  <span class="sep">›</span>
+  <span class="cur" id="crumbSec">第 8 章 · 别把自己搭进去 · 第 8-3 条</span>
+</div>
+
+<!-- ================== 详情主体 ================== -->
+<div class="detail-wrap" id="detailWrap">
+
+  <span class="sec-tag" id="dSec">第 8 章 · 别把自己搭进去 · 第 8-3 条</span>
+
+  <h1 class="detail-title" id="dTitle">记住反诈硬规则：来电不轻信、信息不透露、链接不点击、转账多核实，七种最常见的骗局都是这个形状</h1>
+
+  <div class="badges" id="dBadges"><span class="badge ev-b">证据等级 B</span><span class="badge cp-high">性价比 高</span><span class="badge gain">换钱</span><span class="badge cost">成本 见下方</span></div>
+
+  <div class="detail-body" id="dBody"><p>凡是让你转账、共享屏幕、下载陌生 App、点链接、报验证码的，先挂断，再用官方号码打回去核实。刷单返利、虚假投资理财、网络贷款、冒充客服、冒充公检法、杀猪盘、色诱刷单这七类，都是要你先转钱。事前认出来，比事后追钱便宜得多。</p><p><strong>换来什么：</strong>法律要求政府和有关部门把各类电信网络诈骗的手法讲给大家。公安机关会同金融、电信、网信部门建立预警劝阻系统，发现可能要被骗的人就及时劝阻。96110 就是这条全国统一的预警劝阻热线，来电要接。公安部 2026 年 6 月通报，最高发的 10 类诈骗占了全部电诈案件的 85%。刷单返利发案最多，占 25%。虚假网络投资理财损失最大，约占全部损失的 40%。福建省公安厅逐类拆解的识别特征如下。刷单返利：「喊你一起赚钱的大概率是想赚你的钱」，任务单做不完就不退本金。虚假投资理财：群里「水军」晒收益，先给小额返利再让你加大投入，提现要「缴税」。网络贷款：「贷款并不需要交保证金、做银行流水账，一旦遇上了，一定是假的」。冒充客服：说你开了会员要自动扣费、影响征信，逼你转账取消。这类骗子常让你下载一个「某某会议」App，再打开屏幕共享。共享之后，你在手机上「包括消息弹窗、短信验证码、密码输入等都会被看得一清二楚」。上海反诈中心的提示是：「凡是提到『会议号』『屏幕共享』『远程控制』的都是诈骗」。冒充公检法：「公检法机关不存在所谓的『安全账户』，凡是通过电话、QQ、微信、网络等办案、做笔录的『公检法机关』，都是诈骗」。在国外，骗子还会冒充驻外使领馆，说你涉嫌洗钱、有重要文件要领、护照签证有问题。然后把电话转给国内「公安」。驻美使馆专门提醒留学生：「凡是自称驻外使领馆、运营商、海关等工作人员，以涉嫌相关违法犯罪为由，主动将电话转接至公安机关的，都是诈骗！」杀猪盘：「对于从未见过面，只见到照片或者视频的『恋人』，不可轻信」，永远不视频不见面却常有急事要钱。色诱刷单：约见面先「做任务」，钱越交越多。事前认出来，比事后止付便宜得多。止付能追回多少，取决于报警时钱还在不在账上。止付怎么做见第 2 条（打 110 或 96110 要求止付）（全国，2022 年 12 月起）</p><p><strong>要花什么：</strong>不花钱。把「三不一多」记住，读一遍下面那七类，再装一个「国家反诈中心」App，96110 来电必接。凡是让你转账、共享屏幕、下载陌生 App、点链接、报验证码的，先挂断，再打官方电话核实。难在对方往往催得很急，你要顶住这股催促先挂断。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+
+  <div class="ad-slot hidden" id="adDetail"></div>
+
+  <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">自称公检法、客服、领导、平台风控，要你「配合调查」「取消会员」「刷单返利」「投资内幕」的，都是同一个套路。真贷款不需要交保证金，公检法没有「安全账户」，这两句记住就能挡掉一大半。定 B 级是因为这句口诀只是官方的宣传口径，没有「记住之后少被骗多少」的数字。口诀和七类拆解取自省级公安厅的页面。公安部 2026 年通报了 10 类高发诈骗。其余几类是冒充电商物流客服、贷款征信、网络游戏虚假交易、网络婚恋交友、冒充领导熟人和机票退改签。这几类套路都一样，最后都要你转钱。在国外接到自称使领馆、国内公安的电话，说你涉案、有文件要领、护照有问题，一律先挂断。留学生是这类骗局的重点目标。熟人当面找你「帮忙刷个脸」办贷款，不让你转钱，却让你背债，见第 45 条（帮忙刷个脸）。做生意时撞上的代运营骗局，见第 12 节第 24 条（代运营网店）。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">全国人大常委会 (2022). 反电信网络诈骗法（第八、二十、三十四条）. <a href="https://www.spp.gov.cn/spp/fl/202209/t20220902_575631.shtml" target="_blank" rel="noopener noreferrer">https://www.spp.gov.cn/spp/fl/202209/t20220902_575631.shtml</a>；公安部 (2026). 公安部发布会：通报当前电信网络诈骗犯罪的最新形势、特点提示防范电信网络诈骗要点（2026 年 6 月 12 日）：「以上这10类案件就占了全部电诈案件的85%。其中，刷单返利诈骗发案最高，占所有电诈案件的25%；虚假网络投资理财诈骗损失最高，约占全部电诈案件损失的40%」. <a href="https://www.mps.gov.cn/n2254536/n2254544/n2254552/n10491781/index.html" target="_blank" rel="noopener noreferrer">https://www.mps.gov.cn/n2254536/n2254544/n2254552/n10491781/index.html</a>；福建省公安厅 (2023). 96110 来电，请务必接听. <a href="http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202303/t20230306_6126156.htm" target="_blank" rel="noopener noreferrer">http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202303/t20230306_6126156.htm</a>（省级公安机关页面，含「来电不轻信，信息不透露，链接不点击，转账多核实」口诀及「警惕 192 开头的诈骗电话」提示）；福建省公安厅 (2023 到 2024). 识骗技巧专栏：刷单 <a href="http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202307/t20230703_6196881.htm" target="_blank" rel="noopener noreferrer">http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202307/t20230703_6196881.htm</a>；投资理财 <a href="http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202312/t20231220_6362145.htm" target="_blank" rel="noopener noreferrer">http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202312/t20231220_6362145.htm</a>；贷款 <a href="http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202312/t20231207_6326741.htm" target="_blank" rel="noopener noreferrer">http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202312/t20231207_6326741.htm</a>；冒充客服 <a href="http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202310/t20231020_6279505.htm" target="_blank" rel="noopener noreferrer">http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202310/t20231020_6279505.htm</a>；共享屏幕（2022 年 8 月 18 日）<a href="https://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202208/t20220818_5977906.htm" target="_blank" rel="noopener noreferrer">https://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202208/t20220818_5977906.htm</a>；「中银会议」等诈骗 App（2025 年 5 月 12 日，转载上海反诈中心）<a href="https://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202505/t20250512_6912823.htm" target="_blank" rel="noopener noreferrer">https://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202505/t20250512_6912823.htm</a>；冒充公检法 <a href="http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202309/t20230913_6255863.htm" target="_blank" rel="noopener noreferrer">http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202309/t20230913_6255863.htm</a>；中国驻美国大使馆双边处警务联络官 (2025). 开学第一信（三）（2025 年 1 月 28 日）. <a href="https://us.china-embassy.gov.cn/chn/lsfw/lsxz/lstx/202503/t20250305_11568435.htm" target="_blank" rel="noopener noreferrer">https://us.china-embassy.gov.cn/chn/lsfw/lsxz/lstx/202503/t20250305_11568435.htm</a>；杀猪盘 <a href="http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202308/t20230818_6232030.htm" target="_blank" rel="noopener noreferrer">http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202308/t20230818_6232030.htm</a>；色诱刷单 <a href="http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202403/t20240307_6410612.htm" target="_blank" rel="noopener noreferrer">http://gat.fujian.gov.cn/ztzl/fjjffpzxrx/spjq/202403/t20240307_6410612.htm</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 8 章 · 别把自己搭进去</span></div></div>
+
+  <!-- 相关条目 -->
+  <div class="related" id="dRelated"><div class="rl-title">相关条目</div><a class="rl-item" target="_blank" rel="noopener" href="/detail/12-24.html">花钱请人代运营网店、上开店培训、做「无货源」之前，先问清后面还要不要加钱、销量从哪来<span class="rl-sec">第 12 章 · 创业与做生意</span></a></div>
+
+  <!-- 底部操作 -->
+  <div class="actions">
+    <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/08-别把自己搭进去.md#3-记住反诈硬规则来电不轻信信息不透露链接不点击转账多核实七种最常见的骗局都是这个形状" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
+    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
+    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+  </div>
+
+</div>
+
+<!-- ================== 页脚 ================== -->
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/detail.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>

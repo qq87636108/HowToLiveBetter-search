@@ -21,9 +21,17 @@ def main():
     entry = json.load(open(BASE + "/data/entry_words.json", encoding="utf-8"))
     scenes = json.load(open(BASE + "/data/scenes.json", encoding="utf-8"))
 
+    # 门禁必须与生产同口径（2026-10-16 复核修正）：不传 df_meta 时 search() 走降级分支
+    # （每个 idf 恒等 ln(10)=2.30，词/片段同权）⇒ 查的是另一个评分路径，门禁形同虚设
+    try:
+        df_meta = json.load(open(BASE + "/data/df.json", encoding="utf-8"))
+    except Exception as e:
+        print(f"[门禁错误] 无法加载 {BASE}/data/df.json：{e}")
+        sys.exit(2)
+
     # ① 全量入口 top1 非空
     all_words = list(dict.fromkeys(list(kws.keys()) + list(entry.keys()) + [s['t'] for s in scenes]))
-    zero = [w for w in all_words if not search_core.search(w, idx, syn, kws, top=1)[0]]
+    zero = [w for w in all_words if not search_core.search(w, idx, syn, kws, top=1, df_meta=df_meta)[0]]
 
     # ② 悬空 stable_key
     key_set = {e['key'] for e in idx}

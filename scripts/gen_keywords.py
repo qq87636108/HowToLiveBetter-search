@@ -144,7 +144,7 @@ def gen_df(idx):
     import re as _re
     for e in idx:
         hay = (e['hay_title'] + " " + e['hay_plain']).lower()
-        hay = _re.sub(r"[\s,，、。？?！!；;：:（）()【】\[\]「」《》""''…·—\-]+", "", hay)
+        hay = _re.sub(r"[\s,，、。？?！!；;：:（）()【】\[\]「」《》""''…·—-]+", "", hay)
         df.update(set(hay[i:i+2] for i in range(len(hay)-1)))
     # ② 整词（keywords key + entry_words + 同义词 key/别名 + 胶囊词 + 标题实义段）
     vocab = set()
@@ -163,7 +163,9 @@ def gen_df(idx):
         w_low = w.lower()
         df[w] = sum(1 for e in idx if w_low in e['hay_title'].lower() or w_low in e['hay_plain'].lower())
     meta = {"N": N, "df": dict(df)}
-    json.dump(meta, open(BASE + "/data/df.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    # sort_keys=True：df 的键来自 set 迭代，键序受 PYTHONHASHSEED 影响 → 同内容两次生成 md5 不同，
+    # 会让「双端 md5 一致」的部署校验出现假失败（2026-10-16 实测）
+    json.dump(meta, open(BASE + "/data/df.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1, sort_keys=True)
     return meta
 
 def main():
@@ -180,6 +182,46 @@ def main():
     added = auto_extend(idx, kws)
     if added:
         print(f"  自动补全新增条目关键词 {added} 个")
+    # 悬空 key 自动续接（2026-10-08 根因修复，2026-10-16 重写：
+    # 作者改标题 → stable_key 变；经 keymap/idmap「两跳」重映射到本轮新 stable_key。
+    # ★旧实现的三个缺陷一并修掉：
+    #   ① 值语义错：旧 keymap 里存的是新 stable_key（不是展示 id），直接当 key 用属于巧合命中；
+    #      现在按契约走：老 key →（keymap）展示 id →（idmap）本轮新 stable_key
+    #   ② `elif k in km or True:` 恒真分支 + 内层 k 未绑定（键列表为空时）→ NameError
+    #   ③ 整词静默删除 ⇒ 循环后不可能有悬空 key ⇒ validate 的悬空硬门禁永久失效。
+    #      现在：丢弃非静默（记入 dropped 并打印），丢弃比例超阈值即 raise（把静默错乱变显式失败）
+    km_path = BASE + "/data/keymap.json"
+    id_path = BASE + "/data/idmap.json"
+    km = json.load(open(km_path, encoding="utf-8")) if os.path.exists(km_path) else {}
+    idmap = json.load(open(id_path, encoding="utf-8")) if os.path.exists(id_path) else {}
+    key_set = {e['key'] for e in idx}
+    remapped = 0
+    dropped = []
+    for w, keys in list(kws.items()):
+        nks = []
+        for k in keys:
+            if k in key_set:
+                nks.append(k)
+                continue
+            nk = None
+            did = km.get(k)
+            if did and did in idmap and idmap[did] in key_set:
+                nk = idmap[did]
+            if nk:
+                nks.append(nk)
+                remapped += 1
+        if nks:
+            kws[w] = list(dict.fromkeys(nks))
+        else:
+            dropped.append(w)
+            del kws[w]
+    if remapped:
+        print(f"  悬空 key 自动续接 {remapped} 个")
+    if dropped:
+        total = len(kws) + len(dropped)
+        print(f"  [提示] 悬空且续接不上、已丢弃关键词 {len(dropped)} 个: {dropped[:5]}")
+        if len(dropped) > max(3, int(0.02 * total)):
+            raise ValueError(f"悬空关键词超阈值（{len(dropped)}/{total}），疑似 stable_key 生成链路故障，请人工核对 keymap/idmap")
     # 写盘前验证（阻塞1/2/3 的守护）
     validate(kws, idx)
     json.dump(kws, open(BASE + "/data/keywords.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)

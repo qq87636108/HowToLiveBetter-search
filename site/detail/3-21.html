@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>觉得「所有人都看见我出丑了」的时候，把这个估计除以二 · 高性价比人生</title>
+<base href="/">
+<meta name="description" content="穿尴尬的 T 恤进屋，以为将近一半人认得出衣服上印的是谁，实际不到四分之一。换成体面的 T 恤也一样高估。小组讨论完，人也以为自己说错的话在别人眼里更显眼，聊天后还常低估对方有多喜欢自己。所以觉得「所有人都看见我出丑了」">
+<meta name="gvl-prerendered" content="1">
+<link rel="canonical" href="https://life.daogong.cc/detail/3-21.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="觉得「所有人都看见我出丑了」的时候，把这个估计除以二">
+<meta property="og:description" content="穿尴尬的 T 恤进屋，以为将近一半人认得出衣服上印的是谁，实际不到四分之一。换成体面的 T 恤也一样高估。小组讨论完，人也以为自己说错的话在别人眼里更显眼，聊天后还常低估对方有多喜欢自己。所以觉得「所有人都看见我出丑了」">
+<meta property="og:url" content="https://life.daogong.cc/detail/3-21.html">
+<style>
+  :root {
+    --blue: #4e6ef2;
+    --blue-hover: #4262e0;
+    --blue-title: #2440b3;
+    --text: #222;
+    --text-desc: #333;
+    --gray: #999;
+    --gray2: #bbb;
+    --line: #ececec;
+    --border: #c4c7ce;
+    --hl: #c00;
+    --ev-a: #2e7d32;
+    --ev-b: #b26a00;
+    --ev-c: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================== 顶部导航栏 ================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+  }
+  .topbar .logo-sm {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .topbar .sbox {
+    display: flex;
+    max-width: 480px;
+    height: 38px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    background: #fff;
+  }
+  .topbar .sbox:focus-within { border-color: var(--blue); }
+  .topbar .sbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: transparent;
+  }
+  .topbar .sbox input::placeholder { color: var(--gray2); }
+  .topbar .sbox .btn {
+    width: 80px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .topbar .sbox .btn:hover { background: var(--blue-hover); }
+
+  /* ================== 面包屑 ================== */
+  .breadcrumb {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
+  .breadcrumb .cur { color: var(--text); }
+
+  /* ================== 详情主体 ================== */
+  .detail-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  /* 章节标记 */
+  .sec-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    color: var(--gray);
+    background: #f5f6f8;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 标题 */
+  .detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  /* 徽标行 */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 650;
+    padding: 3px 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
+  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
+  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
+  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
+  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
+  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
+  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
+  .badge.cost { background: #fdecea; color: #c62828; }
+
+  /* 正文 */
+  .detail-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-desc);
+    margin-bottom: 28px;
+  }
+
+  /* 元信息表格 */
+  .meta-table {
+    border-top: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .meta-row .k {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--gray);
+    font-size: 13.5px;
+  }
+  .meta-row .v {
+    flex: 1;
+    color: var(--text-desc);
+    line-height: 1.75;
+  }
+  .meta-row .v a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta-row .v a:hover { text-decoration: underline; }
+
+  /* 相关条目 */
+  .related {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .related .rl-title {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .related .rl-item {
+    display: block;
+    font-size: 13.5px;
+    color: var(--blue-title);
+    text-decoration: none;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+  .related .rl-item:hover { text-decoration: underline; }
+  .related .rl-item .rl-sec {
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-left: 6px;
+  }
+
+  /* 底部操作 */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .actions a, .actions button {
+    font-size: 13.5px;
+    font-family: inherit;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .actions .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .actions .btn-primary:hover { background: var(--blue-hover); }
+  .actions .btn-secondary {
+    background: #fff;
+    color: var(--text-desc);
+    border: 1px solid var(--border);
+  }
+  .actions .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* ================== 页脚 ================== */
+  .foot {
+    text-align: center;
+    padding: 30px 20px 40px;
+    font-size: 12.5px;
+    color: var(--gray2);
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  .foot-links { line-height: 2; }
+  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
+  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
+  .foot a { color: var(--gray); text-decoration: none; }
+  .foot a:hover { color: var(--blue); }
+
+  /* ================== 响应式 ================== */
+  @media (max-width: 640px) {
+    .topbar { gap: 12px; padding: 10px 14px; }
+    .topbar .logo-sm { font-size: 18px; }
+    .topbar .sbox { height: 36px; }
+    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
+    .topbar .sbox .btn { width: 60px; font-size: 13px; }
+    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
+    .detail-wrap { padding: 16px 14px 60px; }
+    .detail-title { font-size: 20px; }
+    .detail-body { font-size: 14px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .meta-row .k { width: auto; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== 顶部导航栏 ================== -->
+<div class="topbar">
+  <a class="logo-sm" href="index.html">高性价比人生</a>
+  <div class="sbox">
+    <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
+    <button class="btn" onclick="searchFromDetail()">搜索</button>
+  </div>
+</div>
+
+<!-- ================== 面包屑 ================== -->
+<div class="breadcrumb">
+  <a href="index.html">首页</a>
+  <span class="sep">›</span>
+  <span class="cur" id="crumbSec">第 3 章 · 不要浪费精力 · 第 3-21 条</span>
+</div>
+
+<!-- ================== 详情主体 ================== -->
+<div class="detail-wrap" id="detailWrap">
+
+  <span class="sec-tag" id="dSec">第 3 章 · 不要浪费精力 · 第 3-21 条</span>
+
+  <h1 class="detail-title" id="dTitle">觉得「所有人都看见我出丑了」的时候，把这个估计除以二</h1>
+
+  <div class="badges" id="dBadges"><span class="badge ev-b">证据等级 B</span><span class="badge ">性价比 一般</span><span class="badge gain">换时间精力</span><span class="badge cost">成本 见下方</span></div>
+
+  <div class="detail-body" id="dBody"><p>穿尴尬的 T 恤进屋，以为将近一半人认得出衣服上印的是谁，实际不到四分之一。换成体面的 T 恤也一样高估。小组讨论完，人也以为自己说错的话在别人眼里更显眼，聊天后还常低估对方有多喜欢自己。所以觉得「所有人都看见我出丑了」时，实际往往只有一半或更少。</p><p><strong>换来什么：</strong>实验一：让参与者穿上印有 Barry Manilow 头像的 T 恤，走进有其他参与者的房间。穿的人平均估计 46% 的旁观者能正确指出衣服上的人是谁。旁观者实际正确率 23%，估计值恰为实际值的两倍。逐场把估计值减去实际值，平均高估 23 个百分点（95% CI 9–38，可信范围）。剔除只有两名和三名旁观者的那两场之后，为 27 个百分点（11–43）。实验二：改穿参与者自选的、自认为正面的 T 恤。平均估计 48%，旁观者实际正确率 8%，为六倍。作者在脚注里说，两次实验穿的人估计得几乎一样（48% 和 46%），差在旁观者的正确率（8% 和 23%）。作者怀疑主要原因是实验二给旁观者的问卷更费神，不是体面的衣服更容易被高估。实验三：本科生分成 3 到 7 人的小组，讨论一个指定话题 20 分钟，再一起写一份政策建议。讨论刚结束，每人分开估计组里其他人会怎么给大家排名，名次数字越小越靠前。在「说错话的多少」上，自己估计的名次平均 2.30，别人实际给的名次 2.96，差 −0.66（p &lt; .01）。所以人们以为自己说错的话在别人眼里更显眼。「可能冒犯人的话」一项也一样（2.35 对 2.90，p &lt; .01），「会被别人挑剔的话」差得小一些（2.61 对 2.82，p &lt; .05）。另一系列研究有三种场景：陌生人配对交谈、大学新生室友、成人工作坊。结果是人们系统性低估交谈对象对自己的喜欢程度，也低估对方对这次交谈的享受程度。作者称之为「喜欢差」。不同长度的交谈中都存在，在新生室友之间持续数月。</p><p><strong>要花什么：</strong>不花钱。只是在紧张的时候多问自己一句：他们真的看见了吗。</p></div>
+
+  <div class="ad-slot hidden" id="adDetail"></div>
+
+  <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">定 B 的理由：都是人数不多的实验室与校园研究。场景是穿衣服、跟陌生人或室友聊天，以及学生小组讨论，讨论刚结束时就问。搬到「被同事议论」「开会说错话过几天还有没有人记得」上，没有直接证据。这些数字只说明高估的方向和大致倍数，没法当系数套。别人的看法也不是都不重要。真正在评价你的场合，比如面试、答辩、考核、体检报告，评价是实打实的，该准备就准备。要打折的只是日常里那种「所有人都在看我」的感觉，那部分要对付的是你自己的估计偏差。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">Gilovich T, Medvec VH, Savitsky K (2000). The spotlight effect in social judgment: An egocentric bias in estimates of the salience of one&#x27;s own actions and appearance. Journal of Personality and Social Psychology, 78(2), 211–222. <a href="https://doi.org/10.1037/0022-3514.78.2.211" target="_blank" rel="noopener noreferrer">https://doi.org/10.1037/0022-3514.78.2.211</a>；Boothby EJ, Cooney G, Sandstrom GM, Clark MS (2018). The Liking Gap in Conversations: Do People Like Us More Than We Think? Psychological Science, 29(11), 1742–1756. <a href="https://doi.org/10.1177/0956797618783714" target="_blank" rel="noopener noreferrer">https://doi.org/10.1177/0956797618783714</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 3 章 · 不要浪费精力</span></div></div>
+
+  <!-- 相关条目 -->
+  <div class="related" id="dRelated" style="display:none"></div>
+
+  <!-- 底部操作 -->
+  <div class="actions">
+    <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/03-不要浪费精力.md#21-觉得所有人都看见我出丑了的时候把这个估计除以二" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
+    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
+    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+  </div>
+
+</div>
+
+<!-- ================== 页脚 ================== -->
+<div class="foot" id="pageFoot"></div>
+
+<script src="core/ads-config.js"></script>
+<script src="core/ads.js"></script>
+<script src="core/detail.js"></script>
+<script src="core/footer.js"></script>
+</body>
+</html>
