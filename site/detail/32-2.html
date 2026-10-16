@@ -11,289 +11,7 @@
 <meta property="og:title" content="盯住美国 F-1 新规的官司：「最长四年、读完 30 天内走」原定 2026 年 9 月 15 日生效，前一天被法院暂停，眼下仍是「读完为止」">
 <meta property="og:description" content="美国原本要把 F-1 改成最长四年、读完 30 天内走。生效前一天，联邦法院把它暂停了。所以眼下还是老规矩：读多久算多久，读完有 60 天准备走人。暂停不是废除，政府还能上诉，规矩随时可能再变。">
 <meta property="og:url" content="https://life.daogong.cc/detail/32-2.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -329,13 +47,13 @@
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">本条截至 2026 年 9 月 25 日。政府可以向第一巡回上诉法院上诉，国土安全部也可以改好规则重新发布。所以要读好几年的人，别假定老规矩会一直不变。法院定了 2026 年 10 月 2 日再开庭听双方汇报进展，过了那天再看一次学校的通知。新规如果以后生效，要延期就得在期限到期之前另外申请，不会自动续上。老规矩下，提前不读了的，离境期限和读完的不一样，先问学校国际学生办公室。J 签证在同一份规则里，细节和 F-1 不一样，按自己的签证类别去查。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">DHS (2026). Establishing a Fixed Time Period of Admission and an Extension of Stay Procedure for Nonimmigrant Academic Students, Exchange Visitors（2026-07-17 公布，原定 2026-09-15 生效）. <a href="https://www.federalregister.gov/documents/2026/07/17/2026-14439/establishing-a-fixed-time-period-of-admission-and-an-extension-of-stay-procedure-for-nonimmigrant" target="_blank" rel="noopener noreferrer">https://www.federalregister.gov/documents/2026/07/17/2026-14439/establishing-a-fixed-time-period-of-admission-and-an-extension-of-stay-procedure-for-nonimmigrant</a>；Presidents&#x27; Alliance on Higher Education and Immigration v. U.S. Department of Homeland Security, No. 1:26-cv-13799-FDS (D. Mass. Sept. 14, 2026)，法院案卷. <a href="https://www.courtlistener.com/docket/74661796/presidents-alliance-on-higher-education-and-immigration-v-united-states/" target="_blank" rel="noopener noreferrer">https://www.courtlistener.com/docket/74661796/presidents-alliance-on-higher-education-and-immigration-v-united-states/</a>；Yale Office of International Students &amp; Scholars (2026-09-14). Important Update: Court Action on the D/S Rule. <a href="https://oiss.yale.edu/news/important-update-court-action-on-the-ds-rule" target="_blank" rel="noopener noreferrer">https://oiss.yale.edu/news/important-update-court-action-on-the-ds-rule</a>；AILA (2026). One Day Before Taking Effect, Federal Court Postpones the F, J, and I Fixed Admission Period Rule. <a href="https://www.aila.org/blog/think-immigration-one-day-before-taking-effect-federal-court-postpones-the-f-j-and-i-fixed-admission-period-rule" target="_blank" rel="noopener noreferrer">https://www.aila.org/blog/think-immigration-one-day-before-taking-effect-federal-court-postpones-the-f-j-and-i-fixed-admission-period-rule</a>；8 CFR 214.2(f). <a href="https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-214/section-214.2" target="_blank" rel="noopener noreferrer">https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-214/section-214.2</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 32 章 · 出国留学</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/32-出国留学.md#2-盯住美国-f-1-新规的官司最长四年读完-30-天内走原定-2026-年-9-月-15-日生效前一天被法院暂停眼下仍是读完为止" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

@@ -11,289 +11,7 @@
 <meta property="og:title" content="如果「觉得自己丑」已经到反复照镜子、反复想改的程度，先做一次体像评估再谈手术">
 <meta property="og:description" content="去整形外科看的人里约 15% 有躯体变形障碍，就是把别人基本看不出的缺陷放大到影响生活。去皮肤科看的人里约 13%，两边都是七成多为女性。先挂一次号看看自己是不是这种情况，再决定动不动手术。">
 <meta property="og:url" content="https://life.daogong.cc/detail/28-8.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,20 +40,20 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-b">证据等级 B</span><span class="badge ">性价比 一般</span><span class="badge gain">换寿命</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>去整形外科看的人里约 15% 有躯体变形障碍，就是把别人基本看不出的缺陷放大到影响生活。去皮肤科看的人里约 13%，两边都是七成多为女性。先挂一次号看看自己是不是这种情况，再决定动不动手术。</p><p><strong>换来什么：</strong>按规矩把 33 项研究找齐再合起来算。整形外科就诊者中，躯体变形障碍（把别人基本看不出的缺陷放大到影响生活）患病率 15.04%，各项研究在 2.21%–56.67% 之间。换成人数，每 100 个去做整形的人里约 15 个符合，单看各项研究则从 2 个到 57 个不等。这批人平均年龄 34.54±12.41 岁，后一个数是上下浮动的幅度，74.38% 为女性。皮肤科就诊者是 12.65%，各项研究在 4.52%–35.16% 之间，平均年龄 27.79±9.03 岁，76.09% 为女性。作者建议整形外科医师与皮肤科医师主动评估、把高风险的人认出来，并安排几个科室一起管。另一项研究问了 200 名躯体变形障碍患者，71.0% 找过皮肤科、整形这类非精神科的治疗，64.0% 做了。作者的结论是这类治疗「很少改善」躯体变形障碍，看起来对它无效</p><p><strong>要花什么：</strong>去精神科或者临床心理科挂一次号，几十元。难的是在约手术之前先去这一趟。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>去整形外科看的人里约 15% 有躯体变形障碍，就是把别人基本看不出的缺陷放大到影响生活。去皮肤科看的人里约 13%，两边都是七成多为女性。先挂一次号看看自己是不是这种情况，再决定动不动手术。</p><p><strong>换来什么：</strong>按规矩把 33 项研究找齐再合起来算。整形外科就诊者中，躯体变形障碍（把别人基本看不出的缺陷放大到影响生活）患病率 15.04%，各项研究在 2.21%–56.67% 之间。换成人数，每 100 个去做整形的人里约 15 个符合，单看各项研究则从 2 个到 57 个不等。这批人平均年龄 34.54±12.41 岁，后一个数是上下浮动的幅度，74.38% 为女性。皮肤科就诊者是 12.65%，各项研究在 4.52%–35.16% 之间，平均年龄 27.79±9.03 岁，76.09% 为女性。作者建议整形外科医师与皮肤科医师主动评估、把高风险的人认出来，并安排几个科室一起管。另一项研究问了 200 名躯体变形障碍患者，71.0% 找过皮肤科、整形这类非精神科的治疗，64.0% 做了。作者的结论是这类治疗「很少改善」躯体变形障碍，看起来对它无效</p><p><strong>要花什么：</strong>去精神科或者临床心理科挂一次号，几十元。难的是在约手术之前先去这一趟。</p><p class="gvl-note">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">各项研究测出来的比例从 2.21% 一直到 56.67%，差得极大。原因是用的问卷和调查的人群都不一样。所以只能读出「这个比例不低、值得先筛一次」，不能把 15.04% 当准确数字，记 B 级也是因为这个。按这个比例，去整形外科的人里多数并没有躯体变形障碍。本条针对的是「反复、持续、已经影响到工作和社交」这一小部分人，做手术、做皮肤治疗很少能让他们好起来。英国 NHS 列的判断线索有这几条：花很多时间拿自己和别人比长相，老照镜子或者干脆躲着镜子，花很大力气遮盖某个部位，抠皮肤想让它「平滑」。它会影响工作、社交和人际关系。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">Ribeiro RVE (2017). Prevalence of Body Dysmorphic Disorder in Plastic Surgery and Dermatology Patients: A Systematic Review with Meta-Analysis. Aesthetic Plast Surg. <a href="https://doi.org/10.1007/s00266-017-0869-0" target="_blank" rel="noopener noreferrer">https://doi.org/10.1007/s00266-017-0869-0</a>；Crerand CE, Phillips KA, Menard W, Fay C (2005). Nonpsychiatric medical treatment of body dysmorphic disorder. Psychosomatics, 46(6), 549-555. <a href="https://doi.org/10.1176/appi.psy.46.6.549" target="_blank" rel="noopener noreferrer">https://doi.org/10.1176/appi.psy.46.6.549</a>；NHS. Body dysmorphic disorder (BDD). <a href="https://www.nhs.uk/mental-health/conditions/body-dysmorphia/" target="_blank" rel="noopener noreferrer">https://www.nhs.uk/mental-health/conditions/body-dysmorphia/</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 28 章 · 别为了外形把身体搞坏</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/28-别为了外形把身体搞坏.md#8-如果觉得自己丑已经到反复照镜子反复想改的程度先做一次体像评估再谈手术" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

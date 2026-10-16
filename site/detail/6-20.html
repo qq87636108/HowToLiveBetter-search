@@ -11,289 +11,7 @@
 <meta property="og:title" content="不要因为体检查出胆囊结石、但从没疼过，就去预防性切胆囊">
 <meta property="og:description" content="胆囊里有石头、但从没疼过的人，近九年里约八成一直没出症状。不动它，每年出胆囊炎、胰腺炎这类急症的约千分之一到千分之三。切胆囊也不是零风险，约 1.5% 的人胆管会被伤到。所以欧洲和英国的指南都说，没症状先不切。">
 <meta property="og:url" content="https://life.daogong.cc/detail/6-20.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -329,13 +47,13 @@
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">争议。国内胆道外科 2021 版的专家共识，把一部分无症状胆囊结石列进了手术指征。同一本杂志的解读文章写明，争议的核心之一就在这里。共识全文要订阅，具体是哪几种情形没核到原文（TODO：待核实）。另一处反方意见是小石头：5 毫米以内的小结石和胰腺炎更相关。荷兰一项测算说，这类人预防性切除可能多活也可能少活，取决于胰腺炎有多常见、有多致命。欧洲指南也列了例外：胆囊壁钙化（瓷化胆囊）、同时有 1 厘米以上的胆囊息肉，这两种该切。要做别的腹部大手术时，可以考虑顺带切掉。这条说的只是一种情形：石头长在胆囊里，而且从来没疼过。<strong>胆总管里的石头是另一回事</strong>。同一份指南第 1.3.1 条明确写着，胆总管结石不管有没有症状，都要把胆管里的石头清掉，并且切除胆囊。出现下面这些情况要当天就去医院，别拿这个结论硬扛：右上腹或者上腹一直绞痛、发热打寒战、眼白或皮肤发黄、小便颜色变深。医生看过影像之后建议手术时，问清楚他是基于哪一条理由，比如胆管受了累、同时长了息肉、胆囊壁有异常。别拿这个结论去反驳他。它挡的只是「没有任何理由、单纯因为查出石头就切」。上面两项研究都是跟着一群人往后看，没有分组对照。但它们要回答的是「不去动它会怎么样」，而不是「哪种治疗更好」，用在这里合适。另外这两项跟踪的年头是 4 到 9 年，年头再长一些，出症状的比例会往上走</span></div><div class="meta-row"><span class="k">出处</span><span class="v">Festi D, Reggiani ML, Attili AF, et al. (2010). Natural history of gallstone disease: Expectant management or active treatment? Results from a population-based cohort study. Journal of Gastroenterology and Hepatology, 25(4), 719-724. <a href="https://doi.org/10.1111/j.1440-1746.2009.06146.x" target="_blank" rel="noopener noreferrer">https://doi.org/10.1111/j.1440-1746.2009.06146.x</a>；McSherry CK, Ferstenberg H, Calhoun WF, Lahman E, Virshup M (1985). The natural history of diagnosed gallstone disease in symptomatic and asymptomatic patients. Annals of Surgery, 202(1), 59-63. <a href="https://doi.org/10.1097/00000658-198507000-00009" target="_blank" rel="noopener noreferrer">https://doi.org/10.1097/00000658-198507000-00009</a>；National Institute for Health and Care Excellence (2014). Gallstone disease: diagnosis and management. NICE guideline CG188，第 1.2.1、1.3.1 条. <a href="https://www.nice.org.uk/guidance/cg188/chapter/Recommendations" target="_blank" rel="noopener noreferrer">https://www.nice.org.uk/guidance/cg188/chapter/Recommendations</a>；European Association for the Study of the Liver (2016). EASL Clinical Practice Guidelines on the prevention, diagnosis and treatment of gallstones. Journal of Hepatology, 65(1), 146-181. <a href="https://doi.org/10.1016/j.jhep.2016.03.005" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.jhep.2016.03.005</a>；Törnqvist B, Strömberg C, Persson G, Nilsson M (2012). Effect of intended intraoperative cholangiography and early detection of bile duct injury on survival after cholecystectomy: population based cohort study. BMJ, 345, e6457. <a href="https://doi.org/10.1136/bmj.e6457" target="_blank" rel="noopener noreferrer">https://doi.org/10.1136/bmj.e6457</a>；Ransohoff DF, Gracie WA, Wolfenson LB, Neuhauser D (1983). Prophylactic cholecystectomy or expectant management for silent gallstones. A decision analysis to assess survival. Annals of Internal Medicine, 99(2), 199-204. <a href="https://doi.org/10.7326/0003-4819-99-2-199" target="_blank" rel="noopener noreferrer">https://doi.org/10.7326/0003-4819-99-2-199</a>；Gurusamy KS, Samraj K (2007). Cholecystectomy versus no cholecystectomy in patients with silent gallstones. Cochrane Database of Systematic Reviews, CD006230. <a href="https://doi.org/10.1002/14651858.CD006230.pub2" target="_blank" rel="noopener noreferrer">https://doi.org/10.1002/14651858.CD006230.pub2</a>；反方：Venneman NG, Buskens E, Besselink MG, et al. (2005). Small gallstones are associated with increased risk of acute pancreatitis: potential benefits of prophylactic cholecystectomy? American Journal of Gastroenterology, 100(11), 2540-2550. <a href="https://doi.org/10.1111/j.1572-0241.2005.00317.x" target="_blank" rel="noopener noreferrer">https://doi.org/10.1111/j.1572-0241.2005.00317.x</a>；中华医学会外科学分会胆道外科学组, 中国医师协会外科医师分会胆道外科医师委员会 (2022). 胆囊良性疾病外科治疗的专家共识（2021版）. 中华外科杂志, 60(1), 4-9. <a href="https://doi.org/10.3760/cma.j.cn112139-20210811-00373" target="_blank" rel="noopener noreferrer">https://doi.org/10.3760/cma.j.cn112139-20210811-00373</a>（全文需订阅，未取得）；同上 (2022). 《胆囊良性疾病外科治疗的专家共识（2021版）》解读. 中华外科杂志, 60(4), 337-342. <a href="https://doi.org/10.3760/cma.j.cn112139-20220119-00031" target="_blank" rel="noopener noreferrer">https://doi.org/10.3760/cma.j.cn112139-20220119-00031</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 6 章 · 反面清单</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/06-反面清单.md#20-不要因为体检查出胆囊结石但从没疼过就去预防性切胆囊" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

@@ -11,289 +11,7 @@
 <meta property="og:title" content="管孩子别动手打，也别吼骂、骂他笨：常挨打挨骂的孩子，行为和情绪问题都更多">
 <meta property="og:description" content="常挨打的孩子，攻击性和心理问题都更多，和父母也更疏远，挨更重的打也更多。打能不能让孩子当场听话，证据说不清。13 岁时常被吼、被骂笨的孩子，之后闯祸和抑郁都更多，父母平时再亲热也抵不掉。">
 <meta property="og:url" content="https://life.daogong.cc/detail/30-16.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,7 +40,7 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge ">性价比 一般</span><span class="badge gain">换寿命</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>常挨打的孩子，攻击性和心理问题都更多，和父母也更疏远，挨更重的打也更多。打能不能让孩子当场听话，证据说不清。13 岁时常被吼、被骂笨的孩子，之后闯祸和抑郁都更多，父母平时再亲热也抵不掉。</p><p><strong>换来什么：</strong>先看打。一篇荟萃分析只算「张开手打屁股或打手脚」这一种。它汇总了 75 项研究、111 个效果值，共 160927 名孩子。17 项结果里有 13 项和挨打明显有关，方向全是坏的。d 是效果大小，0.2 算小，0.5 算中等。小时候的攻击性 d = 0.37（95% CI 0.13–0.61，可信范围）。外显问题 0.41，指打人、违反规矩这类。内化问题 0.24，指焦虑、抑郁这类。心理健康问题 0.53，和父母关系差 0.51，自尊低 0.15，认知能力差 0.17。被父母施加身体虐待 0.64。长大后的反社会行为 0.36，心理健康问题 0.24。111 个效果值合起来是 d = 0.33（0.29–0.38）。孩子当场听不听话，和挨不挨打关系不明显（d = 0.14，−0.19–0.47），这一项只有 5 个效果值。另一篇综述只看前后跟踪的研究，共 69 项。体罚稳定地预示孩子之后的行为问题变多，没看到它和任何长期的好结果有关。其中 7 项研究看了打的次数，5 项发现打得越多、问题越重。再看吼骂。美国一项研究跟踪了 976 个父母双全的家庭。孩子 13 岁时，父母常吼叫、骂脏话、骂孩子笨或懒，孩子 13 到 14 岁之间闯祸和抑郁症状都增加。父母平时亲不亲热，都抵消不了这个关联。反过来也成立：13 岁时闯祸多的孩子，之后挨骂也更多。法律上，父母不得对孩子实施家庭暴力。《反家庭暴力法》第二条列了家庭暴力的方式：殴打、捆绑、残害、限制人身自由，以及经常性谩骂、恐吓。该法第十二条要求监护人用文明的方式进行家庭教育。父母侵犯孩子权益的，居委会、村委会要劝诫、制止，情节严重的报公安。公安、检察院、法院发现了，要训诫父母，并可以责令他们接受家庭教育指导（全国）</p><p><strong>要花什么：</strong>不花钱。难在火上来的那一刻停住手和嘴，还得换一套不打不骂的管法。换成什么管法，见本节第 17 条（教具体做法的家长课）。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>常挨打的孩子，攻击性和心理问题都更多，和父母也更疏远，挨更重的打也更多。打能不能让孩子当场听话，证据说不清。13 岁时常被吼、被骂笨的孩子，之后闯祸和抑郁都更多，父母平时再亲热也抵不掉。</p><p><strong>换来什么：</strong>先看打。一篇荟萃分析只算「张开手打屁股或打手脚」这一种。它汇总了 75 项研究、111 个效果值，共 160927 名孩子。17 项结果里有 13 项和挨打明显有关，方向全是坏的。d 是效果大小，0.2 算小，0.5 算中等。小时候的攻击性 d = 0.37（95% CI 0.13–0.61，可信范围）。外显问题 0.41，指打人、违反规矩这类。内化问题 0.24，指焦虑、抑郁这类。心理健康问题 0.53，和父母关系差 0.51，自尊低 0.15，认知能力差 0.17。被父母施加身体虐待 0.64。长大后的反社会行为 0.36，心理健康问题 0.24。111 个效果值合起来是 d = 0.33（0.29–0.38）。孩子当场听不听话，和挨不挨打关系不明显（d = 0.14，−0.19–0.47），这一项只有 5 个效果值。另一篇综述只看前后跟踪的研究，共 69 项。体罚稳定地预示孩子之后的行为问题变多，没看到它和任何长期的好结果有关。其中 7 项研究看了打的次数，5 项发现打得越多、问题越重。再看吼骂。美国一项研究跟踪了 976 个父母双全的家庭。孩子 13 岁时，父母常吼叫、骂脏话、骂孩子笨或懒，孩子 13 到 14 岁之间闯祸和抑郁症状都增加。父母平时亲不亲热，都抵消不了这个关联。反过来也成立：13 岁时闯祸多的孩子，之后挨骂也更多。法律上，父母不得对孩子实施家庭暴力。《反家庭暴力法》第二条列了家庭暴力的方式：殴打、捆绑、残害、限制人身自由，以及经常性谩骂、恐吓。该法第十二条要求监护人用文明的方式进行家庭教育。父母侵犯孩子权益的，居委会、村委会要劝诫、制止，情节严重的报公安。公安、检察院、法院发现了，要训诫父母，并可以责令他们接受家庭教育指导（全国）</p><p><strong>要花什么：</strong>不花钱。难在火上来的那一刻停住手和嘴，还得换一套不打不骂的管法。换成什么管法，见本节第 17 条（教具体做法的家长课）。</p><p class="gvl-note">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
@@ -334,8 +52,8 @@
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/30-上学以后的孩子.md#16-管孩子别动手打也别吼骂骂他笨常挨打挨骂的孩子行为和情绪问题都更多" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

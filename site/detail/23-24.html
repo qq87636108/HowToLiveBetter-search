@@ -11,289 +11,7 @@
 <meta property="og:title" content="本科毕业要不要接着读硕士：先算学费和少挣的两三年工资，再看自己读的专业多挣不多挣；已经上班的可以读非全日制，证书和全日制效力相同">
 <meta property="og:description" content="读硕士要花学费，还要少挣两三年工资，后者通常是大头。英国一项研究扣掉家庭和本科成绩的差别后，35 岁时读过硕士的女性只多挣约 2%，男性还少挣约 2%，不同专业差别很大。已经上班的可以读非全日制，证书效力和全日制一样，但">
 <meta property="og:url" content="https://life.daogong.cc/detail/23-24.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -329,13 +47,13 @@
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">争议。英国以前的研究算出来的硕士回报一直是正的，这项研究的作者认为是自己的数据更细、扣得更干净。作者也承认扣不掉动机和职业偏好这类差别。数据只到 35 岁，用的是二三十年前毕业的人，国内也没找到同样扣掉个人差别的数字，所以只能当方向参考。证据等级因此定 B。算账的办法和本节第 6 条（读书还是打工）一样，把两三年少挣的工资对上往后每年多挣的那一截。有的岗位招聘公告直接写明要硕士，比如高校、科研院所和部分国企，这时候学历门槛本身就是回报，要单独算。非全日制那几份文件是部门通知，没写罚则，也没写违反了向谁投诉。它管的是招聘公告怎么写，管不了单位最后挑谁。校园招聘有明文限制，私企的社会招聘没找到管学习方式的明文。2025 年的招生管理规定写明，非全日制原则上只招在职、毕业后回原单位的人。学费、奖助和住宿由学校写进招生章程。户口和档案怎么办，本书查到的国家文件都没统一规定，报名前看清简章、问学校。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">财政部、国家发展改革委、教育部 (2013). 关于完善研究生教育投入机制的意见（财教〔2013〕19号）. <a href="https://www.gov.cn/gongbao/content/2013/content_2404719.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/gongbao/content/2013/content_2404719.htm</a>：「原则上，现阶段全日制学术学位研究生学费标准，硕士生每生每年不超过8000元，博士生每生每年不超过1万元。全日制专业学位研究生以及目前已按规定实行收费政策的研究生，暂执行原收费政策」「博士生资助标准不低于每生每年1万元，硕士生资助标准不低于每生每年6000元」；Britton J, Buscha F, Dickson M, van der Erve L, Vignoles A, Walker I, Waltmann B, Zhu Y (2020). The earnings returns to postgraduate degrees in the UK. Department for Education. <a href="https://assets.publishing.service.gov.uk/media/5f609e478fa8f5106d1563cc/PG_LEO_report_FINAL.pdf" target="_blank" rel="noopener noreferrer">https://assets.publishing.service.gov.uk/media/5f609e478fa8f5106d1563cc/PG_LEO_report_FINAL.pdf</a>；教育部办公厅 (2016). 关于统筹全日制和非全日制研究生管理工作的通知（教研厅〔2016〕2号）. <a href="http://www.moe.gov.cn/srcsite/A22/moe_826/201609/t20160914_281117.html" target="_blank" rel="noopener noreferrer">http://www.moe.gov.cn/srcsite/A22/moe_826/201609/t20160914_281117.html</a>：「按照国家有关规定发给相应的、注明学习方式的毕业证书」「全日制和非全日制研究生实行相同的考试招生政策和培养标准，其学历学位证书具有同等法律地位和相同效力」；财教〔2013〕19号同上：「研究生国家助学金范围覆盖全国研究生招生计划内的所有全日制研究生」；教育部办公厅等五部门 (2019). 关于进一步做好非全日制研究生就业工作的通知（教研厅函〔2019〕1号）. <a href="https://www.gov.cn/zhengce/zhengceku/2020-02/05/content_5490220.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/2020-02/05/content_5490220.htm</a>：「各级公务员招录、事业单位及国有企业公开招聘要根据岗位需求合理制定招聘条件，对不同教育形式的研究生提供平等就业机会，不得设置与职位要求无关的报考资格条件」；教育部 (2020). 关于做好2021届全国普通高校毕业生就业创业工作的通知（教学〔2020〕5号）. <a href="https://www.gov.cn/zhengce/zhengceku/2020-12/01/content_5566303.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/2020-12/01/content_5566303.htm</a>：「在招聘公告和实际操作中不得将毕业院校、国（境）外学习经历、学习方式（全日制和非全日制）作为限制性条件」；教育部 (2021). 关于做好2022届全国普通高校毕业生就业创业工作的通知（教学〔2021〕5号）. <a href="https://www.gov.cn/zhengce/zhengceku/2021-11/21/content_5652326.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/2021-11/21/content_5652326.htm</a>：「在各类校园招聘活动中，不得设置违反国家规定的有关歧视性条款，不得将毕业院校、学习方式（全日制和非全日制）等作为限制性条件」；教育部 (2024). 2025年全国硕士研究生招生工作管理规定（教学〔2024〕4号）第七十七条. <a href="https://www.gov.cn/zhengce/zhengceku/202410/content_6978684.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/202410/content_6978684.htm</a>：「招生章程中应按相关规定公布本单位各专业硕士研究生报考条件、学习方式、学制、学费标准、奖助办法、毕业就业、住宿情况以及培养所在校区等内容。原则上招生单位非全日制硕士研究生招收在职定向就业人员」</span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 23 章 · 学什么技能划算</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/23-学什么技能划算.md#24-本科毕业要不要接着读硕士先算学费和少挣的两三年工资再看自己读的专业多挣不多挣已经上班的可以读非全日制证书和全日制效力相同" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

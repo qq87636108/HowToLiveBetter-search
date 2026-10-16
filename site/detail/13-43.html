@@ -11,289 +11,7 @@
 <meta property="og:title" content="不满 1 岁的婴儿噎住哭不出声，趴着拍背 5 下、翻过来按胸口 5 下，轮着做，别按肚子">
 <meta property="og:description" content="孩子还能咳、能哭出声，就让他自己咳，你在旁边盯着。哭不出声、脸发紫，就让人打 120。你把孩子脸朝下趴在前臂上，用掌根在两块肩胛骨中间拍 5 下，没出来就翻过来在胸口正中快速按 5 下。两样轮着做，别按肚子，孩子没反应了">
 <meta property="og:url" content="https://life.daogong.cc/detail/13-43.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,20 +40,20 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-b">证据等级 B</span><span class="badge cp-top">性价比 极高</span><span class="badge gain">换寿命</span><span class="badge cost-zero">成本 零</span></div>
 
-  <div class="detail-body" id="dBody"><p>孩子还能咳、能哭出声，就让他自己咳，你在旁边盯着。哭不出声、脸发紫，就让人打 120。你把孩子脸朝下趴在前臂上，用掌根在两块肩胛骨中间拍 5 下，没出来就翻过来在胸口正中快速按 5 下。两样轮着做，别按肚子，孩子没反应了就改做心肺复苏。</p><p><strong>换来什么：</strong>美国心脏协会和美国儿科学会出了 2025 年的儿童基础生命支持指南。指南写：窒息（比如异物堵住气道）「是婴儿和儿童的主要死因之一」。婴儿最常呛进去的是液体。还在咳、还能出声的是轻度，让孩子自己咳，同时盯着有没有变重。咳得很弱或者咳不出、哭不出、脸色发紫的是重度。重度要先叫急救，再「反复做 5 次拍背、接 5 次胸部冲击，直到异物出来或者婴儿失去反应」。指南不建议给婴儿做腹部冲击，因为可能伤到肚子里的脏器。胸部冲击现在推荐用一只手的掌根，因为它比原来的两指法按得更深。婴儿失去反应就开始心肺复苏，先按压，不摸脉搏。吹气前看得见的异物要取出来。指南明写「不要用手指盲目去掏」。国际红十字与红新月会联合会的 2025 年国际急救指南也是这一套。先在两肩胛骨之间用力拍最多 5 下，不行就把孩子翻过来按胸口最多 5 下，再不行马上叫急救。它按胸口用的是双手环抱、两个拇指按。福建省红十字应急救护培训中心说，1 岁以下婴儿要做「5 次背部拍击 + 5 次胸部冲击」。拍背时让婴儿俯卧在前臂上，头低于躯干</p><p><strong>要花什么：</strong>不花钱。看一遍动作或者上一次婴儿急救课，几分钟到半天。难的是慌乱中先把孩子翻过来趴好。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>孩子还能咳、能哭出声，就让他自己咳，你在旁边盯着。哭不出声、脸发紫，就让人打 120。你把孩子脸朝下趴在前臂上，用掌根在两块肩胛骨中间拍 5 下，没出来就翻过来在胸口正中快速按 5 下。两样轮着做，别按肚子，孩子没反应了就改做心肺复苏。</p><p><strong>换来什么：</strong>美国心脏协会和美国儿科学会出了 2025 年的儿童基础生命支持指南。指南写：窒息（比如异物堵住气道）「是婴儿和儿童的主要死因之一」。婴儿最常呛进去的是液体。还在咳、还能出声的是轻度，让孩子自己咳，同时盯着有没有变重。咳得很弱或者咳不出、哭不出、脸色发紫的是重度。重度要先叫急救，再「反复做 5 次拍背、接 5 次胸部冲击，直到异物出来或者婴儿失去反应」。指南不建议给婴儿做腹部冲击，因为可能伤到肚子里的脏器。胸部冲击现在推荐用一只手的掌根，因为它比原来的两指法按得更深。婴儿失去反应就开始心肺复苏，先按压，不摸脉搏。吹气前看得见的异物要取出来。指南明写「不要用手指盲目去掏」。国际红十字与红新月会联合会的 2025 年国际急救指南也是这一套。先在两肩胛骨之间用力拍最多 5 下，不行就把孩子翻过来按胸口最多 5 下，再不行马上叫急救。它按胸口用的是双手环抱、两个拇指按。福建省红十字应急救护培训中心说，1 岁以下婴儿要做「5 次背部拍击 + 5 次胸部冲击」。拍背时让婴儿俯卧在前臂上，头低于躯干</p><p><strong>要花什么：</strong>不花钱。看一遍动作或者上一次婴儿急救课，几分钟到半天。难的是慌乱中先把孩子翻过来趴好。</p><p class="gvl-note">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">定 B 是因为支撑这套手法的主要是病例报告，没有「照做能少死多少人」的数字。收益定「大」是凭判断：完全堵住的气道几分钟内就会让孩子心跳停下。受益的几乎都是自家孩子。1 岁以上的孩子和成人改按肚子，见本节第 26 条（噎住拍背加腹部冲击）。按胸口用什么手法，各家写法不同。美国指南用一只手的掌根，国际红十字用两个拇指，老教程用两根手指。2025 年美国指南因为两指按不够深，已经不再推荐它。硬币、小玩具这类小东西放到孩子够不着的地方。孩子没反应之后怎么做，见本节第 44 条（婴儿心肺复苏）。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">Joyner BL 等 (2025). Part 6: Pediatric Basic Life Support: 2025 American Heart Association and American Academy of Pediatrics Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation 152(suppl 2):S424–S447. <a href="https://doi.org/10.1161/CIR.0000000000001370" target="_blank" rel="noopener noreferrer">https://doi.org/10.1161/CIR.0000000000001370</a>，全文见 <a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/pediatric-basic-life-support" target="_blank" rel="noopener noreferrer">https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/pediatric-basic-life-support</a>；International Federation of Red Cross and Red Crescent Societies (2025). International First Aid, Resuscitation and Education Guidelines 2025，第 238–240 页. <a href="https://www.ifrc.org/sites/default/files/2026-03/IFRC%20International%20First%20Aid,%20Resuscitation%20and%20Education%20Guidelines%202025.pdf" target="_blank" rel="noopener noreferrer">https://www.ifrc.org/sites/default/files/2026-03/IFRC%20International%20First%20Aid,%20Resuscitation%20and%20Education%20Guidelines%202025.pdf</a>；福州市卫生健康委员会 (2026). 海姆立克急救法更新了. <a href="https://www.fuzhou.gov.cn/zgfzzt/swjw/fzwj/jkkp/202601/t20260108_5268351.htm" target="_blank" rel="noopener noreferrer">https://www.fuzhou.gov.cn/zgfzzt/swjw/fzwj/jkkp/202601/t20260108_5268351.htm</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 13 章 · 紧急情况</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/13-紧急情况.md#43-不满-1-岁的婴儿噎住哭不出声趴着拍背-5-下翻过来按胸口-5-下轮着做别按肚子" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

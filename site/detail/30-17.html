@@ -11,289 +11,7 @@
 <meta property="og:title" content="孩子难管、自己总忍不住打骂，去上一期教具体做法的家长课">
 <meta property="og:description" content="孩子本来就难管的，家长上过教具体管法的课，孩子打人、不守规矩的问题少了，家长的情绪也好了。家长打骂孩子也少了，刚上完课时最明显，一两年后还在，但小了很多。上海也试过这类课，有效。">
 <meta property="og:url" content="https://life.daogong.cc/detail/30-17.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,20 +40,20 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge ">性价比 一般</span><span class="badge gain">换寿命</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>孩子本来就难管的，家长上过教具体管法的课，孩子打人、不守规矩的问题少了，家长的情绪也好了。家长打骂孩子也少了，刚上完课时最明显，一两年后还在，但小了很多。上海也试过这类课，有效。</p><p><strong>换来什么：</strong>Cochrane 汇总了 13 项试验，其中 10 项是抽签分组的，共 1078 名家长。孩子 3 到 12 岁，都有行为问题。收进来的课每周或隔周一次，每次一到两小时，至少三次。短的连上 4 周，长的连上 24 周。上过课的家长，孩子的行为问题少了。家长自己评是 SMD −0.53（95% CI −0.72 到 −0.34，可信范围），旁人独立评是 −0.44（−0.77 到 −0.11）。SMD 和 d 是同一把尺子，0.5 算中等。家长的心理健康变好，−0.36（−0.52 到 −0.20）。负面或严厉的管法变少，家长自己评 −0.77（−0.96 到 −0.59），旁人评 −0.42（−0.67 到 −0.16）。作者说这些是短期效果。另一篇荟萃筛出 346 项抽签分组的试验，其中 60 项量了打骂孩子这类行为，分布在 22 个国家。打骂在课刚上完时少了，d = −0.46（−0.59 到 −0.33）。1 到 6 个月后是 −0.24（−0.37 到 −0.11）。7 到 24 个月后是 −0.18（−0.34 到 −0.02），越往后越小。这些数据大多是家长自己报的。国内也有试验。上海 81 名家长抽签分组，一部分上 Triple P 小组课。上完课，孩子的适应问题、家长的管法和情绪，都比等着上课的家长好，6 个月后还在。农村一所幼儿园有 191 名带孩子的大人参加，一部分自学网课，再加两次小组讨论。上完两周，他们报告的虐待孩子行为比只发书读的少约 33%（IRR 0.67）。三个月后，孩子的行为问题也少了（d = −0.40）。《家庭教育促进法》要求父母自觉学习家庭教育知识。中小学校、幼儿园可以办家长学校，定期组织公益性的家庭教育指导。居委会、村委会可以办社区家长学校。省级以上政府要开公益性的网上家长学校和服务热线。家庭教育指导机构不得组织营利性培训（全国，2022 年 1 月 1 日起施行）</p><p><strong>要花什么：</strong>学校、幼儿园办的家长学校和省级以上政府开的网上家长学校，法律写明是公益性的。有证据的那类课每周或隔周上一次，每次一到两小时，从四周到二十四周不等。回家要照着练。难在坚持上完、天天练。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>孩子本来就难管的，家长上过教具体管法的课，孩子打人、不守规矩的问题少了，家长的情绪也好了。家长打骂孩子也少了，刚上完课时最明显，一两年后还在，但小了很多。上海也试过这类课，有效。</p><p><strong>换来什么：</strong>Cochrane 汇总了 13 项试验，其中 10 项是抽签分组的，共 1078 名家长。孩子 3 到 12 岁，都有行为问题。收进来的课每周或隔周一次，每次一到两小时，至少三次。短的连上 4 周，长的连上 24 周。上过课的家长，孩子的行为问题少了。家长自己评是 SMD −0.53（95% CI −0.72 到 −0.34，可信范围），旁人独立评是 −0.44（−0.77 到 −0.11）。SMD 和 d 是同一把尺子，0.5 算中等。家长的心理健康变好，−0.36（−0.52 到 −0.20）。负面或严厉的管法变少，家长自己评 −0.77（−0.96 到 −0.59），旁人评 −0.42（−0.67 到 −0.16）。作者说这些是短期效果。另一篇荟萃筛出 346 项抽签分组的试验，其中 60 项量了打骂孩子这类行为，分布在 22 个国家。打骂在课刚上完时少了，d = −0.46（−0.59 到 −0.33）。1 到 6 个月后是 −0.24（−0.37 到 −0.11）。7 到 24 个月后是 −0.18（−0.34 到 −0.02），越往后越小。这些数据大多是家长自己报的。国内也有试验。上海 81 名家长抽签分组，一部分上 Triple P 小组课。上完课，孩子的适应问题、家长的管法和情绪，都比等着上课的家长好，6 个月后还在。农村一所幼儿园有 191 名带孩子的大人参加，一部分自学网课，再加两次小组讨论。上完两周，他们报告的虐待孩子行为比只发书读的少约 33%（IRR 0.67）。三个月后，孩子的行为问题也少了（d = −0.40）。《家庭教育促进法》要求父母自觉学习家庭教育知识。中小学校、幼儿园可以办家长学校，定期组织公益性的家庭教育指导。居委会、村委会可以办社区家长学校。省级以上政府要开公益性的网上家长学校和服务热线。家庭教育指导机构不得组织营利性培训（全国，2022 年 1 月 1 日起施行）</p><p><strong>要花什么：</strong>学校、幼儿园办的家长学校和省级以上政府开的网上家长学校，法律写明是公益性的。有证据的那类课每周或隔周上一次，每次一到两小时，从四周到二十四周不等。回家要照着练。难在坚持上完、天天练。</p><p class="gvl-note">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">给 A 是因为有 Cochrane 和多项抽签试验合并出来的数字。试验里的课有几个共同点。带课的人教具体做法，比如陪孩子玩、夸奖、奖励和管教。家长在课上练习、演练，回家还有作业。只发资料或者只讨论的课被排除在外，所以证据管不到只听一场讲座的那种。国内公益家长学校讲什么、怎么讲，各地不一样，未必是这一类。挑课时看它是不是连上几周、让你练具体做法。两篇荟萃收进的试验里，常见的课名有 Triple P、Incredible Years。本书不推荐具体机构和收费产品。打骂少了的效果一两年后变小，课上完还得接着练。受益人是孩子，也是你自己。孩子已经有严重的情绪问题，带去精神科或儿童心理科，见本节第 8 条（抑郁筛查）。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">Furlong M, McGilloway S, Bywater T, Hutchings J, Smith SM, Donnelly M. (2012). Behavioural and cognitive-behavioural group-based parenting programmes for early-onset conduct problems in children aged 3 to 12 years. Cochrane Database of Systematic Reviews, (2), CD008225. <a href="https://doi.org/10.1002/14651858.CD008225.pub2" target="_blank" rel="noopener noreferrer">https://doi.org/10.1002/14651858.CD008225.pub2</a>；Backhaus S, Leijten P, Jochim J, Melendez-Torres GJ, Gardner F. (2023). Effects over time of parenting interventions to reduce physical and emotional violence against children: a systematic review and meta-analysis. eClinicalMedicine, 60, 102003. <a href="https://doi.org/10.1016/j.eclinm.2023.102003" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.eclinm.2023.102003</a>；Guo M, Morawska A, Sanders MR. (2016). A Randomized Controlled Trial of Group Triple P With Chinese Parents in Mainland China. Behavior Modification, 40(6), 825–851. <a href="https://doi.org/10.1177/0145445516644221" target="_blank" rel="noopener noreferrer">https://doi.org/10.1177/0145445516644221</a>；Wang W, Zhang H. (2026). A self-directed parenting program to reduce the risk of child maltreatment in rural China: A cluster randomized controlled trial. Child Abuse &amp; Neglect, 173, 107937. <a href="https://doi.org/10.1016/j.chiabu.2026.107937" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.chiabu.2026.107937</a>；全国人大常委会 (2021). 家庭教育促进法（第十八、二十五、三十一、三十八、四十条）. <a href="https://flk.npc.gov.cn/detail?id=ff8081817cac3b2d017cac5a6c6f0109" target="_blank" rel="noopener noreferrer">https://flk.npc.gov.cn/detail?id=ff8081817cac3b2d017cac5a6c6f0109</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 30 章 · 上学以后的孩子</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/30-上学以后的孩子.md#17-孩子难管自己总忍不住打骂去上一期教具体做法的家长课" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

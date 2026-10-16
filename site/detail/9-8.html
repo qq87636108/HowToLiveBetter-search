@@ -11,289 +11,7 @@
 <meta property="og:title" content="优惠用自己的真实身份领，不买虚拟号批量注册小号，不靠漏洞重复领">
 <meta property="og:description" content="用真实身份、一个号领一次券，不在处罚范围里。批量注册假用户、自己下单自己接单去多领，按诈骗办。骗到各省定的起点（3000 到 1 万元）判 3 年以下，到 3 万到 10 万元判 3 到 10 年。有骑手用 0.1 元一">
 <meta property="og:url" content="https://life.daogong.cc/detail/9-8.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,7 +40,7 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-high">性价比 高</span><span class="badge gain">换人身自由</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>用真实身份、一个号领一次券，不在处罚范围里。批量注册假用户、自己下单自己接单去多领，按诈骗办。骗到各省定的起点（3000 到 1 万元）判 3 年以下，到 3 万到 10 万元判 3 到 10 年。有骑手用 0.1 元一个的虚拟号刷券，套现 9 万余元，同案 12 人被判刑。</p><p><strong>换来什么：</strong>骗别人或者公家的财物，数额较大的判 3 年以下，并处或者单处罚金（判刑的同时罚钱，也可能只罚钱）。数额巨大，或者有其他严重情节的，判 3 到 10 年并罚钱。数额特别巨大，或者有其他特别严重情节的，判 10 年以上或者无期徒刑，并罚钱或者没收财产。数额较大、巨大、特别巨大这三档，各省在下面的幅度内定本地标准。较大是 3000 元至 1 万元以上。巨大是 3 万元至 10 万元以上，特别巨大是 50 万元以上。把方法教给别人、卖「教程」的，按传授犯罪方法罪判 5 年以下，情节严重的判 5 到 10 年，特别严重的判 10 年以上或者无期徒刑。买卖手机号、验证码的上下游，按侵犯公民个人信息罪判 3 年以下，特别严重的判 3 到 7 年。用批量账号、网络地址自动切换系统，以及批量接收短信验证的接码平台，本身就是反电信网络诈骗法第十四条明令禁止的。非法买卖、出租、出借电话卡和互联网账号、帮别人过实名核验，在第三十一条之列。违反第十四条的，赚到的钱全部没收，再按赚到的钱罚 1 到 10 倍。没赚到钱，或者赚的不到 5 万元的，罚 50 万元以下，情节严重的还要拘留 15 日以下。违反第三十一条的，罚款同样是 1 到 10 倍，没赚到钱或者赚的不到 2 万元的罚 20 万元以下，情节严重的也要拘留 15 日以下。参与电信网络诈骗、还不够判刑的，拘留 10 到 15 日。赚到的钱没收，再罚 1 到 10 倍。没赚到钱或者赚的不到 1 万元的，罚 10 万元以下。官方案例一：外卖骑手刘某某以 0.1 元一个买虚拟手机号，注册某平台新用户。他领满 29 减 15 的新人券下单，再把商品倒卖给小商铺套现。他还用虚拟号互相邀请，领 2 元至 20 元的奖励金。他和骑手谭某某分别骗得 9 万余元和 7 万余元。上海杨浦区检察院以诈骗罪起诉 12 人，法院判 3 年 6 个月至拘役 3 个月。官方案例二：王某利用网店退款与回收虚拟抽奖币的时间差。他退款 1156 笔，提走手办 224 件，金额 24.9 万余元。他还在二手平台变现，法院以诈骗罪判 3 年缓 4 年，并处罚金 3 万元。他在审理期间退赃并预缴罚金，共 33 万元。官方案例三：某网约车平台的新用户优惠券和司机补贴，被「自己打车自己接单」的虚假跑单骗取，涉及 19 省 70 余市，金额 200 余万元。辽宁朝阳龙城区检察院起诉 163 人，全部被判有罪。主犯黄某、蔡某以诈骗罪、侵犯公民个人信息罪、传授犯罪方法罪数罪并罚（几个罪一起算刑期），各判 3 年 6 个月。另有 34 名情节轻微的从犯，检察院决定不起诉，仍然移送公安作行政处罚（全国）</p><p><strong>要花什么：</strong>不花钱。放弃「羊毛任务群」里的活。发现平台有漏洞，不去碰它。难在忍住不把优惠当成可以批量复制的收入。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>用真实身份、一个号领一次券，不在处罚范围里。批量注册假用户、自己下单自己接单去多领，按诈骗办。骗到各省定的起点（3000 到 1 万元）判 3 年以下，到 3 万到 10 万元判 3 到 10 年。有骑手用 0.1 元一个的虚拟号刷券，套现 9 万余元，同案 12 人被判刑。</p><p><strong>换来什么：</strong>骗别人或者公家的财物，数额较大的判 3 年以下，并处或者单处罚金（判刑的同时罚钱，也可能只罚钱）。数额巨大，或者有其他严重情节的，判 3 到 10 年并罚钱。数额特别巨大，或者有其他特别严重情节的，判 10 年以上或者无期徒刑，并罚钱或者没收财产。数额较大、巨大、特别巨大这三档，各省在下面的幅度内定本地标准。较大是 3000 元至 1 万元以上。巨大是 3 万元至 10 万元以上，特别巨大是 50 万元以上。把方法教给别人、卖「教程」的，按传授犯罪方法罪判 5 年以下，情节严重的判 5 到 10 年，特别严重的判 10 年以上或者无期徒刑。买卖手机号、验证码的上下游，按侵犯公民个人信息罪判 3 年以下，特别严重的判 3 到 7 年。用批量账号、网络地址自动切换系统，以及批量接收短信验证的接码平台，本身就是反电信网络诈骗法第十四条明令禁止的。非法买卖、出租、出借电话卡和互联网账号、帮别人过实名核验，在第三十一条之列。违反第十四条的，赚到的钱全部没收，再按赚到的钱罚 1 到 10 倍。没赚到钱，或者赚的不到 5 万元的，罚 50 万元以下，情节严重的还要拘留 15 日以下。违反第三十一条的，罚款同样是 1 到 10 倍，没赚到钱或者赚的不到 2 万元的罚 20 万元以下，情节严重的也要拘留 15 日以下。参与电信网络诈骗、还不够判刑的，拘留 10 到 15 日。赚到的钱没收，再罚 1 到 10 倍。没赚到钱或者赚的不到 1 万元的，罚 10 万元以下。官方案例一：外卖骑手刘某某以 0.1 元一个买虚拟手机号，注册某平台新用户。他领满 29 减 15 的新人券下单，再把商品倒卖给小商铺套现。他还用虚拟号互相邀请，领 2 元至 20 元的奖励金。他和骑手谭某某分别骗得 9 万余元和 7 万余元。上海杨浦区检察院以诈骗罪起诉 12 人，法院判 3 年 6 个月至拘役 3 个月。官方案例二：王某利用网店退款与回收虚拟抽奖币的时间差。他退款 1156 笔，提走手办 224 件，金额 24.9 万余元。他还在二手平台变现，法院以诈骗罪判 3 年缓 4 年，并处罚金 3 万元。他在审理期间退赃并预缴罚金，共 33 万元。官方案例三：某网约车平台的新用户优惠券和司机补贴，被「自己打车自己接单」的虚假跑单骗取，涉及 19 省 70 余市，金额 200 余万元。辽宁朝阳龙城区检察院起诉 163 人，全部被判有罪。主犯黄某、蔡某以诈骗罪、侵犯公民个人信息罪、传授犯罪方法罪数罪并罚（几个罪一起算刑期），各判 3 年 6 个月。另有 34 名情节轻微的从犯，检察院决定不起诉，仍然移送公安作行政处罚（全国）</p><p><strong>要花什么：</strong>不花钱。放弃「羊毛任务群」里的活。发现平台有漏洞，不去碰它。难在忍住不把优惠当成可以批量复制的收入。</p><p class="gvl-note">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
@@ -334,8 +52,8 @@
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/09-普通人容易踩的法律红线.md#8-优惠用自己的真实身份领不买虚拟号批量注册小号不靠漏洞重复领" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

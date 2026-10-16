@@ -11,289 +11,7 @@
 <meta property="og:title" content="开张前选对主体：个体户和合伙人赔到底，有限公司才「有限」">
 <meta property="og:description" content="个体户和普通合伙人欠多少还多少，有限公司的股东只赔自己注册时答应出的那个数。但答应了多少，5 年内就要真拿出多少：填 100 万，就是可能欠着 100 万。公司账和自家账混着用、拿公司躲债，「有限」也会失效。只有你一个股">
 <meta property="og:url" content="https://life.daogong.cc/detail/12-3.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,20 +40,20 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-high">性价比 高</span><span class="badge gain">换钱</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>个体户和普通合伙人欠多少还多少，有限公司的股东只赔自己注册时答应出的那个数。但答应了多少，5 年内就要真拿出多少：填 100 万，就是可能欠着 100 万。公司账和自家账混着用、拿公司躲债，「有限」也会失效。只有你一个股东的，还得你自己拿账证明没混。</p><p><strong>换来什么：</strong>个体工商户欠的债，要拿个人的钱和东西还，或者拿全家的钱和东西还。普通合伙企业的合伙人，对合伙企业的债承担无限连带责任。意思是欠多少还多少，还不完不算完。债主还可以只揪住其中一个人，要他还全部。有限合伙不一样，里面的有限合伙人只赔到自己答应出的那笔钱（以认缴出资为限）为止。有限责任公司的股东也是只赔到自己答应出的那笔钱（以认缴出资额为限）。但「有限」会在三种情况下失效。一是答应出的钱要在公司成立起 5 年内真交齐，公司还不上到期的债时，债主可以要求提前交。二是已经投进去又抽走的钱（抽逃出资）要还回来。三是拿公司当壳子躲债、严重损害债主利益，这时公司的债你个人要跟着一起还（承担连带责任）。只有一个股东的公司更严：要由这个股东自己证明公司的钱和他自己的钱是分开的。证明不了，公司的债他个人就要跟着一起还。法院主要看钱和账分没分开。股东随便用公司的钱又不记账，公司账和个人账不分，都算混在一起（全国，2024 年 7 月起）</p><p><strong>要花什么：</strong>登记在当地政务服务网上办，一次几个小时。开了有限公司之后每个月要记账报税，这是长期的开销：自己做花时间，请人代记账花钱，各地价格不同。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>个体户和普通合伙人欠多少还多少，有限公司的股东只赔自己注册时答应出的那个数。但答应了多少，5 年内就要真拿出多少：填 100 万，就是可能欠着 100 万。公司账和自家账混着用、拿公司躲债，「有限」也会失效。只有你一个股东的，还得你自己拿账证明没混。</p><p><strong>换来什么：</strong>个体工商户欠的债，要拿个人的钱和东西还，或者拿全家的钱和东西还。普通合伙企业的合伙人，对合伙企业的债承担无限连带责任。意思是欠多少还多少，还不完不算完。债主还可以只揪住其中一个人，要他还全部。有限合伙不一样，里面的有限合伙人只赔到自己答应出的那笔钱（以认缴出资为限）为止。有限责任公司的股东也是只赔到自己答应出的那笔钱（以认缴出资额为限）。但「有限」会在三种情况下失效。一是答应出的钱要在公司成立起 5 年内真交齐，公司还不上到期的债时，债主可以要求提前交。二是已经投进去又抽走的钱（抽逃出资）要还回来。三是拿公司当壳子躲债、严重损害债主利益，这时公司的债你个人要跟着一起还（承担连带责任）。只有一个股东的公司更严：要由这个股东自己证明公司的钱和他自己的钱是分开的。证明不了，公司的债他个人就要跟着一起还。法院主要看钱和账分没分开。股东随便用公司的钱又不记账，公司账和个人账不分，都算混在一起（全国，2024 年 7 月起）</p><p><strong>要花什么：</strong>登记在当地政务服务网上办，一次几个小时。开了有限公司之后每个月要记账报税，这是长期的开销：自己做花时间，请人代记账花钱，各地价格不同。</p><p class="gvl-note">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">公司账户和个人账户分开用，客户货款别收到个人卡上，公司的钱别付家里的开销，账目留全。注册资本别为了好看填大数。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">全国人大 (2020). 民法典（第五十六条）. <a href="https://www.spp.gov.cn/spp/fl/202006/t20200602_463888.shtml" target="_blank" rel="noopener noreferrer">https://www.spp.gov.cn/spp/fl/202006/t20200602_463888.shtml</a>；全国人大常委会 (2006). 合伙企业法（2006 年修订，第二条）. <a href="http://www.gov.cn/gongbao/content/2006/content_413955.htm" target="_blank" rel="noopener noreferrer">http://www.gov.cn/gongbao/content/2006/content_413955.htm</a>；全国人大常委会 (2023). 公司法（2023 年修订，第四、二十三、四十七、五十三、五十四条；第二十三条第三款：「只有一个股东的公司，股东不能证明公司财产独立于股东自己的财产的，应当对公司债务承担连带责任。」）. <a href="https://www.gov.cn/yaowen/liebiao/202312/content_6923395.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/yaowen/liebiao/202312/content_6923395.htm</a>；最高人民法院 (2019). 全国法院民商事审判工作会议纪要（第 10 点「人格混同」）：「最主要的表现是公司的财产与股东的财产是否混同且无法区分」「公司账簿与股东账簿不分，致使公司财产与股东财产无法区分的」. <a href="https://www.court.gov.cn/zixun/xiangqing/199691.html" target="_blank" rel="noopener noreferrer">https://www.court.gov.cn/zixun/xiangqing/199691.html</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 12 章 · 创业与做生意</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/12-创业与做生意.md#3-开张前选对主体个体户和合伙人赔到底有限公司才有限" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

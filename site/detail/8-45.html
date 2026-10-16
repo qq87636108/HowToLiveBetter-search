@@ -11,289 +11,7 @@
 <meta property="og:title" content="熟人让你「帮忙刷个脸、做个见证」去办贷款，或者要你念验证码，别答应：这叫 AB 贷，借款人是你，不是担保人">
 <meta property="og:description" content="所谓「帮忙刷个脸、做个见证」，其实是用你的名字向银行借钱。借款人是你，不是担保人，钱转给熟人以后，银行照样找你还。中介骗了你，但只要银行不知情，这份借款合同你就撤不掉。熟人写给你的「我来还」承诺书，也管不到银行。">
 <meta property="og:url" content="https://life.daogong.cc/detail/8-45.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,7 +40,7 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-b">证据等级 B</span><span class="badge cp-high">性价比 高</span><span class="badge gain">换钱</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>所谓「帮忙刷个脸、做个见证」，其实是用你的名字向银行借钱。借款人是你，不是担保人，钱转给熟人以后，银行照样找你还。中介骗了你，但只要银行不知情，这份借款合同你就撤不掉。熟人写给你的「我来还」承诺书，也管不到银行。</p><p><strong>换来什么：</strong>金融监管总局福建监管局 2022 年的风险提示讲了这个套路。客户 A 资质不够，贷不下来。中介说要加一个担保人，让 A 去找资质好的 B。实际办的时候，中介用 B 的身份信息申请贷款，钱给 A 用。原文说「借款人实质为B」，B「直至被银行催收才知本人是借款人而非担保人」。山东监管局 2024 年的提示说，中介会向 B 承诺「不用承担任何责任」。中介还会事先教 B 怎么应付银行的贷前调查，实际由 B 作为借款人申请贷款。上海普陀区法院 2024 年公布过一起案子。业务员拿着 B 的手机下载银行 App，直接用 B 的名义申请贷款。钱到了 B 的账户，B 转给了 A，A 又付了 8 万多元手续费。中介一伙 8 人以合同诈骗罪被判 10 个月到 4 年。中介判了刑，这笔贷款也不会因此变成别人的。民法典第一百四十九条写着，第三人欺诈的，对方「知道或者应当知道」，受骗的一方才能请求撤销。这里的对方是银行，银行不知情就撤不掉。能撤的，要在知道被骗之日起 1 年内向法院请求（第一百五十二条）。借款人要按约定的期限还钱（第六百七十五条）。合同只约束签合同的人（第四百六十五条）。把债转给别人，要经银行同意（第五百五十一条）。所以 A 写的承诺书管不到银行。钱只能自己起诉 A 去要。替人刷了脸、没看合同，法院也认这份合同。内江市市中区法院 2025 年审结过一个案子：蒋某向小贷公司借钱，自己一个人借不到。张某的儿子背着张某，把她的身份信息给了蒋某，让她当共同借款人。借款流程里要张某本人刷脸，她刷了，但没看合同。法院说她「应当预见人脸识别的重要性及法律后果」，判她和蒋某一起还剩下的本金 6 万多元。电子签名法写明，「可靠的电子签名与手写签名或者盖章具有同等的法律效力」。反电信网络诈骗法规定，任何人「不得提供实名核验帮助」，违反的要罚款，情节严重的拘留。普通程序一审 6 个月内审结，可以延长。律师费不在法定的诉讼费用里，要自己出（全国）</p><p><strong>要花什么：</strong>不花钱。难在当面拒绝亲戚朋友。对方说「只是做个见证」「不用你担责任」，也照样拒绝。手机、身份证、银行卡不交给中介，也不照中介的安排刷脸、签字。验证码只自己用，熟人要也不念。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>所谓「帮忙刷个脸、做个见证」，其实是用你的名字向银行借钱。借款人是你，不是担保人，钱转给熟人以后，银行照样找你还。中介骗了你，但只要银行不知情，这份借款合同你就撤不掉。熟人写给你的「我来还」承诺书，也管不到银行。</p><p><strong>换来什么：</strong>金融监管总局福建监管局 2022 年的风险提示讲了这个套路。客户 A 资质不够，贷不下来。中介说要加一个担保人，让 A 去找资质好的 B。实际办的时候，中介用 B 的身份信息申请贷款，钱给 A 用。原文说「借款人实质为B」，B「直至被银行催收才知本人是借款人而非担保人」。山东监管局 2024 年的提示说，中介会向 B 承诺「不用承担任何责任」。中介还会事先教 B 怎么应付银行的贷前调查，实际由 B 作为借款人申请贷款。上海普陀区法院 2024 年公布过一起案子。业务员拿着 B 的手机下载银行 App，直接用 B 的名义申请贷款。钱到了 B 的账户，B 转给了 A，A 又付了 8 万多元手续费。中介一伙 8 人以合同诈骗罪被判 10 个月到 4 年。中介判了刑，这笔贷款也不会因此变成别人的。民法典第一百四十九条写着，第三人欺诈的，对方「知道或者应当知道」，受骗的一方才能请求撤销。这里的对方是银行，银行不知情就撤不掉。能撤的，要在知道被骗之日起 1 年内向法院请求（第一百五十二条）。借款人要按约定的期限还钱（第六百七十五条）。合同只约束签合同的人（第四百六十五条）。把债转给别人，要经银行同意（第五百五十一条）。所以 A 写的承诺书管不到银行。钱只能自己起诉 A 去要。替人刷了脸、没看合同，法院也认这份合同。内江市市中区法院 2025 年审结过一个案子：蒋某向小贷公司借钱，自己一个人借不到。张某的儿子背着张某，把她的身份信息给了蒋某，让她当共同借款人。借款流程里要张某本人刷脸，她刷了，但没看合同。法院说她「应当预见人脸识别的重要性及法律后果」，判她和蒋某一起还剩下的本金 6 万多元。电子签名法写明，「可靠的电子签名与手写签名或者盖章具有同等的法律效力」。反电信网络诈骗法规定，任何人「不得提供实名核验帮助」，违反的要罚款，情节严重的拘留。普通程序一审 6 个月内审结，可以延长。律师费不在法定的诉讼费用里，要自己出（全国）</p><p><strong>要花什么：</strong>不花钱。难在当面拒绝亲戚朋友。对方说「只是做个见证」「不用你担责任」，也照样拒绝。手机、身份证、银行卡不交给中介，也不照中介的安排刷脸、签字。验证码只自己用，熟人要也不念。</p><p class="gvl-note">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
@@ -334,8 +52,8 @@
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/08-别把自己搭进去.md#45-熟人让你帮忙刷个脸做个见证去办贷款或者要你念验证码别答应这叫-ab-贷借款人是你不是担保人" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

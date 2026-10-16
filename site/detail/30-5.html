@@ -11,289 +11,7 @@
 <meta property="og:title" content="0 到 3 岁不给屏幕，3 到 6 岁尽量不给，中小学生非学习用途每天不超过 1 小时">
 <meta property="og:description" content="国家卫健委要求 0 到 3 岁不给屏幕，3 到 6 岁尽量别碰。中小学生不为学习用的，一次不超过 15 分钟、一天不超过 1 小时。理由是长时间近距离用眼会让近视来得早。屏幕和近视的证据没这么硬，真正试出效果的是每天户外">
 <meta property="og:url" content="https://life.daogong.cc/detail/30-5.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,20 +40,20 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-b">证据等级 B</span><span class="badge ">性价比 一般</span><span class="badge gain">换寿命</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>国家卫健委要求 0 到 3 岁不给屏幕，3 到 6 岁尽量别碰。中小学生不为学习用的，一次不超过 15 分钟、一天不超过 1 小时。理由是长时间近距离用眼会让近视来得早。屏幕和近视的证据没这么硬，真正试出效果的是每天户外 2 小时。</p><p><strong>换来什么：</strong>《防控儿童青少年近视核心知识十条》第四条的原话是「0～3岁婴幼儿不使用手机、平板、电脑等视屏类电子产品；3～6岁幼儿尽量避免其接触和使用手机、平板、电脑等视屏类电子产品；中小学生非学习目的使用电子屏幕单次时长不宜超过15分钟，每天累计时长不宜超过1小时」。同一条写明「长时间近距离使用电子视屏类产品，易消耗儿童远视储备量，是儿童青少年近视早发、高发的重要原因」。教育部等八部门 2018 年的实施方案给家长的要求一致，还加了一句「年龄越小，连续使用电子产品的时间应越短」。研究证据要弱得多：一项系统综述收了 33 项研究，11 项进了合并计算，对象从 3 个月到 33 岁。只算手机和平板的，近视的比值比是 1.26（95% CI 1.00 到 1.60，I²=77%）。和电脑合起来算是 1.77（1.28 到 2.45，I²=87%）。作者的结论只写到「可能相关」，并写明 33 项研究没有一项有可靠的屏幕时间测量</p><p><strong>要花什么：</strong>不花钱。难的是把屏幕从孩子手里拿走，也难在家长自己当着孩子的面少看。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>国家卫健委要求 0 到 3 岁不给屏幕，3 到 6 岁尽量别碰。中小学生不为学习用的，一次不超过 15 分钟、一天不超过 1 小时。理由是长时间近距离用眼会让近视来得早。屏幕和近视的证据没这么硬，真正试出效果的是每天户外 2 小时。</p><p><strong>换来什么：</strong>《防控儿童青少年近视核心知识十条》第四条的原话是「0～3岁婴幼儿不使用手机、平板、电脑等视屏类电子产品；3～6岁幼儿尽量避免其接触和使用手机、平板、电脑等视屏类电子产品；中小学生非学习目的使用电子屏幕单次时长不宜超过15分钟，每天累计时长不宜超过1小时」。同一条写明「长时间近距离使用电子视屏类产品，易消耗儿童远视储备量，是儿童青少年近视早发、高发的重要原因」。教育部等八部门 2018 年的实施方案给家长的要求一致，还加了一句「年龄越小，连续使用电子产品的时间应越短」。研究证据要弱得多：一项系统综述收了 33 项研究，11 项进了合并计算，对象从 3 个月到 33 岁。只算手机和平板的，近视的比值比是 1.26（95% CI 1.00 到 1.60，I²=77%）。和电脑合起来算是 1.77（1.28 到 2.45，I²=87%）。作者的结论只写到「可能相关」，并写明 33 项研究没有一项有可靠的屏幕时间测量</p><p><strong>要花什么：</strong>不花钱。难的是把屏幕从孩子手里拿走，也难在家长自己当着孩子的面少看。</p><p class="gvl-note">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">定 B 是因为官方给的是分档规定，不是试验测出来的数字。研究给的比值比下限正好压在 1.00，作者只敢说「可能相关」。所以把它当一条好执行的家规就行，不要当成「不看屏幕就不会近视」。真正有抽签试验撑着的是第 4 条（户外 2 小时）。学龄前也要查眼睛。同一份文件写明 1～3 岁、4～6 岁、7 岁之后都应当定期做屈光筛查，看远视储备还剩多少。查法见第 12 条（散瞳验光）。屏幕和孩子语言能力的关系也做过荟萃，汇总了 42 项研究 18905 人。屏幕时间越长，语言能力越弱（r=−0.14，95% CI −0.18 到 −0.10）。但一起看、看有教育内容的节目反过来是正相关（r=0.16 和 0.13）。这是相关不是因果，只能说明拿屏幕代替陪孩子说话不划算。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">国家卫生健康委办公厅 (2023). 防控儿童青少年近视核心知识十条（国卫办妇幼函〔2023〕278 号）. <a href="https://www.gov.cn/zhengce/zhengceku/202307/content_6894284.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/202307/content_6894284.htm</a> ; 教育部等八部门 (2018). 综合防控儿童青少年近视实施方案（教体艺〔2018〕3 号）. <a href="http://www.moe.gov.cn/srcsite/A17/moe_943/s3285/201808/t20180830_346672.html" target="_blank" rel="noopener noreferrer">http://www.moe.gov.cn/srcsite/A17/moe_943/s3285/201808/t20180830_346672.html</a> ; Foreman J, Salim AT, Praveen A, et al. (2021). Association between digital smart device use and myopia: a systematic review and meta-analysis. The Lancet Digital Health, 3(12), e806-e818. <a href="https://doi.org/10.1016/S2589-7500(21)00135-7" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/S2589-7500(21)00135-7</a> ; Madigan S, McArthur BA, Anhorn C, Eirich R, Christakis DA (2020). Associations between screen use and child language skills: a systematic review and meta-analysis. JAMA Pediatrics, 174(7), 665-675. <a href="https://doi.org/10.1001/jamapediatrics.2020.0327" target="_blank" rel="noopener noreferrer">https://doi.org/10.1001/jamapediatrics.2020.0327</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 30 章 · 上学以后的孩子</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/30-上学以后的孩子.md#5-0-到-3-岁不给屏幕3-到-6-岁尽量不给中小学生非学习用途每天不超过-1-小时" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

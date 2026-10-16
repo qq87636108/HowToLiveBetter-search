@@ -163,6 +163,42 @@ def main():
             rel_refs.append(e["id"])
     check(not base_hits, "静态页不含 <base>（为 CSP base-uri 'none' 留路）", str(base_hits[:4]))
     check(not rel_refs, "静态页脚本/CSS 用绝对 /core/ 路径", str(rel_refs[:4]))
+
+    # ★CSP 兼容（2026-10-16 二次整改）：站内 HTML 不得再出现内联代码——
+    # onclick / 无 src 的 <script> / <style> / style="" 属性都会被 CSP 拦掉。
+    # 防止将来改版又把内联代码塞回来。查 3 个壳 + 政策页 + 抽样预渲染页。
+    inline_bad = []
+    csp_targets = [SITE + "/index.html", SITE + "/detail.html"] + \
+        sorted(glob.glob(SITE + "/pages/*.html")) + \
+        [SITE + "/detail/" + e["id"] + ".html" for e in seen]
+    for p in csp_targets:
+        if not os.path.exists(p):
+            continue
+        t = open(p, encoding="utf-8").read()
+        if ("onclick=" in t or re.search(r"<script(?![^>]*\bsrc=)[^>]*>(?!\s*</script>)", t)
+                or "<style" in t or ' style="' in t):
+            inline_bad.append(os.path.relpath(p, SITE))
+    check(not inline_bad, "HTML 无内联代码（onclick/内联script/style，CSP 兼容）",
+          str(inline_bad[:5]))
+    # ★版本号：HTML 引用的 /core 资产必须带 ?v=（JS/CSS 缓存 86400s，无版本号=改完不生效）
+    no_ver = []
+    for p in csp_targets:
+        if not os.path.exists(p):
+            continue
+        t = open(p, encoding="utf-8").read()
+        for m in re.finditer(r'(?:src|href)="(/core/[A-Za-z0-9_.-]+\.(?:js|css))(?!\?v=)', t):
+            no_ver.append(os.path.basename(p) + ":" + m.group(1))
+    check(not no_ver, "/core 资源引用均带 ?v= 版本号", str(no_ver[:5]))
+    # ★相对 core/ 引用盲区（2026-10-16 专家评审发现2/3）：壳页曾用 src="core/…"（相对），
+    # version_assets 与 ?v= 断言的口径都只认绝对 /core/ → 假阴性。现在壳页已全改绝对，
+    # 这里断言「全站 HTML 不得再出现相对 core/ 引用」，防止回潮。
+    rel_core = []
+    for p in [SITE + "/index.html", SITE + "/detail.html"]:
+        t = open(p, encoding="utf-8").read()
+        if 'src="core/' in t or 'href="core/' in t:
+            rel_core.append(os.path.basename(p))
+    check(not rel_core, "壳页无相对 core/ 引用（版本号口径盲区）", str(rel_core))
+
     check("detail.html?id=" not in sm, "sitemap 已改为静态 URL（不再 ?id=）", "")
 
     print("")

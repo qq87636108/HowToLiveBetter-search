@@ -37,8 +37,7 @@ def content_html(e):
         body += "<p><strong>要花什么：</strong>" + e["cost_html"] + "</p>"
     if e.get("disclaimer"):
         kind = e.get("disclaim_kind") or "医疗健康"
-        body += ('<p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;'
-                 'margin:16px 0">本条涉及' + esc(kind) + '信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p>')
+        body += ('<p class="gvl-note">本条涉及' + esc(kind) + '信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p>')
     return body
 
 
@@ -106,7 +105,7 @@ def build_page(shell, e, site_url):
                       '<div class="related" id="dRelated">' + rl + '</div>', 1)
     else:
         s = s.replace('<div class="related" id="dRelated"></div>',
-                      '<div class="related" id="dRelated" style="display:none"></div>', 1)
+                      '<div class="related hidden" id="dRelated"></div>', 1)
     bu = esc(e.get("book_url") or "https://github.com/eternity4719/HowToLiveBetter")
     s = s.replace('<a class="btn-primary" id="btnGithub" href="#"',
                   '<a class="btn-primary" id="btnGithub" href="' + bu + '"', 1)

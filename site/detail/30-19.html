@@ -11,289 +11,7 @@
 <meta property="og:title" content="教孩子认识身体的隐私部位，被人碰了、被要求保密都要回家说；孩子说了先信、别骂，带去报警和就医">
 <meta property="og:description" content="上过防性侵课的孩子，在假扮陌生人引诱的演练里，做出保护自己动作的明显多了。学到的东西半年后还在，孩子也没变得更害怕。能不能真的少受侵害，还没测出来。性侵孩子的人里熟人占比较高，所以要教他哪里别人不能碰，碰了、被要求保密，">
 <meta property="og:url" content="https://life.daogong.cc/detail/30-19.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,7 +40,7 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-b">证据等级 B</span><span class="badge ">性价比 一般</span><span class="badge gain">换寿命</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>上过防性侵课的孩子，在假扮陌生人引诱的演练里，做出保护自己动作的明显多了。学到的东西半年后还在，孩子也没变得更害怕。能不能真的少受侵害，还没测出来。性侵孩子的人里熟人占比较高，所以要教他哪里别人不能碰，碰了、被要求保密，都回家说。</p><p><strong>换来什么：</strong>Cochrane 2015 年汇总了 24 项学校防性侵课的试验，共 5802 名 5 到 18 岁的学生。这些课大多教几样东西：安全规则，身体归自己，哪些是隐私部位。还教孩子分清哪种触碰不行、哪种秘密不能守，以及该告诉谁。很多课还强调，出了事不是孩子的错。先看孩子会不会保护自己。研究者找人假扮陌生人去引诱孩子，2 项试验 102 人。上过课的做出保护动作的 OR 5.71（95% CI 1.98–16.51，可信范围），机会约为没上课的 5.7 倍。按原文换算，没上课的每 1000 人约 390 人做到，上过课的约 795 人。再看知识。18 项试验 4657 人，问卷得分 SMD 0.61（0.45–0.78），0.5 算中等。半年后仍是 0.69（0.51–0.87）。3 项研究 795 人看了害处，孩子的焦虑、害怕没有增减（SMD −0.08，−0.22 到 0.07）。3 项研究 1788 人看了孩子会不会说出来。说出自己被性侵过的 OR 3.56（1.13–11.24），每 1000 人从约 4 人变成约 14 人。但同班同校的孩子彼此相像，校正这一点之后，差别就看不出来了（OR 3.04，0.75–12.33）。所有结果的证据质量都是中等。作者写明，这些课能不能真的减少性侵，还要长期跟踪才知道。联合国教科文组织等六个联合国机构 2018 年出了性教育指南。它建议 5 到 8 岁就教孩子身体各部位的名称，包括生殖器官。还要教孩子知道身体哪些部位是隐私的。有人碰他、让他不舒服时，要说「不」、走开，再告诉信任的大人。指南写明，性侵永远不是受害孩子的错。熟人、信任的人甚至家里人做的，也一样。人民日报的防性侵手册给了一个好记的说法：背心、短裤遮住的地方，不许别人看、不许别人摸。《未成年人保护法》第十六条要求父母对孩子做安全教育，提高他自我保护的意识和能力。第四十条要求学校、幼儿园开展适合孩子年龄的性教育。学校、幼儿园发现性侵害、性骚扰，不得隐瞒，要及时报告公安和教育部门。最高检等九部门 2020 年建立了强制报告制度。要报的人包括学校、幼儿园、医院、托育机构、居委会、村委会、宾馆等单位的人。他们在工作中发现孩子受到或疑似受到侵害，要立即向公安报案。要报的情形包括：生殖器官或隐私部位疑似有不正常的伤，不满 14 岁的女孩疑似被性侵、怀孕、流产。报案人的信息要保密。因为报告引起纠纷的，报告人不承担法律责任。2025 年，检察机关起诉强奸、猥亵儿童等性侵害未成年人犯罪 42873 人，比上年少 5.5%。这占起诉的侵害未成年人犯罪的 58.9%。这一年起诉的侵害未成年人案件里，3852 件的线索来自强制报告，占 7.1%。最高法等 16 部门 2025 年的意见说，这类案子熟人作案占比较高。有的年幼孩子缺少防范意识，监护人又疏于关注，孩子被性侵了自己都不知道（全国 / 多国）</p><p><strong>要花什么：</strong>不花钱。平时洗澡、换衣服时顺口教几句，隔一阵再问问。难在家长自己说身体部位不好意思开口，也难在孩子真说出来时，压住火不骂他。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>上过防性侵课的孩子，在假扮陌生人引诱的演练里，做出保护自己动作的明显多了。学到的东西半年后还在，孩子也没变得更害怕。能不能真的少受侵害，还没测出来。性侵孩子的人里熟人占比较高，所以要教他哪里别人不能碰，碰了、被要求保密，都回家说。</p><p><strong>换来什么：</strong>Cochrane 2015 年汇总了 24 项学校防性侵课的试验，共 5802 名 5 到 18 岁的学生。这些课大多教几样东西：安全规则，身体归自己，哪些是隐私部位。还教孩子分清哪种触碰不行、哪种秘密不能守，以及该告诉谁。很多课还强调，出了事不是孩子的错。先看孩子会不会保护自己。研究者找人假扮陌生人去引诱孩子，2 项试验 102 人。上过课的做出保护动作的 OR 5.71（95% CI 1.98–16.51，可信范围），机会约为没上课的 5.7 倍。按原文换算，没上课的每 1000 人约 390 人做到，上过课的约 795 人。再看知识。18 项试验 4657 人，问卷得分 SMD 0.61（0.45–0.78），0.5 算中等。半年后仍是 0.69（0.51–0.87）。3 项研究 795 人看了害处，孩子的焦虑、害怕没有增减（SMD −0.08，−0.22 到 0.07）。3 项研究 1788 人看了孩子会不会说出来。说出自己被性侵过的 OR 3.56（1.13–11.24），每 1000 人从约 4 人变成约 14 人。但同班同校的孩子彼此相像，校正这一点之后，差别就看不出来了（OR 3.04，0.75–12.33）。所有结果的证据质量都是中等。作者写明，这些课能不能真的减少性侵，还要长期跟踪才知道。联合国教科文组织等六个联合国机构 2018 年出了性教育指南。它建议 5 到 8 岁就教孩子身体各部位的名称，包括生殖器官。还要教孩子知道身体哪些部位是隐私的。有人碰他、让他不舒服时，要说「不」、走开，再告诉信任的大人。指南写明，性侵永远不是受害孩子的错。熟人、信任的人甚至家里人做的，也一样。人民日报的防性侵手册给了一个好记的说法：背心、短裤遮住的地方，不许别人看、不许别人摸。《未成年人保护法》第十六条要求父母对孩子做安全教育，提高他自我保护的意识和能力。第四十条要求学校、幼儿园开展适合孩子年龄的性教育。学校、幼儿园发现性侵害、性骚扰，不得隐瞒，要及时报告公安和教育部门。最高检等九部门 2020 年建立了强制报告制度。要报的人包括学校、幼儿园、医院、托育机构、居委会、村委会、宾馆等单位的人。他们在工作中发现孩子受到或疑似受到侵害，要立即向公安报案。要报的情形包括：生殖器官或隐私部位疑似有不正常的伤，不满 14 岁的女孩疑似被性侵、怀孕、流产。报案人的信息要保密。因为报告引起纠纷的，报告人不承担法律责任。2025 年，检察机关起诉强奸、猥亵儿童等性侵害未成年人犯罪 42873 人，比上年少 5.5%。这占起诉的侵害未成年人犯罪的 58.9%。这一年起诉的侵害未成年人案件里，3852 件的线索来自强制报告，占 7.1%。最高法等 16 部门 2025 年的意见说，这类案子熟人作案占比较高。有的年幼孩子缺少防范意识，监护人又疏于关注，孩子被性侵了自己都不知道（全国 / 多国）</p><p><strong>要花什么：</strong>不花钱。平时洗澡、换衣服时顺口教几句，隔一阵再问问。难在家长自己说身体部位不好意思开口，也难在孩子真说出来时，压住火不骂他。</p><p class="gvl-note">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
@@ -334,8 +52,8 @@
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/30-上学以后的孩子.md#19-教孩子认识身体的隐私部位被人碰了被要求保密都要回家说孩子说了先信别骂带去报警和就医" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

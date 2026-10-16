@@ -11,289 +11,7 @@
 <meta property="og:title" content="不写、不卖、不传软件的破解补丁、注册机和破解版，卖钱够了数就按侵犯著作权罪判">
 <meta property="og:description" content="注册码校验、加密狗这类验证都是软件的技术措施，没经许可绕开它就算侵权，不收钱也要赔。为了挣钱去破解、卖破解工具，挣到 3 万元或者卖到 5 万元就够判刑，最重判 10 年。有人做破解加密狗配盗版软件卖，同案三人判了 1 ">
 <meta property="og:url" content="https://life.daogong.cc/detail/11-20.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,7 +40,7 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-high">性价比 高</span><span class="badge gain">换人身自由</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>注册码校验、加密狗这类验证都是软件的技术措施，没经许可绕开它就算侵权，不收钱也要赔。为了挣钱去破解、卖破解工具，挣到 3 万元或者卖到 5 万元就够判刑，最重判 10 年。有人做破解加密狗配盗版软件卖，同案三人判了 1 年到 3 年 2 个月。</p><p><strong>换来什么：</strong>先说民事。著作权法允许权利人给作品加上技术措施。技术措施是防止、限制别人没经许可使用作品的有效技术、装置或者部件。没经权利人许可，任何人不得故意避开或者破坏技术措施。也不得为了避开技术措施，制造、进口或者向公众提供有关装置、部件。还不得故意替别人避开技术措施提供技术服务。计算机软件是作品，这几样做了都是侵权，要停止侵害、赔偿损失。赔多少，按权利人的实际损失或者你挣到的钱算。算不清的，参照正常买授权要付的钱。故意侵权、情节严重的，判 1 到 5 倍。同时损害公共利益的，著作权主管部门还可以没收违法所得。违法经营额 5 万元以上的，可以罚它的 1 到 5 倍。不足 5 万元或者算不清的，可以罚 25 万元以下。再说刑事。刑法修正案（十一）把「故意避开或者破坏技术措施」写进了侵犯著作权罪，前提是以营利为目的。违法所得 3 万元以上，或者非法经营数额 5 万元以上，判 3 年以下，同时罚钱或者只罚钱。到这些数的 10 倍，判 3 到 10 年并罚钱。有人明知别人在搞侵犯著作权犯罪，还给他提供主要用于避开、破坏技术措施的装置、部件或者技术服务。数额到了同样的门槛，也按这个罪追究。官方案例一：2019 年 3 月到 2022 年 7 月，刘某生为了挣钱，自己做能避开软件技术措施的「加密狗」。他还复制盗版软件，和加密狗一起拿去卖。他的非法经营数额 106 万余元。上海市第三中级人民法院认定他情节特别严重，按侵犯著作权罪判了刑。最高检说，这是刑法修正案（十一）施行后全国首例「故意避开或者破坏技术措施型」侵犯著作权案。2023 年 4 月，上海法院判这一串案子的三名被告 3 年 2 个月到 1 年，部分缓刑，罚金 70 万元到 8 万元。官方案例二：医疗设备维修工刘某在 QQ 群里花 8 万元，买了 50 套破解加密狗，再按每个几千元在网上转卖。插上它就能绕过医疗设备的身份验证，进入维修软件。上海普陀法院判他 1 年 2 个月、缓刑，罚金 8 万元。官方案例三：徐州李某某等人从 2021 年 5 月起，找人做游戏机的破解程序，生产破解装置来卖。非法经营数额 3900 余万元。2024 年 11 月，10 人被判 3 年 6 个月到 2 年 6 个月，部分缓刑，罚金 1100 万元到 150 万元（全国）</p><p><strong>要花什么：</strong>不花钱。代价是放掉卖破解版、卖注册码、卖破解加密狗这类来钱快的副业。破解补丁也别发到论坛和网盘里。难在破解看着只是技术活，不像偷东西</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>注册码校验、加密狗这类验证都是软件的技术措施，没经许可绕开它就算侵权，不收钱也要赔。为了挣钱去破解、卖破解工具，挣到 3 万元或者卖到 5 万元就够判刑，最重判 10 年。有人做破解加密狗配盗版软件卖，同案三人判了 1 年到 3 年 2 个月。</p><p><strong>换来什么：</strong>先说民事。著作权法允许权利人给作品加上技术措施。技术措施是防止、限制别人没经许可使用作品的有效技术、装置或者部件。没经权利人许可，任何人不得故意避开或者破坏技术措施。也不得为了避开技术措施，制造、进口或者向公众提供有关装置、部件。还不得故意替别人避开技术措施提供技术服务。计算机软件是作品，这几样做了都是侵权，要停止侵害、赔偿损失。赔多少，按权利人的实际损失或者你挣到的钱算。算不清的，参照正常买授权要付的钱。故意侵权、情节严重的，判 1 到 5 倍。同时损害公共利益的，著作权主管部门还可以没收违法所得。违法经营额 5 万元以上的，可以罚它的 1 到 5 倍。不足 5 万元或者算不清的，可以罚 25 万元以下。再说刑事。刑法修正案（十一）把「故意避开或者破坏技术措施」写进了侵犯著作权罪，前提是以营利为目的。违法所得 3 万元以上，或者非法经营数额 5 万元以上，判 3 年以下，同时罚钱或者只罚钱。到这些数的 10 倍，判 3 到 10 年并罚钱。有人明知别人在搞侵犯著作权犯罪，还给他提供主要用于避开、破坏技术措施的装置、部件或者技术服务。数额到了同样的门槛，也按这个罪追究。官方案例一：2019 年 3 月到 2022 年 7 月，刘某生为了挣钱，自己做能避开软件技术措施的「加密狗」。他还复制盗版软件，和加密狗一起拿去卖。他的非法经营数额 106 万余元。上海市第三中级人民法院认定他情节特别严重，按侵犯著作权罪判了刑。最高检说，这是刑法修正案（十一）施行后全国首例「故意避开或者破坏技术措施型」侵犯著作权案。2023 年 4 月，上海法院判这一串案子的三名被告 3 年 2 个月到 1 年，部分缓刑，罚金 70 万元到 8 万元。官方案例二：医疗设备维修工刘某在 QQ 群里花 8 万元，买了 50 套破解加密狗，再按每个几千元在网上转卖。插上它就能绕过医疗设备的身份验证，进入维修软件。上海普陀法院判他 1 年 2 个月、缓刑，罚金 8 万元。官方案例三：徐州李某某等人从 2021 年 5 月起，找人做游戏机的破解程序，生产破解装置来卖。非法经营数额 3900 余万元。2024 年 11 月，10 人被判 3 年 6 个月到 2 年 6 个月，部分缓刑，罚金 1100 万元到 150 万元（全国）</p><p><strong>要花什么：</strong>不花钱。代价是放掉卖破解版、卖注册码、卖破解加密狗这类来钱快的副业。破解补丁也别发到论坛和网盘里。难在破解看着只是技术活，不像偷东西</p><p class="gvl-note">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
@@ -334,8 +52,8 @@
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/11-程序员和技术人容易踩的红线.md#20-不写不卖不传软件的破解补丁注册机和破解版卖钱够了数就按侵犯著作权罪判" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

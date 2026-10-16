@@ -11,289 +11,7 @@
 <meta property="og:title" content="住小区被物业停水、停电、停暖、停气逼交物业费的，向当地房地产主管部门投诉；自己欠了物业费，物业只能催告、起诉或者申请仲裁">
 <meta property="og:description" content="物业不能靠停水、停电、停暖、停气逼你交物业费，遇上了向当地房地产主管部门投诉。物业按约定提供了服务，你不能拿「没用过」当理由不交，欠着不交它可以起诉。擅自多收、重复收的那部分，可以不交，交了能要回来。">
 <meta property="og:url" content="https://life.daogong.cc/detail/15-17.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,20 +40,20 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge ">性价比 一般</span><span class="badge gain">换钱</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>物业不能靠停水、停电、停暖、停气逼你交物业费，遇上了向当地房地产主管部门投诉。物业按约定提供了服务，你不能拿「没用过」当理由不交，欠着不交它可以起诉。擅自多收、重复收的那部分，可以不交，交了能要回来。</p><p><strong>换来什么：</strong>民法典第九百四十四条写了三层意思。第一层原话是：「物业服务人不得采取停止供电、供水、供热、供燃气等方式催交物业费。」第二层：物业按约定提供了服务，业主不能以「未接受或者无需接受」服务为由拒交。第三层：业主逾期不交，物业可以催告你在合理期限内交。期限到了还不交，物业可以起诉或者申请仲裁。物业管理条例也写明，业主逾期不交物业费，业主委员会要督促你限期交。逾期还不交的，物业服务企业可以向法院起诉。投诉找县级以上地方政府的房地产行政主管部门，条例要求它们及时处理业主的投诉。最高法的司法解释写明，物业擅自扩大收费范围、提高收费标准或者重复收费的，你可以拿这一点抗辩不交。已经交了的违规费用，可以要求退还</p><p><strong>要花什么：</strong>不花钱。打电话或者写一份投诉，几十分钟。物业不改、你又要它赔损失的，就得去法院起诉</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>物业不能靠停水、停电、停暖、停气逼你交物业费，遇上了向当地房地产主管部门投诉。物业按约定提供了服务，你不能拿「没用过」当理由不交，欠着不交它可以起诉。擅自多收、重复收的那部分，可以不交，交了能要回来。</p><p><strong>换来什么：</strong>民法典第九百四十四条写了三层意思。第一层原话是：「物业服务人不得采取停止供电、供水、供热、供燃气等方式催交物业费。」第二层：物业按约定提供了服务，业主不能以「未接受或者无需接受」服务为由拒交。第三层：业主逾期不交，物业可以催告你在合理期限内交。期限到了还不交，物业可以起诉或者申请仲裁。物业管理条例也写明，业主逾期不交物业费，业主委员会要督促你限期交。逾期还不交的，物业服务企业可以向法院起诉。投诉找县级以上地方政府的房地产行政主管部门，条例要求它们及时处理业主的投诉。最高法的司法解释写明，物业擅自扩大收费范围、提高收费标准或者重复收费的，你可以拿这一点抗辩不交。已经交了的违规费用，可以要求退还</p><p><strong>要花什么：</strong>不花钱。打电话或者写一份投诉，几十分钟。物业不改、你又要它赔损失的，就得去法院起诉</p><p class="gvl-note">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">法律禁止的是物业拿停水停电当催物业费的手段。欠的是水费、电费、燃气费本身，情况不同。供电单位催告后你在合理期限内仍不交，可以按国家规定的程序中止供电，要事先通知你。供水、供气、供热参照这条办。条例还规定，供水、供电、供气、供热等单位要向最终用户收费。物业停水停电给你造成了损失、你要它赔的，要去法院起诉。一审普通程序 6 个月起，简易程序 3 个月，律师费一般自己出。租房被房东断水断电逼着搬走的，见第 2 条（断水断电、换锁）。收益定中是凭判断：物业费一年几百到几千元，停暖停水的损失没有统一统计。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">全国人大 (2020). 民法典（第九百四十四条；第六百五十四、六百五十六条）. <a href="https://www.spp.gov.cn/spp/fl/202006/t20200602_463888.shtml" target="_blank" rel="noopener noreferrer">https://www.spp.gov.cn/spp/fl/202006/t20200602_463888.shtml</a>；国务院 (2018 第三次修订). 物业管理条例（第五、四十四、四十八、六十四条）. <a href="https://flk.npc.gov.cn/detail?id=ff8080816f3cbb3c016f40daebf30779" target="_blank" rel="noopener noreferrer">https://flk.npc.gov.cn/detail?id=ff8080816f3cbb3c016f40daebf30779</a>；最高人民法院 (2020). 关于修改《最高人民法院关于在民事审判工作中适用〈中华人民共和国工会法〉若干问题的解释》等二十七件民事类司法解释的决定（法释〔2020〕17 号，第十四项修改物业服务纠纷解释原第五条，条文顺序调整后为第二条：「物业服务人违反物业服务合同约定或者法律、法规、部门规章规定，擅自扩大收费范围、提高收费标准或者重复收费，业主以违规收费为由提出抗辩的，人民法院应予支持。业主请求物业服务人退还其已经收取的违规费用的，人民法院应予支持。」）. <a href="https://www.court.gov.cn/fabu/xiangqing/282621.html" target="_blank" rel="noopener noreferrer">https://www.court.gov.cn/fabu/xiangqing/282621.html</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 15 章 · 租房与买房</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/15-租房与买房.md#17-住小区被物业停水停电停暖停气逼交物业费的向当地房地产主管部门投诉自己欠了物业费物业只能催告起诉或者申请仲裁" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

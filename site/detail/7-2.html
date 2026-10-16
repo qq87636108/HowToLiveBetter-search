@@ -11,289 +11,7 @@
 <meta property="og:title" content="被欠薪先投诉劳动监察，再申请劳动仲裁，两条路都不收费，多数案子几个月内有结果">
 <meta property="og:description" content="先打 12333 或者去人社局劳动监察投诉，立案后 60 个工作日内查完。查实了能责令公司限期付钱，逾期不付还要多赔 50% 到 100%。再不行就申请劳动仲裁，45 天内结案。但「结案」不等于「到账」：公司没财产、老板">
 <meta property="og:url" content="https://life.daogong.cc/detail/7-2.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -329,13 +47,13 @@
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">投诉和仲裁有用，但要分清「结案」和「到账」。98.2% 的结案率说的只是程序走完了。公司没财产、老板跑路的，赢了也照样拿不到钱。最高法只公布执行到位的总额（2024 年 2.3 万亿元）和「执行完毕率保持高位」，欠薪案最后有多少真进了当事人口袋，没有官方数据。「仲裁终结率」这个词公报没给定义，本条按「裁决之后没再打到法院去」理解。欠薪到一定数额就够刑事立案了。一种是欠一个人 3 个月以上，金额在 5000 到 2 万元以上。另一种是欠 10 人以上，累计 3 万到 10 万元以上。这两种情况，责令支付后还是不付的，就够立案。各省高院和省检察院在这个幅度内定本省的具体数额并公布，投诉前查一下本省是多少，投诉时当面提出来。工地上的农民工另有工资专用账户和总包先行清偿的规定，找总包比找包工头管用。这两条路的前提是有用人单位。没办执照的作坊、店铺照样算，可以投诉和仲裁。给家庭或个人干私活，比如当保姆，就不算劳动关系，要去法院，见第 22 条（先分清雇你的是谁）。进城务工人员为讨薪申请法律援助的，不查经济困难。劳动合同法、民事诉讼法的原文引自税务总局和贵州省市场监管局的转载页（都是 gov.cn），因为中国人大网的页面打不开。刑法修正案（八）在中国人大网抓取失败，改用 curl 打开核对</span></div><div class="meta-row"><span class="k">出处</span><span class="v">人力资源社会保障部 (2025). 2024 年度人力资源和社会保障事业发展统计公报. <a href="https://www.mohrss.gov.cn/SYrlzyhshbzb/zwgk/szrs/tjgb/202506/W020250616518526345602.pdf" target="_blank" rel="noopener noreferrer">https://www.mohrss.gov.cn/SYrlzyhshbzb/zwgk/szrs/tjgb/202506/W020250616518526345602.pdf</a>；最高人民法院 (2025). 最高人民法院工作报告. <a href="https://www.gov.cn/yaowen/liebiao/202503/content_7013680.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/yaowen/liebiao/202503/content_7013680.htm</a>；国务院 (2004). 劳动保障监察条例（国务院令第 423 号，第九、十七、二十六条）. <a href="https://www.gov.cn/gongbao/content/2004/content_63042.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/gongbao/content/2004/content_63042.htm</a>；全国人大常委会 (2007). 劳动争议调解仲裁法（主席令第八十号，第二十七、四十三、四十四、四十七、五十、五十三条）. <a href="https://chinajob.mohrss.gov.cn/h5/c/2022-07-15/356212.shtml" target="_blank" rel="noopener noreferrer">https://chinajob.mohrss.gov.cn/h5/c/2022-07-15/356212.shtml</a>；全国人大常委会 (2012 修正). 劳动合同法（第三十、八十五条）. <a href="https://fgk.chinatax.gov.cn/zcfgk/c100009/c5193025/content.html" target="_blank" rel="noopener noreferrer">https://fgk.chinatax.gov.cn/zcfgk/c100009/c5193025/content.html</a>；全国人大常委会 (2023 修正). 民事诉讼法（第一百零九、一百五十二、一百六十四、一百八十三、二百二十五、二百二十七条）. <a href="https://amr.guizhou.gov.cn/zwgk/xxgkml/jcxxgk/zcfg/fl/202401/t20240129_83645867.html" target="_blank" rel="noopener noreferrer">https://amr.guizhou.gov.cn/zwgk/xxgkml/jcxxgk/zcfg/fl/202401/t20240129_83645867.html</a>；全国人大常委会 (2011). 刑法修正案（八）第四十一条，即刑法第二百七十六条之一. <a href="http://www.npc.gov.cn/cwhhdbdh/c6626/c14002/c14003/201905/t20190523_390477.html" target="_blank" rel="noopener noreferrer">http://www.npc.gov.cn/cwhhdbdh/c6626/c14002/c14003/201905/t20190523_390477.html</a>；最高人民法院 (2013). 关于审理拒不支付劳动报酬刑事案件适用法律若干问题的解释（法释〔2013〕3 号，第三条）. <a href="https://www.court.gov.cn/fabu/xiangqing/5041.html" target="_blank" rel="noopener noreferrer">https://www.court.gov.cn/fabu/xiangqing/5041.html</a>；国务院 (2019). 保障农民工工资支付条例（国务院令第 724 号，第十、二十六、三十、三十一、三十二、四十一条）. <a href="https://www.gov.cn/gongbao/content/2020/content_5469641.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/gongbao/content/2020/content_5469641.htm</a>；全国人大常委会 (2021). 法律援助法（第三十一、四十二条）. <a href="https://www.beijing.gov.cn/zhengce/zhengcefagui/qtwj/202504/t20250402_4053713.html" target="_blank" rel="noopener noreferrer">https://www.beijing.gov.cn/zhengce/zhengcefagui/qtwj/202504/t20250402_4053713.html</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 7 章 · 没钱的时候怎么活</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/07-没钱的时候怎么活.md#2-被欠薪先投诉劳动监察再申请劳动仲裁两条路都不收费多数案子几个月内有结果" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

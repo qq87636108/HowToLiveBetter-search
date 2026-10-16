@@ -11,289 +11,7 @@
 <meta property="og:title" content="孩子生下来养不了，只有民政登记这一条合法出路：收钱把孩子给人可能按拐卖罪判，扔下不管是遗弃罪">
 <meta property="og:description" content="养不了有出路，但合法的只有一条：到民政部门办收养登记，收养关系从登记那天才成立。私下把孩子给人，尤其是收了钱，可能从「送养」变成拐卖儿童罪，起刑就是 5 年以上。把孩子扔下不管、拒不抚养，情节恶劣的是遗弃罪，判 5 年以">
 <meta property="og:url" content="https://life.daogong.cc/detail/9-20.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,7 +40,7 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-high">性价比 高</span><span class="badge gain">换人身自由</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>养不了有出路，但合法的只有一条：到民政部门办收养登记，收养关系从登记那天才成立。私下把孩子给人，尤其是收了钱，可能从「送养」变成拐卖儿童罪，起刑就是 5 年以上。把孩子扔下不管、拒不抚养，情节恶劣的是遗弃罪，判 5 年以下。</p><p><strong>换来什么：</strong>刑法第二百四十条：「拐卖妇女、儿童的，处五年以上十年以下有期徒刑，并处罚金」。有加重情形的，处十年以上有期徒刑或者无期徒刑，并处罚金或者没收财产。「情节特别严重的，处死刑，并处没收财产」。《关于依法惩治拐卖妇女儿童犯罪的意见》第 17 条，说的是怎么区分卖亲生孩子和民间送养。判断标准是「关键在于行为人是否具有非法获利的目的」。也就是看有没有想靠这件事挣钱。有三种情形可以认定为出卖亲生子女，按拐卖妇女、儿童罪定罪。第一种是「将生育作为非法获利手段，生育后即出卖子女的」。第二种是「明知对方不具有抚养目的，或者根本不考虑对方是否具有抚养目的，为收取钱财将子女『送』给他人的」。第三种是「为收取明显不属于『营养费』『感谢费』的巨额钱财将子女『送』给他人的」。反过来，不是为了挣钱、确实迫于生活困难私自送养、只收少量营养费感谢费的，属于民间送养，不按拐卖罪定罪。再看刑法第二百六十一条。「对于年老、年幼、患病或者其他没有独立生活能力的人，负有扶养义务而拒绝扶养，情节恶劣的，处五年以下有期徒刑、拘役或者管制」。民法典第一千零九十四条规定，能当送养人的只有三种：孤儿的监护人、儿童福利机构、有特殊困难无力抚养子女的生父母。第一千一百零五条：「收养应当向县级以上人民政府民政部门登记。收养关系自登记之日起成立」</p><p><strong>要花什么：</strong>不花钱。到县级以上民政部门办收养登记，要交材料，还要等审核和收养评估，前后要花些时间。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>养不了有出路，但合法的只有一条：到民政部门办收养登记，收养关系从登记那天才成立。私下把孩子给人，尤其是收了钱，可能从「送养」变成拐卖儿童罪，起刑就是 5 年以上。把孩子扔下不管、拒不抚养，情节恶劣的是遗弃罪，判 5 年以下。</p><p><strong>换来什么：</strong>刑法第二百四十条：「拐卖妇女、儿童的，处五年以上十年以下有期徒刑，并处罚金」。有加重情形的，处十年以上有期徒刑或者无期徒刑，并处罚金或者没收财产。「情节特别严重的，处死刑，并处没收财产」。《关于依法惩治拐卖妇女儿童犯罪的意见》第 17 条，说的是怎么区分卖亲生孩子和民间送养。判断标准是「关键在于行为人是否具有非法获利的目的」。也就是看有没有想靠这件事挣钱。有三种情形可以认定为出卖亲生子女，按拐卖妇女、儿童罪定罪。第一种是「将生育作为非法获利手段，生育后即出卖子女的」。第二种是「明知对方不具有抚养目的，或者根本不考虑对方是否具有抚养目的，为收取钱财将子女『送』给他人的」。第三种是「为收取明显不属于『营养费』『感谢费』的巨额钱财将子女『送』给他人的」。反过来，不是为了挣钱、确实迫于生活困难私自送养、只收少量营养费感谢费的，属于民间送养，不按拐卖罪定罪。再看刑法第二百六十一条。「对于年老、年幼、患病或者其他没有独立生活能力的人，负有扶养义务而拒绝扶养，情节恶劣的，处五年以下有期徒刑、拘役或者管制」。民法典第一千零九十四条规定，能当送养人的只有三种：孤儿的监护人、儿童福利机构、有特殊困难无力抚养子女的生父母。第一千一百零五条：「收养应当向县级以上人民政府民政部门登记。收养关系自登记之日起成立」</p><p><strong>要花什么：</strong>不花钱。到县级以上民政部门办收养登记，要交材料，还要等审核和收养评估，前后要花些时间。</p><p class="gvl-note">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
@@ -334,8 +52,8 @@
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/09-普通人容易踩的法律红线.md#20-孩子生下来养不了只有民政登记这一条合法出路收钱把孩子给人可能按拐卖罪判扔下不管是遗弃罪" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

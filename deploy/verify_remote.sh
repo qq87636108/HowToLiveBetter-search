@@ -77,6 +77,14 @@ echo "$H" | grep -qi 'x-frame-options' && ok "X-Frame-Options" || bad "缺 X-Fra
 echo "$H" | grep -qi 'cache-control' && ok "Cache-Control 已设" || bad "缺 Cache-Control"
 echo "$H" | grep -qi 'strict-transport-security' && ok "HSTS" || bad "缺 HSTS"
 echo "$H" | grep -qi 'permissions-policy' && ok "Permissions-Policy" || bad "缺 Permissions-Policy"
+# CSP（2026-10-16 二次整改）：必须带且不得含 'unsafe-inline'（内联代码已全部外置）
+echo "$H" | grep -qi 'content-security-policy' && ok "CSP 已设" || bad "缺 Content-Security-Policy"
+echo "$H" | grep -qi "content-security-policy.*unsafe-inline" && bad "CSP 含 unsafe-inline（改造倒退）" || ok "CSP 无 unsafe-inline"
+# 资源版本号：详情页引用的 /core 资产应带 ?v=（JS/CSS 缓存 86400s，无版本号=改完不生效）
+printf '%s' "$P" | grep -qE '(/core/[A-Za-z0-9_.-]+\.(js|css))\?v=' && ok "/core 资源引用带 ?v= 版本号" || bad "/core 资源引用无 ?v= 版本号"
+# CSP 与页面一致性抽查：政策页也应带 CSP（headers conf 被各 location include）
+HP=$(head_ "$BASE/pages/about.html")
+echo "$HP" | grep -qi 'content-security-policy' && ok "政策页 CSP 已设" || bad "政策页缺 CSP"
 HR=$(head_ "$BASE/robots.txt")
 echo "$HR" | grep -qi 'max-age=600' && ok "robots.txt 缓存 600s 且 must-revalidate（变更能及时生效）" || bad "robots.txt 缓存过长：$(echo "$HR" | grep -i cache-control | tr -d '\r')"
 

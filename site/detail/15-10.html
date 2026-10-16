@@ -11,289 +11,7 @@
 <meta property="og:title" content="买期房时先看预售许可证，定金、首付和贷款只打进合同写明的预售资金监管账户">
 <meta property="og:description" content="期房就是还没盖好就开卖的房子。没有预售许可证，开发商不能卖，也不能收定金。你交的首付和贷款，按规定要全部进监管账户，等房子能交付了才解除监管。钱打到别的账户，就不在这层保护里。">
 <meta property="og:url" content="https://life.daogong.cc/detail/15-10.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,20 +40,20 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-high">性价比 高</span><span class="badge gain">换钱</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>期房就是还没盖好就开卖的房子。没有预售许可证，开发商不能卖，也不能收定金。你交的首付和贷款，按规定要全部进监管账户，等房子能交付了才解除监管。钱打到别的账户，就不在这层保护里。</p><p><strong>换来什么：</strong>期房在法规里叫商品房预售，是开发商把正在建的房子先卖给你。2026 年 8 月，住建部、自然资源部和金融监管总局发文规定：「购房人支付的首付款、个人住房贷款等购房资金应全部存入资金监管账户。」房子竣工验收、水电气热具备交付条件以后，才解除监管。开发商要在购房合同里写明购房资金存入监管账户的权利和责任。开发商违约、不能按期交房的，你可以按合同约定解除合同。开发商要按合同退钱，并承担违约责任。人民银行和金融监管总局同时规定，买预售房的个人住房贷款，由银行直接付进项目的预售资金监管账户。2022 年三部门的文件已经写明，定金、首付款和按揭贷款「应当全部直接存入监管账户」。没拿到预售许可的楼盘，开发商不得预售，也不得用认购、预订、排号、发 VIP 卡的办法收定金。没有预售许可证签的预售合同，法院认定无效。起诉前补上许可证的，可以认定有效。钱付到监管账户以外的地方，就不在这套监管里。同一份 2026 年的文件还规定，按现房销售的楼盘拿到施工许可证后，开发商可以先收「少量定金」。定金由住房资金监管机构监管，存在项目主办银行开的「定金监管账户」里，房屋具备交付条件后才解除监管</p><p><strong>要花什么：</strong>不花钱。签约前看一眼预售许可证，付款前核对账户，几分钟。难在销售让你转到别的账户时，要坚持不转</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>期房就是还没盖好就开卖的房子。没有预售许可证，开发商不能卖，也不能收定金。你交的首付和贷款，按规定要全部进监管账户，等房子能交付了才解除监管。钱打到别的账户，就不在这层保护里。</p><p><strong>换来什么：</strong>期房在法规里叫商品房预售，是开发商把正在建的房子先卖给你。2026 年 8 月，住建部、自然资源部和金融监管总局发文规定：「购房人支付的首付款、个人住房贷款等购房资金应全部存入资金监管账户。」房子竣工验收、水电气热具备交付条件以后，才解除监管。开发商要在购房合同里写明购房资金存入监管账户的权利和责任。开发商违约、不能按期交房的，你可以按合同约定解除合同。开发商要按合同退钱，并承担违约责任。人民银行和金融监管总局同时规定，买预售房的个人住房贷款，由银行直接付进项目的预售资金监管账户。2022 年三部门的文件已经写明，定金、首付款和按揭贷款「应当全部直接存入监管账户」。没拿到预售许可的楼盘，开发商不得预售，也不得用认购、预订、排号、发 VIP 卡的办法收定金。没有预售许可证签的预售合同，法院认定无效。起诉前补上许可证的，可以认定有效。钱付到监管账户以外的地方，就不在这套监管里。同一份 2026 年的文件还规定，按现房销售的楼盘拿到施工许可证后，开发商可以先收「少量定金」。定金由住房资金监管机构监管，存在项目主办银行开的「定金监管账户」里，房屋具备交付条件后才解除监管</p><p><strong>要花什么：</strong>不花钱。签约前看一眼预售许可证，付款前核对账户，几分钟。难在销售让你转到别的账户时，要坚持不转</p><p class="gvl-note">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">2026 年 8 月 28 日以前就拿到建设工程规划许可证的楼盘，预售条件和资金监管按各地原来的规定办。首付和贷款要进监管账户，2010 年和 2022 年的文件都要求过。按现房销售的楼盘，开发商在盖房期间先收少量定金的，新规要求定金进定金监管账户。监管账户的户名和账号以购房合同里写的为准，付款前对一遍。合同被认定无效、开发商又不退钱的，要去法院起诉。一审普通程序 6 个月起，律师费一般自己出。二手房的房款怎么付，见第 7 条（交易资金专用存款账户）。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">住房城乡建设部、自然资源部、金融监管总局 (2026). 关于完善商品住房销售制度的通知（建房规〔2026〕3 号，第一部分第（二）（三）项，第二部分第（三）项）. <a href="https://www.gov.cn/gongbao/2026/issue_13026/202610/content_7082773.html" target="_blank" rel="noopener noreferrer">https://www.gov.cn/gongbao/2026/issue_13026/202610/content_7082773.html</a>；中国人民银行、金融监管总局 (2026). 关于改革完善房地产信贷管理推动加快构建房地产发展新模式的意见（银发〔2026〕171 号，第二十二条）. <a href="https://www.gov.cn/gongbao/2026/issue_13026/202610/content_7082770.html" target="_blank" rel="noopener noreferrer">https://www.gov.cn/gongbao/2026/issue_13026/202610/content_7082770.html</a>；银保监会办公厅、住房城乡建设部办公厅、人民银行办公厅 (2022). 关于商业银行出具保函置换预售监管资金有关工作的通知（银保监办发〔2022〕104 号，第二条）. <a href="https://www.gov.cn/zhengce/zhengceku/2022-11/14/content_5726954.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/2022-11/14/content_5726954.htm</a>；住房城乡建设部 (2010). 关于进一步加强房地产市场监管完善商品住房预售制度有关问题的通知（建房〔2010〕53 号，第一部分第（一）项，第二部分第（九）项）. <a href="http://www.gov.cn/gongbao/content/2010/content_1629136.htm" target="_blank" rel="noopener noreferrer">http://www.gov.cn/gongbao/content/2010/content_1629136.htm</a>；最高人民法院 (2020 修正). 关于审理商品房买卖合同纠纷案件适用法律若干问题的解释（法释〔2020〕17 号修正后文本，第二条）. <a href="https://www.court.gov.cn/fabu/xiangqing/282621.html" target="_blank" rel="noopener noreferrer">https://www.court.gov.cn/fabu/xiangqing/282621.html</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 15 章 · 租房与买房</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/15-租房与买房.md#10-买期房时先看预售许可证定金首付和贷款只打进合同写明的预售资金监管账户" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

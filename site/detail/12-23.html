@@ -11,289 +11,7 @@
 <meta property="og:title" content="亏了就按程序退场：能简易注销就注销，资不抵债走破产，别放着不管">
 <meta property="og:description" content="没欠债、不欠工资税款社保的，全体投资人写份承诺，公示 20 天没人提异议就能简易注销。个体户不用公示，10 天没异议直接注销。公司还不上债，可以申请破产。放着不管、2 年不报年报又联系不上的，吊销执照，负有责任的法定代表">
 <meta property="og:url" content="https://life.daogong.cc/detail/12-23.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,20 +40,20 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-high">性价比 高</span><span class="badge gain">换钱</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>没欠债、不欠工资税款社保的，全体投资人写份承诺，公示 20 天没人提异议就能简易注销。个体户不用公示，10 天没异议直接注销。公司还不上债，可以申请破产。放着不管、2 年不报年报又联系不上的，吊销执照，负有责任的法定代表人 3 年内不能再当法定代表人。</p><p><strong>换来什么：</strong>欠别人的和别人欠你的都没有，或者都已经还清。不欠工资、不欠社保、不欠税。全体投资人写了书面承诺。满足这几条，挂出来公示 20 日没人提异议，就能走简易注销。个体户不用公示，有关部门 10 日内没有异议就直接注销。公司还不上到期的债、欠的又比手上有的多（资不抵债）的，可以向法院申请重整、和解或者破产清算。已经解散又没清算、欠的比有的多的，该负责清算的人应当去申请破产清算。放着不管的后果是这样的：不按期公示年报，会被列进经营异常名录。连续 2 年不报年报、被列进经营异常名录还不改，按登记的地址又联系不上的，吊销营业执照。企业被吊销执照，法定代表人对此负有个人责任的，3 年内不得再当公司的法定代表人和董事、监事、高管。这 3 年从吊销那天算起。已经列进经营异常名录的，连简易注销都走不了（全国）</p><p><strong>要花什么：</strong>简易注销自己就能办：在国家企业信用信息公示系统上挂出来 20 日。还有债没还完的，要先把账理清，该收的收回来，该还的还掉，这一步叫清算。走破产要向法院申请，耗时几个月。难的是亏了之后不想面对，一直拖着不办。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>没欠债、不欠工资税款社保的，全体投资人写份承诺，公示 20 天没人提异议就能简易注销。个体户不用公示，10 天没异议直接注销。公司还不上债，可以申请破产。放着不管、2 年不报年报又联系不上的，吊销执照，负有责任的法定代表人 3 年内不能再当法定代表人。</p><p><strong>换来什么：</strong>欠别人的和别人欠你的都没有，或者都已经还清。不欠工资、不欠社保、不欠税。全体投资人写了书面承诺。满足这几条，挂出来公示 20 日没人提异议，就能走简易注销。个体户不用公示，有关部门 10 日内没有异议就直接注销。公司还不上到期的债、欠的又比手上有的多（资不抵债）的，可以向法院申请重整、和解或者破产清算。已经解散又没清算、欠的比有的多的，该负责清算的人应当去申请破产清算。放着不管的后果是这样的：不按期公示年报，会被列进经营异常名录。连续 2 年不报年报、被列进经营异常名录还不改，按登记的地址又联系不上的，吊销营业执照。企业被吊销执照，法定代表人对此负有个人责任的，3 年内不得再当公司的法定代表人和董事、监事、高管。这 3 年从吊销那天算起。已经列进经营异常名录的，连简易注销都走不了（全国）</p><p><strong>要花什么：</strong>简易注销自己就能办：在国家企业信用信息公示系统上挂出来 20 日。还有债没还完的，要先把账理清，该收的收回来，该还的还掉，这一步叫清算。走破产要向法院申请，耗时几个月。难的是亏了之后不想面对，一直拖着不办。</p><p class="gvl-note">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">企业信息公示暂行条例 2024 年经国务院令第 777 号修订，5 月 1 日起施行，此后没有再改。旧版第十七条「经营异常满 3 年列入严重违法企业名单」已经删掉。现在的严重违法失信名单管的是年报弄虚作假、情节严重的企业。网上很多说法还是旧版，别照抄。年报什么时候报、漏报了怎么补，见本节第 25 条（每年 1 月 1 日到 6 月 30 日上网报上一年的年报）。个人破产制度（个体户也算在内）目前只有个别地区在试点，本节没有核实原文，所以不写。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">国务院 (2021). 市场主体登记管理条例（国务院令第 746 号，第三十一、三十二、三十三条）. <a href="https://www.gov.cn/zhengce/zhengceku/2021-08/24/content_5632964.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/2021-08/24/content_5632964.htm</a>；市场监管总局等六部门 (2025). 企业注销指引（2025 年修订）（2025 年第 52 号公告）. <a href="https://www.gov.cn/zhengce/zhengceku/202512/content_7053238.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/202512/content_7053238.htm</a>；全国人大常委会 (2006). 企业破产法（第二、七条）. <a href="http://www.gov.cn/gongbao/content/2006/content_413952.htm" target="_blank" rel="noopener noreferrer">http://www.gov.cn/gongbao/content/2006/content_413952.htm</a>；国务院 (2024 修订). 企业信息公示暂行条例（国务院令第 777 号修订，第十八条）：「企业因连续2年未按规定报送年度报告被列入经营异常名录未改正，且通过登记的住所或者经营场所无法取得联系的，由县级以上市场监督管理部门吊销营业执照」. <a href="https://flk.npc.gov.cn/detail?id=ff8081819c46fcc5019cd18fc6e9557d" target="_blank" rel="noopener noreferrer">https://flk.npc.gov.cn/detail?id=ff8081819c46fcc5019cd18fc6e9557d</a>（国家法律法规数据库）；国务院 (2024). 关于修改和废止部分行政法规的决定（国务院令第 777 号）. <a href="https://www.gov.cn/gongbao/2024/issue_11246/202403/content_6941844.html" target="_blank" rel="noopener noreferrer">https://www.gov.cn/gongbao/2024/issue_11246/202403/content_6941844.html</a>；市场主体登记管理条例（第十二条第四项）与公司法（2023 年修订，第一百七十八条第一款第四项）：担任因违法被吊销营业执照的企业的法定代表人并负有个人责任的，自被吊销营业执照之日起未逾 3 年不得担任法定代表人和董事、监事、高级管理人员. <a href="https://www.gov.cn/zhengce/zhengceku/2021-08/24/content_5632964.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/2021-08/24/content_5632964.htm</a>；<a href="https://www.gov.cn/yaowen/liebiao/202312/content_6923395.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/yaowen/liebiao/202312/content_6923395.htm</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 12 章 · 创业与做生意</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/12-创业与做生意.md#23-亏了就按程序退场能简易注销就注销资不抵债走破产别放着不管" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

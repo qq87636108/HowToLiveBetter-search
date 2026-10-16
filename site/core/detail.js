@@ -89,7 +89,7 @@
   function load() {
     var id = getIdFromUrl();
     if (!id || !/^\d+-\d+$/.test(id)) {
-      document.getElementById('detailWrap').innerHTML = '<p style="color:#999;padding:40px 0;text-align:center">未找到该条目</p>';
+      document.getElementById('detailWrap').innerHTML = '<p class="muted-tip">未找到该条目</p>';
       return;
     }
     fetch(secFile(id)).then(function (r) { return r.json(); }).then(function (items) {
@@ -106,13 +106,13 @@
             throw new Error('no keymap');
           });
         }).catch(function () {
-          document.getElementById('detailWrap').innerHTML = '<p style="color:#999;padding:40px 0;text-align:center">未找到该条目</p>';
+          document.getElementById('detailWrap').innerHTML = '<p class="muted-tip">未找到该条目</p>';
         });
         return;
       }
       render(d, id);
     }).catch(function () {
-      document.getElementById('detailWrap').innerHTML = '<p style="color:#999;padding:40px 0;text-align:center">未找到该条目</p>';
+      document.getElementById('detailWrap').innerHTML = '<p class="muted-tip">未找到该条目</p>';
     });
   }
 
@@ -131,6 +131,16 @@
   function goHomeBtn() {
     window.location.href = 'index.html';
   }
+
+  // CSP 改造（2026-10-16）：按钮从内联 onclick 改为 JS 绑定（CSP 禁止内联事件）
+  // 注意要单独一个 DOMContentLoaded：下面原有的监听器对预渲染页会提前 return，而按钮绑定必须照常执行
+  document.addEventListener('DOMContentLoaded', function () {
+    [['detailSearchBtn', searchFromDetail], ['backResultsBtn', goBack], ['backHomeBtn', goHomeBtn]]
+      .forEach(function (p) {
+        var el = document.getElementById(p[0]);
+        if (el) el.addEventListener('click', p[1]);
+      });
+  });
 
   document.addEventListener('DOMContentLoaded', function () {
     // 预渲染页（/detail/<id>.html）：正文/标题/相关条目已在 HTML 里，跳过 fetch+render，

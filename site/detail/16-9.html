@@ -11,289 +11,7 @@
 <meta property="og:title" content="确诊痛风后长了痛风石、影像上看到骨头被啃出缺损或每年发作 2 次以上的，就长期吃降尿酸药，把血尿酸压到 360 µmol/L 以下并一直维持">
 <meta property="og:description" content="长了痛风石、骨头被啃出缺损或每年发作 2 次以上的，要长期吃降尿酸药，把尿酸压到 360 µmol/L 以下。发作少的，吃不吃和医生商量。由护士按化验结果帮着调药量的病人，两年后 95% 达标，照常看病的只有 30%。达">
 <meta property="og:url" content="https://life.daogong.cc/detail/16-9.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,7 +40,7 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge ">性价比 一般</span><span class="badge gain">换寿命</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>长了痛风石、骨头被啃出缺损或每年发作 2 次以上的，要长期吃降尿酸药，把尿酸压到 360 µmol/L 以下。发作少的，吃不吃和医生商量。由护士按化验结果帮着调药量的病人，两年后 95% 达标，照常看病的只有 30%。达标之后也不能停药，靠忌口降得有限。</p><p><strong>换来什么：</strong>一项随机分成两组的对照试验，517 名过去 12 个月内发作过的成人。一组由护士主导，给患者讲清楚病是怎么回事，再按指标把尿酸调到达标。另一组照常找全科医生看。2 年时血尿酸降到 &lt;360 µmol/L（6 mg/dL）的比例，95% 对 30%。达标的可能性是常规组的 3.18 倍（RR 3.18，95% CI 2.42–4.18，这个区间是数字的可信范围），P&lt;0.0001。第 2 年的发作频率、痛风石、生活质量这几项次要指标，也都优于常规组。每多换来一年算上生活质量折算的寿命（质量调整生命年），花费 £5,066。同一试验还做了随访研究，438 人发了问卷，收回 82%。两组都自己报告了过去 12 个月的发作次数。达标组的中位数是 0 次（中间一半人落在 0–0 次）。常规组是 1 次（0–3），P&lt;0.001。括号里的这个范围叫四分位距。仍在吃降尿酸药的比例，达标组是常规组的 1.19 倍（校正后 RR 1.19，1.09–1.30）。美国风湿病学会 2020 年痛风指南强烈推荐三种人启动降尿酸治疗：皮下长了痛风石的、影像检查看到痛风把骨头啃出缺损的、每年发作 ≥2 次的。发作过不止一次、但每年不到 2 次的，指南是有条件地建议吃，有条件的推荐要医生和病人商量着定。第一次发作的，有条件地不建议马上吃。例外是同时有 3 期及以上慢性肾病、血尿酸 &gt;9 mg/dL 或者长过尿路结石，这几种有条件地建议吃。做法是持续监测血尿酸，照着结果调剂量直到达标，目标 &lt;6 mg/dL。首选别嘌醇，3 期及以上慢性肾病的人也是首选它，起始剂量 ≤100 mg/日。启动时同时给抗炎的预防用药，至少吃 3 到 6 个月。同一指南还引用了一组病例观察。这些患者长期控制良好之后停了药，停药后血尿酸仍保持 &lt;7 mg/dL。他们当中，5 年跟踪期内一次都没发作的只有 13%（27/211）。饮食方面，限酒或戒酒的人，血尿酸比不限的人低 1.6 mg/dL，一份啤酒使血尿酸升高 0.16 mg/dL。健康饮食、地中海饮食、DASH 饮食的效果更小。首选哪种降尿酸药有分歧。美国风湿病学会指南强烈推荐别嘌醇作为首选，理由是剂量用够时有效、耐受好、安全、便宜。它还有条件地建议：吃非布司他的人如果有心血管病史，或新出了心血管事件，有别的药可换就换掉。这条推荐和 FDA 给非布司他加的黑框警告一致。依据之一是 CARES 试验，6190 名合并心血管病的痛风病人随机吃非布司他或别嘌醇。非布司他组的全因死亡风险是别嘌醇组的 1.22 倍（HR 1.22，95% CI 1.01–1.47，高约 22%）。心血管死亡是 1.34 倍（1.03–1.73，高约 34%）。欧洲的 FAST 试验结论不同。它纳入 6128 名 60 岁以上、有心血管危险因素的病人，非布司他的主要心血管事件不比别嘌醇多（HR 0.85，0.70–1.03）。死亡人数是非布司他组 7.2%、别嘌醇组 8.6%。吃促进尿酸从肾排出的药的人，美国风湿病学会有条件地不建议碱化尿液，因为没有证据说明有效，证据确定性很低。它同时要求叮嘱这些人多喝水。已知有肾结石或 3 期及以上慢性肾病的人不该用这类药。同一指南写到，HLA-B\<em>5801 这个基因型在汉族、韩国、泰国血统的人里最常见，占 7.4%，非裔美国人 3.8%，白人和西班牙裔各 0.7%。亚裔和非裔美国人吃别嘌醇，发生别嘌醇超敏综合征的风险都是白人的 3 倍。指南有条件地建议这两类人用别嘌醇前先查 HLA-B\</em>5801，证据确定性很低</p><p><strong>要花什么：</strong>别嘌醇每月几元到几十元。刚开始每几周查一次血尿酸来调药量，稳定之后每几个月查一次。头 3 到 6 个月还要同时吃一种预防发作的药。难在不疼的时候也得一直吃下去。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>长了痛风石、骨头被啃出缺损或每年发作 2 次以上的，要长期吃降尿酸药，把尿酸压到 360 µmol/L 以下。发作少的，吃不吃和医生商量。由护士按化验结果帮着调药量的病人，两年后 95% 达标，照常看病的只有 30%。达标之后也不能停药，靠忌口降得有限。</p><p><strong>换来什么：</strong>一项随机分成两组的对照试验，517 名过去 12 个月内发作过的成人。一组由护士主导，给患者讲清楚病是怎么回事，再按指标把尿酸调到达标。另一组照常找全科医生看。2 年时血尿酸降到 &lt;360 µmol/L（6 mg/dL）的比例，95% 对 30%。达标的可能性是常规组的 3.18 倍（RR 3.18，95% CI 2.42–4.18，这个区间是数字的可信范围），P&lt;0.0001。第 2 年的发作频率、痛风石、生活质量这几项次要指标，也都优于常规组。每多换来一年算上生活质量折算的寿命（质量调整生命年），花费 £5,066。同一试验还做了随访研究，438 人发了问卷，收回 82%。两组都自己报告了过去 12 个月的发作次数。达标组的中位数是 0 次（中间一半人落在 0–0 次）。常规组是 1 次（0–3），P&lt;0.001。括号里的这个范围叫四分位距。仍在吃降尿酸药的比例，达标组是常规组的 1.19 倍（校正后 RR 1.19，1.09–1.30）。美国风湿病学会 2020 年痛风指南强烈推荐三种人启动降尿酸治疗：皮下长了痛风石的、影像检查看到痛风把骨头啃出缺损的、每年发作 ≥2 次的。发作过不止一次、但每年不到 2 次的，指南是有条件地建议吃，有条件的推荐要医生和病人商量着定。第一次发作的，有条件地不建议马上吃。例外是同时有 3 期及以上慢性肾病、血尿酸 &gt;9 mg/dL 或者长过尿路结石，这几种有条件地建议吃。做法是持续监测血尿酸，照着结果调剂量直到达标，目标 &lt;6 mg/dL。首选别嘌醇，3 期及以上慢性肾病的人也是首选它，起始剂量 ≤100 mg/日。启动时同时给抗炎的预防用药，至少吃 3 到 6 个月。同一指南还引用了一组病例观察。这些患者长期控制良好之后停了药，停药后血尿酸仍保持 &lt;7 mg/dL。他们当中，5 年跟踪期内一次都没发作的只有 13%（27/211）。饮食方面，限酒或戒酒的人，血尿酸比不限的人低 1.6 mg/dL，一份啤酒使血尿酸升高 0.16 mg/dL。健康饮食、地中海饮食、DASH 饮食的效果更小。首选哪种降尿酸药有分歧。美国风湿病学会指南强烈推荐别嘌醇作为首选，理由是剂量用够时有效、耐受好、安全、便宜。它还有条件地建议：吃非布司他的人如果有心血管病史，或新出了心血管事件，有别的药可换就换掉。这条推荐和 FDA 给非布司他加的黑框警告一致。依据之一是 CARES 试验，6190 名合并心血管病的痛风病人随机吃非布司他或别嘌醇。非布司他组的全因死亡风险是别嘌醇组的 1.22 倍（HR 1.22，95% CI 1.01–1.47，高约 22%）。心血管死亡是 1.34 倍（1.03–1.73，高约 34%）。欧洲的 FAST 试验结论不同。它纳入 6128 名 60 岁以上、有心血管危险因素的病人，非布司他的主要心血管事件不比别嘌醇多（HR 0.85，0.70–1.03）。死亡人数是非布司他组 7.2%、别嘌醇组 8.6%。吃促进尿酸从肾排出的药的人，美国风湿病学会有条件地不建议碱化尿液，因为没有证据说明有效，证据确定性很低。它同时要求叮嘱这些人多喝水。已知有肾结石或 3 期及以上慢性肾病的人不该用这类药。同一指南写到，HLA-B\<em>5801 这个基因型在汉族、韩国、泰国血统的人里最常见，占 7.4%，非裔美国人 3.8%，白人和西班牙裔各 0.7%。亚裔和非裔美国人吃别嘌醇，发生别嘌醇超敏综合征的风险都是白人的 3 倍。指南有条件地建议这两类人用别嘌醇前先查 HLA-B\</em>5801，证据确定性很低</p><p><strong>要花什么：</strong>别嘌醇每月几元到几十元。刚开始每几周查一次血尿酸来调药量，稳定之后每几个月查一次。头 3 到 6 个月还要同时吃一种预防发作的药。难在不疼的时候也得一直吃下去。</p><p class="gvl-note">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
@@ -334,8 +52,8 @@
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/16-得了慢性病之后怎么活.md#9-确诊痛风后长了痛风石影像上看到骨头被啃出缺损或每年发作-2-次以上的就长期吃降尿酸药把血尿酸压到-360-µmoll-以下并一直维持" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

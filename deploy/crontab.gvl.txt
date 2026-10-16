@@ -1,0 +1,12 @@
+# 高性价比人生 2.0 —— 定时任务真相源（2026-10-16 代码化）
+# 装法：bash deploy/install_cron.sh      （幂等：先删旧 gvl 行，再按本文件装）
+# 为什么代码化：crontab 是运行时配置，机器重装即静默消失 —— 31.11 重装后本文件里的前两行
+# 没了，内容断档 5 天无人知（2026-10-16 复盘 P0）。
+#
+# 主跑 4:17（非整点，避开 GitHub 高峰）
+17 4 * * * cd /root/HermesAgent/projects/goodvaluelife2 && /usr/bin/python3 scripts/pipeline.py >> data/pipeline.log 2>&1
+# 补跑 4:47（当日无 success 记录才真正执行；flock 防与主跑并发）
+47 4 * * * cd /root/HermesAgent/projects/goodvaluelife2 && /usr/bin/python3 scripts/pipeline.py --retry >> data/pipeline.log 2>&1
+# 监工 8:40（独立进程，不寄生 pipeline；健康时零输出，异常写 monitor.log + alert.log）
+# 用户侧投递由 Hermes 定时任务「gvl 内容监工」9:00 跑同一脚本完成（走微信/桌面通道）
+40 8 * * * cd /root/HermesAgent/projects/goodvaluelife2 && /usr/bin/python3 scripts/check_freshness.py >> data/monitor.log 2>&1

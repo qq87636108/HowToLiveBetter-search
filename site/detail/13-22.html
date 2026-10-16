@@ -11,289 +11,7 @@
 <meta property="og:title" content="高温下头晕、恶心、不出汗或意识不清，立刻挪到阴凉处脱衣泼水降温，意识不清的不喂水、打 120">
 <meta property="og:description" content="皮肤烫红、说话含糊、意识混乱是热射病。体温能在 10 到 15 分钟里升到 41 ℃以上，重症的病死率极高。立刻挪到阴凉通风处、脱掉衣服、用凉水和湿毛巾降温，同时打 120。意识不清的一口水都不要喂。">
 <meta property="og:url" content="https://life.daogong.cc/detail/13-22.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,20 +40,20 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-b">证据等级 B</span><span class="badge cp-top">性价比 极高</span><span class="badge gain">换寿命</span><span class="badge cost-zero">成本 零</span></div>
 
-  <div class="detail-body" id="dBody"><p>皮肤烫红、说话含糊、意识混乱是热射病。体温能在 10 到 15 分钟里升到 41 ℃以上，重症的病死率极高。立刻挪到阴凉通风处、脱掉衣服、用凉水和湿毛巾降温，同时打 120。意识不清的一口水都不要喂。</p><p><strong>换来什么：</strong>美国国家气象局：热射病是「严重的医疗急症」。它的表现是体温高于 103°F（39.4°C）、意识混乱、说话含糊、皮肤发烫发红。处理是立刻叫急救、移到凉处、用凉水和湿布降温、「不要给液体」。热衰竭的表现是大汗、乏力、皮肤湿冷、脉快而弱，处理是移到凉处、松开衣服、小口喝水。呕吐、恶化或者超过 1 小时不缓解就就医。云南省疾控局提示：立即转移到阴凉通风处，用冷湿毛巾降温，意识清醒的补含盐饮料，症状严重的立即拨打急救电话。它还说重症热射病「病死率极高」。中国疾控中心提示：先降温，后转运，在病人失去意识后的「黄金半小时」内降温。有条件的，无基础疾病的青壮年可以用冷水浸泡快速降温，老人和有基础病的往皮肤上喷水、靠蒸发降温。荒野医学会 2024 年更新的热病指南说，冷水浸泡是治重症中暑最重要的办法，降温最快。没有冰水就用手边最凉的水，泡不了就喷水加扇风，速度大约是浸泡的一半。美国职业安全卫生研究所（NIOSH）说，热射病发作时体温能在 10 到 15 分钟内升到 106°F（约 41 ℃）以上。它列的症状里有「皮肤又热又干，或者大量出汗」。中国疾控 2014 年版中暑指南列的热射病表现有「皮肤红、热、且干燥无汗」，处理要求「不要给病人喝水」，病人呕吐就翻成侧躺，保持呼吸道通畅</p><p><strong>要花什么：</strong>不花钱。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>皮肤烫红、说话含糊、意识混乱是热射病。体温能在 10 到 15 分钟里升到 41 ℃以上，重症的病死率极高。立刻挪到阴凉通风处、脱掉衣服、用凉水和湿毛巾降温，同时打 120。意识不清的一口水都不要喂。</p><p><strong>换来什么：</strong>美国国家气象局：热射病是「严重的医疗急症」。它的表现是体温高于 103°F（39.4°C）、意识混乱、说话含糊、皮肤发烫发红。处理是立刻叫急救、移到凉处、用凉水和湿布降温、「不要给液体」。热衰竭的表现是大汗、乏力、皮肤湿冷、脉快而弱，处理是移到凉处、松开衣服、小口喝水。呕吐、恶化或者超过 1 小时不缓解就就医。云南省疾控局提示：立即转移到阴凉通风处，用冷湿毛巾降温，意识清醒的补含盐饮料，症状严重的立即拨打急救电话。它还说重症热射病「病死率极高」。中国疾控中心提示：先降温，后转运，在病人失去意识后的「黄金半小时」内降温。有条件的，无基础疾病的青壮年可以用冷水浸泡快速降温，老人和有基础病的往皮肤上喷水、靠蒸发降温。荒野医学会 2024 年更新的热病指南说，冷水浸泡是治重症中暑最重要的办法，降温最快。没有冰水就用手边最凉的水，泡不了就喷水加扇风，速度大约是浸泡的一半。美国职业安全卫生研究所（NIOSH）说，热射病发作时体温能在 10 到 15 分钟内升到 106°F（约 41 ℃）以上。它列的症状里有「皮肤又热又干，或者大量出汗」。中国疾控 2014 年版中暑指南列的热射病表现有「皮肤红、热、且干燥无汗」，处理要求「不要给病人喝水」，病人呕吐就翻成侧躺，保持呼吸道通畅</p><p><strong>要花什么：</strong>不花钱。</p><p class="gvl-note">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">不要等「缓一缓」，热射病时体温能在十几分钟里升到 41 ℃以上。热射病可能不出汗，也可能满身大汗，NIOSH 两种都列了，别因为还在出汗就放过。不要给意识不清的人灌水，吐了就让他侧躺。冰袋放哪里，两边说法不同。中国疾控说敷在脖子、腋窝和大腿根，荒野医学会说研究看不出敷这几处有降温效果。荒野医学会的建议是，只有冰袋可用时就把全身盖满，冰袋不够再放脸颊、手心和脚底。两边都说有条件就用冷水浸泡。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">US National Weather Service. Heat Related Illnesses. <a href="https://www.weather.gov/safety/heat-illness" target="_blank" rel="noopener noreferrer">https://www.weather.gov/safety/heat-illness</a> ; 云南省疾控局 (2026). 出现这些症状，你可能是中暑了. <a href="https://ynsjkj.yn.gov.cn/html/2026/jikongkepu_0719/2606.html" target="_blank" rel="noopener noreferrer">https://ynsjkj.yn.gov.cn/html/2026/jikongkepu_0719/2606.html</a> ; 中国疾病预防控制中心. 高温天气，中国疾控中心提醒您谨防中暑：「如有条件可用冷水浸泡的方法对无基础疾病的青壮年快速降温。老人和有基础疾病的患者可向皮肤喷水通过蒸发降温。降温应遵循&quot;先降温，后转运&quot; 的原则」. <a href="https://www.chinacdc.cn/jkkp/ggws/hjyssj/202409/t20240906_296985.html" target="_blank" rel="noopener noreferrer">https://www.chinacdc.cn/jkkp/ggws/hjyssj/202409/t20240906_296985.html</a> ; 国家卫生健康委 (2010). 高温中暑预防知识要点. <a href="https://www.nhc.gov.cn/wjw/jbyfykz/201007/1edb19b7dd4e4bdf8da5ea45f4a64e23.shtml" target="_blank" rel="noopener noreferrer">https://www.nhc.gov.cn/wjw/jbyfykz/201007/1edb19b7dd4e4bdf8da5ea45f4a64e23.shtml</a> ; Eifling KP 等 (2024). Wilderness Medical Society Clinical Practice Guidelines for the Prevention and Treatment of Heat Illness: 2024 Update. Wilderness &amp; Environmental Medicine 35(1_suppl):112S-127S. <a href="https://doi.org/10.1177/10806032241227924" target="_blank" rel="noopener noreferrer">https://doi.org/10.1177/10806032241227924</a>（正文站点拒绝自动抓取，具体推荐按荒野医学会官网的更新摘要核对：「cold water immersion … is the most important method of treating severe heat illness」「If CWI is unavailable, evaporative cooling is the recommended second-line treatment. … generally half as fast as CWI」<a href="https://wms.org/magazine/magazine/1540/Heat-Illness-CPG/default.aspx" target="_blank" rel="noopener noreferrer">https://wms.org/magazine/magazine/1540/Heat-Illness-CPG/default.aspx</a>）；Lipman GS 等 (2019). 同指南 2019 版. <a href="https://doi.org/10.1016/j.wem.2018.10.004" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.wem.2018.10.004</a>；US CDC/NIOSH. Heat-related Illnesses：「When heat stroke occurs, the body temperature can rise to 106°F or higher within 10 to 15 minutes」「Hot, dry skin or profuse sweating」. <a href="https://www.cdc.gov/niosh/heat-stress/about/illnesses.html" target="_blank" rel="noopener noreferrer">https://www.cdc.gov/niosh/heat-stress/about/illnesses.html</a>；中国疾病预防控制中心职业卫生与中毒控制所 (2014). 公众高温中暑预防与紧急处理指南（2014 版）. <a href="https://niohp.chinacdc.cn/sndt/201405/t20140530_97623.htm" target="_blank" rel="noopener noreferrer">https://niohp.chinacdc.cn/sndt/201405/t20140530_97623.htm</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 13 章 · 紧急情况</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/13-紧急情况.md#22-高温下头晕恶心不出汗或意识不清立刻挪到阴凉处脱衣泼水降温意识不清的不喂水打-120" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

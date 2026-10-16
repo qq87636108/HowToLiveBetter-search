@@ -11,289 +11,7 @@
 <meta property="og:title" content="报警当场要受案回执，不立案要书面通知：7 日内可申请复议，再 7 日可申请复核，检察院能通知公安立案">
 <meta property="og:description" content="报了警要当场拿到受案回执，这是你报过案的凭据。公安决定不立案，应当给你书面的不予立案通知书。不服可以 7 日内申请复议，还不服再 7 日内申请复核。你也可以找检察院，请它监督公安立案。">
 <meta property="og:url" content="https://life.daogong.cc/detail/8-39.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,20 +40,20 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge ">性价比 一般</span><span class="badge gain">换人身自由</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>报了警要当场拿到受案回执，这是你报过案的凭据。公安决定不立案，应当给你书面的不予立案通知书。不服可以 7 日内申请复议，还不服再 7 日内申请复核。你也可以找检察院，请它监督公安立案。</p><p><strong>换来什么：</strong>《公安机关办理刑事案件程序规定》（公安部令第 159 号修正后）第一百七十一条管的是受案回执。原文是：「公安机关接受案件时，应当制作受案登记表和受案回执，并将受案回执交扭送人、报案人、控告人、举报人」。第一百七十四条：「对接受的案件，或者发现的犯罪线索，公安机关应当迅速进行审查」。第一百七十八条管的是立不立案。接受案件后经审查，认为有犯罪事实需要追究刑事责任，又属于自己管辖的，就要立案。立案要经县级以上公安机关负责人批准。不立案也要给你一张纸：「对有控告人的案件，决定不予立案的，公安机关应当制作不予立案通知书，并在三日以内送达控告人」。第一百七十九条管的是不服怎么办。原文是：「控告人对不予立案决定不服的，可以在收到不予立案通知书后七日以内向作出决定的公安机关申请复议；公安机关应当在收到复议申请后三十日以内作出决定」。接着写：「控告人对不予立案的复议决定不服的，可以在收到复议决定书后七日以内向上一级公安机关申请复核；上一级公安机关应当在收到复核申请后三十日以内作出决定。对上级公安机关撤销不予立案决定的，下级公安机关应当执行」。案情重大、复杂的可以延长复议复核的时限，但「不得超过三十日，并书面告知申请人」。刑事诉讼法第一百一十二条：认为有犯罪事实需要追究刑事责任的应当立案；不予立案的，「将不立案的原因通知控告人。控告人如果不服，可以申请复议」。第一百一十三条：「被害人认为公安机关对应当立案侦查的案件而不立案侦查，向人民检察院提出的，人民检察院应当要求公安机关说明不立案的理由。人民检察院认为公安机关不立案理由不能成立的，应当通知公安机关立案，公安机关接到通知后应当立案」。《公安机关办理行政案件程序规定》第六十一条也有同样的要求。属于本单位管辖的案件，「应当立即调查处理，制作受案登记表和受案回执，并将受案回执交报案人、控告人、举报人、扭送人」。办理治安案件的期限「自受理之日起不得超过 30 日；案情重大、复杂的，经上一级公安机关批准，可以延长 30 日」，鉴定期间不计入办案期限。《公安机关督察条例》第九条管的是投诉警察。原文是：「督察机构对群众投诉的正在发生的公安机关及其人民警察违法违纪行为，应当及时出警，按照规定给予现场处置，并将处理结果及时反馈投诉人」（全国）</p><p><strong>要花什么：</strong>不花钱。当场多问一句，把受案回执要到手。之后按上面的日期去追问进度。难在一次次开口去问。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>报了警要当场拿到受案回执，这是你报过案的凭据。公安决定不立案，应当给你书面的不予立案通知书。不服可以 7 日内申请复议，还不服再 7 日内申请复核。你也可以找检察院，请它监督公安立案。</p><p><strong>换来什么：</strong>《公安机关办理刑事案件程序规定》（公安部令第 159 号修正后）第一百七十一条管的是受案回执。原文是：「公安机关接受案件时，应当制作受案登记表和受案回执，并将受案回执交扭送人、报案人、控告人、举报人」。第一百七十四条：「对接受的案件，或者发现的犯罪线索，公安机关应当迅速进行审查」。第一百七十八条管的是立不立案。接受案件后经审查，认为有犯罪事实需要追究刑事责任，又属于自己管辖的，就要立案。立案要经县级以上公安机关负责人批准。不立案也要给你一张纸：「对有控告人的案件，决定不予立案的，公安机关应当制作不予立案通知书，并在三日以内送达控告人」。第一百七十九条管的是不服怎么办。原文是：「控告人对不予立案决定不服的，可以在收到不予立案通知书后七日以内向作出决定的公安机关申请复议；公安机关应当在收到复议申请后三十日以内作出决定」。接着写：「控告人对不予立案的复议决定不服的，可以在收到复议决定书后七日以内向上一级公安机关申请复核；上一级公安机关应当在收到复核申请后三十日以内作出决定。对上级公安机关撤销不予立案决定的，下级公安机关应当执行」。案情重大、复杂的可以延长复议复核的时限，但「不得超过三十日，并书面告知申请人」。刑事诉讼法第一百一十二条：认为有犯罪事实需要追究刑事责任的应当立案；不予立案的，「将不立案的原因通知控告人。控告人如果不服，可以申请复议」。第一百一十三条：「被害人认为公安机关对应当立案侦查的案件而不立案侦查，向人民检察院提出的，人民检察院应当要求公安机关说明不立案的理由。人民检察院认为公安机关不立案理由不能成立的，应当通知公安机关立案，公安机关接到通知后应当立案」。《公安机关办理行政案件程序规定》第六十一条也有同样的要求。属于本单位管辖的案件，「应当立即调查处理，制作受案登记表和受案回执，并将受案回执交报案人、控告人、举报人、扭送人」。办理治安案件的期限「自受理之日起不得超过 30 日；案情重大、复杂的，经上一级公安机关批准，可以延长 30 日」，鉴定期间不计入办案期限。《公安机关督察条例》第九条管的是投诉警察。原文是：「督察机构对群众投诉的正在发生的公安机关及其人民警察违法违纪行为，应当及时出警，按照规定给予现场处置，并将处理结果及时反馈投诉人」（全国）</p><p><strong>要花什么：</strong>不花钱。当场多问一句，把受案回执要到手。之后按上面的日期去追问进度。难在一次次开口去问。</p><p class="gvl-note">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">受益人是你自己。报了警不一定就会处理，但办不办、多久办，都有明文的标准和期限，不是看接警的人当天心情。三个动作按顺序记。① 当场拿受案回执，把案件编号和受理单位记下来。② 到期没结果，就按上面的期限去问进度，问「案子在哪个环节」，别问「为什么不管我」。③ 收到不予立案通知书，先看理由，7 日内复议，再 7 日复核。同时可以向人民检察院提出立案监督，三条路不冲突。治安案件，就是打架、小偷小摸这类。办案期限从受理那天算起，不超过 30 日。案情重大复杂的，经上一级公安机关批准可以再延 30 日。做鉴定的时间不算在内。接待态度差就走督察投诉，案子本身照样按立案流程追。捡到失物、邻里纠纷这类本来就不是刑事案件。公安机关会按行政案件或者调解处理，甚至只是登记备案，别按「报案没人管」来理解。被诈骗之后的止付流程，见本节第 2 条（立刻打 110 要求止付）。被网暴见本节第 37 条（被网暴了先固证再挑路）</span></div><div class="meta-row"><span class="k">出处</span><span class="v">全国人大 (2018). 刑事诉讼法（2018 年修正，第一百一十二、一百一十三条）. <a href="https://flk.npc.gov.cn/detail?id=ff8080816f135f46016f1d1b81b01351" target="_blank" rel="noopener noreferrer">https://flk.npc.gov.cn/detail?id=ff8080816f135f46016f1d1b81b01351</a>；公安部 (2020). 关于修改《公安机关办理刑事案件程序规定》的决定（公安部令第 159 号）及修正后全文. <a href="http://www.gov.cn/gongbao/content/2020/content_5549884.htm" target="_blank" rel="noopener noreferrer">http://www.gov.cn/gongbao/content/2020/content_5549884.htm</a>；公安部 (2013/2019 修正). 公安机关办理行政案件程序规定（公安部令第 125 号，第 149 号修改决定）. <a href="http://www.gov.cn/gongbao/content/2013/content_2321117.htm" target="_blank" rel="noopener noreferrer">http://www.gov.cn/gongbao/content/2013/content_2321117.htm</a>、<a href="http://www.gov.cn/zhengce/zhengceku/2018-12/31/content_5428593.htm" target="_blank" rel="noopener noreferrer">http://www.gov.cn/zhengce/zhengceku/2018-12/31/content_5428593.htm</a>；国务院 (2011). 公安机关督察条例（国务院令第 603 号，第九条）. <a href="https://www.gov.cn/zhengce/zhengceku/2011-09/08/content_6138.htm" target="_blank" rel="noopener noreferrer">https://www.gov.cn/zhengce/zhengceku/2011-09/08/content_6138.htm</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 8 章 · 别把自己搭进去</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/08-别把自己搭进去.md#39-报警当场要受案回执不立案要书面通知7-日内可申请复议再-7-日可申请复核检察院能通知公安立案" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

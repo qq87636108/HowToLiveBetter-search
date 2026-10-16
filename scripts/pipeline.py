@@ -211,6 +211,13 @@ def main():
         if r.returncode != 0:
             raise RuntimeError("gen_static_pages 失败: " + (r.stdout[-400:] + r.stderr[-400:]))
         print(r.stdout.strip())
+        # 资源版本号：给 /core/*.js|css 引用加 ?v=<内容hash>（JS/CSS 缓存 86400s 无版本号，
+        # 改完脚本老访客最长 24h 拿旧文件；2026-10-16 专家复核补充）
+        r = subprocess.run([sys.executable, BASE + "/scripts/version_assets.py"],
+                           capture_output=True, text=True, cwd=BASE)
+        if r.returncode != 0:
+            raise RuntimeError("version_assets 失败: " + (r.stdout[-400:] + r.stderr[-400:]))
+        print(r.stdout.strip())
 
         # 重建场景关键词库（scene_map 场景词 → keywords.json/scenes.json；白名单重生成，垃圾键不累积）
         r = subprocess.run([sys.executable, BASE + "/scripts/gen_keywords.py"],
@@ -306,6 +313,11 @@ def main():
                 rr = subprocess.run([sys.executable, BASE + "/scripts/gen_static_pages.py", "--force"],
                                     capture_output=True, text=True, cwd=BASE)
                 print("[回滚] 静态页重生成:", rr.stdout.strip()[-120:] or rr.stderr.strip()[-120:])
+                # 重生成后必须重打版本号（2026-10-16 专家评审发现4）：
+                # 否则回滚出的 HTML 丢 ?v=，下次 verify_deploy 会被 ?v= 断言卡死
+                va = subprocess.run([sys.executable, BASE + "/scripts/version_assets.py"],
+                                    capture_output=True, text=True, cwd=BASE)
+                print("[回滚] 资源版本号:", va.stdout.strip()[-100:] or va.stderr.strip()[-100:])
             except Exception as _re:
                 print("[回滚] 静态页重生成失败:", _re)
         run["error"] = str(e)[:300]

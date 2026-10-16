@@ -162,7 +162,7 @@
       idx += size;
       if (!row.length) return;
       html += '<div class="pill-row">' + row.map(function (s) {
-        return '<button class="pill ' + s.l + '" onclick="quick(\'' + escapeAttr(s.t) + '\')">' + escapeHtml(s.t) + '</button>';
+        return '<button class="pill ' + s.l + '" data-q="' + escapeAttr(s.t) + '">' + escapeHtml(s.t) + '</button>';
       }).join('') + '</div>';
     });
     pillsEl.innerHTML = html;
@@ -227,14 +227,14 @@
       metaEl.textContent = '';
       var pills = relatedPills(state.keyword);
       var pillHtml = pills.map(function (p) {
-        return '<button class="pill ' + p.l + '" onclick="quick(\'' + escapeAttr(p.t) + '\')">' + escapeHtml(p.t) + '</button>';
+        return '<button class="pill ' + p.l + '" data-q="' + escapeAttr(p.t) + '">' + escapeHtml(p.t) + '</button>';
       }).join('');
       listEl.innerHTML = '<div class="noresult">没有找到与「' + escapeHtml(state.keyword) + '」相关的建议。<br>'
         + '<span class="tip">换个更短的关键词试试，或者从这些场景进入：</span><br><br>'
         + '<div class="pill-row">' + pillHtml + '</div></div>';
       return;
     }
-    metaEl.innerHTML = '找到约 <b style="color:#333">' + items.length + '</b> 条相关建议';
+    metaEl.innerHTML = '找到约 <b class="count-num">' + items.length + '</b> 条相关建议';
     listEl.innerHTML = items.map(function (d) { return renderItem(d, hlWords); }).join('');
   }
 
@@ -259,6 +259,24 @@
     showResults();
     render();
   }
+  // CSP 改造（2026-10-16）：按钮从内联 onclick 改为 JS 绑定（CSP 禁止内联事件）
+  document.addEventListener('DOMContentLoaded', function () {
+    [['searchFromHomeBtn', function () { searchFrom('home'); }],
+     ['searchFromResultBtn', function () { searchFrom('result'); }],
+     ['logoHome', goHome]].forEach(function (p) {
+      var el = document.getElementById(p[0]);
+      if (el) el.addEventListener('click', p[1]);
+    });
+  });
+
+  // 胶囊是 JS 动态生成的（首页 22 个 + 0 命中推荐），逐个绑定不如文档级事件委托：
+  // 一处监听覆盖现有与将来所有 .pill，点击取 data-q 走 quick()（2026-10-16 专家评审揪出的阻塞级缺陷）
+  document.addEventListener('click', function (ev) {
+    var t = ev.target;
+    var b = t && t.closest ? t.closest('button.pill[data-q]') : null;
+    if (b) quick(b.getAttribute('data-q'));
+  });
+
   function quick(text) {
     document.getElementById('homeInput').value = text;
     document.getElementById('resultInput').value = text;

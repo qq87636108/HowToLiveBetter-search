@@ -11,289 +11,7 @@
 <meta property="og:title" content="进货一批留一批票据和上家信息，进货价明显低于市场价的不进：员工替公司进的假货，算公司犯罪时老板也是被判的那个">
 <meta property="og:description" content="卖假货，挣到 3 万，或者卖到 5 万，就够判刑，判 3 年以下。没卖出去的货，货值到了销售标准的三倍也算。「我不知道是假的」不由你说了算：进货价明显低于市场价又说不出理由，就可以认定你知情。留住采购合同、发票、付款记录">
 <meta property="og:url" content="https://life.daogong.cc/detail/12-20.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,20 +40,20 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-high">性价比 高</span><span class="badge gain">换人身自由</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>卖假货，挣到 3 万，或者卖到 5 万，就够判刑，判 3 年以下。没卖出去的货，货值到了销售标准的三倍也算。「我不知道是假的」不由你说了算：进货价明显低于市场价又说不出理由，就可以认定你知情。留住采购合同、发票、付款记录和上家信息，才有免赔那条路。</p><p><strong>换来什么：</strong>明知是假冒注册商标的商品还卖，挣到的钱（违法所得）够 3 万元，就到了要判刑的门槛。卖出去的金额够 5 万元，也一样。判 3 年以下，同时罚钱，或者只罚钱。达到这个标准十倍的，判 3 到 10 年并罚钱。货还压在仓库没卖出去也算：货值到了销售金额标准三倍以上的，同样构成犯罪。「明知」不用你自己承认。最高人民法院和最高人民检察院 2025 年的司法解释，列了五种可以直接认定你知情的情形。你拿得出证据证明确实不知道的除外。一是知道商品上的注册商标被涂改、调换或者覆盖。二是伪造、涂改商标注册人授权文件，或者知道该文件被伪造、涂改。三是因销售假冒商品受过刑事或者行政处罚，又销售同一种的。四是无正当理由，以明显低于市场价格进货或者销售的。五是被行政执法机关、司法机关发现后，转移、销毁侵权商品和会计凭证等证据，或者提供虚假证明的。公司犯这一条的，「对单位判处罚金，并对其直接负责的主管人员和其他直接责任人员」按同一条处罚。就是公司罚钱，拍板的负责人和经手的人按同一条判。所以公司犯这一条时，货就算是员工进的，拍板的那个人也要挨判。反过来，商标法留了一条出路：卖的时候确实不知道这货侵犯了别人的注册商标，「能证明该商品是自己合法取得并说明提供者的，不承担赔偿责任」。能不能免赔，全看有没有票据和上家信息，没留就用不上这一条（全国，司法解释 2025 年 4 月 26 日起施行）</p><p><strong>要花什么：</strong>不花钱。每批货都留好这几样：采购合同、发票、付款记录、上家的营业执照和授权文件。再定一条内部规矩：谁进的货谁签字，价格明显低于市场价的一律不进。难的是放过那些看着很赚钱的低价货。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>卖假货，挣到 3 万，或者卖到 5 万，就够判刑，判 3 年以下。没卖出去的货，货值到了销售标准的三倍也算。「我不知道是假的」不由你说了算：进货价明显低于市场价又说不出理由，就可以认定你知情。留住采购合同、发票、付款记录和上家信息，才有免赔那条路。</p><p><strong>换来什么：</strong>明知是假冒注册商标的商品还卖，挣到的钱（违法所得）够 3 万元，就到了要判刑的门槛。卖出去的金额够 5 万元，也一样。判 3 年以下，同时罚钱，或者只罚钱。达到这个标准十倍的，判 3 到 10 年并罚钱。货还压在仓库没卖出去也算：货值到了销售金额标准三倍以上的，同样构成犯罪。「明知」不用你自己承认。最高人民法院和最高人民检察院 2025 年的司法解释，列了五种可以直接认定你知情的情形。你拿得出证据证明确实不知道的除外。一是知道商品上的注册商标被涂改、调换或者覆盖。二是伪造、涂改商标注册人授权文件，或者知道该文件被伪造、涂改。三是因销售假冒商品受过刑事或者行政处罚，又销售同一种的。四是无正当理由，以明显低于市场价格进货或者销售的。五是被行政执法机关、司法机关发现后，转移、销毁侵权商品和会计凭证等证据，或者提供虚假证明的。公司犯这一条的，「对单位判处罚金，并对其直接负责的主管人员和其他直接责任人员」按同一条处罚。就是公司罚钱，拍板的负责人和经手的人按同一条判。所以公司犯这一条时，货就算是员工进的，拍板的那个人也要挨判。反过来，商标法留了一条出路：卖的时候确实不知道这货侵犯了别人的注册商标，「能证明该商品是自己合法取得并说明提供者的，不承担赔偿责任」。能不能免赔，全看有没有票据和上家信息，没留就用不上这一条（全国，司法解释 2025 年 4 月 26 日起施行）</p><p><strong>要花什么：</strong>不花钱。每批货都留好这几样：采购合同、发票、付款记录、上家的营业执照和授权文件。再定一条内部规矩：谁进的货谁签字，价格明显低于市场价的一律不进。难的是放过那些看着很赚钱的低价货。</p><p class="gvl-note">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">化妆品、酒水、母婴、数码、服装是这类案子的高发品类。共同点是同一款货有巨大的价差空间。「渠道货」「尾单」「海外免税」这些说法，都不能替代票据。判刑之外还有一道行政处罚。认定侵权成立的，侵权商品和工具要没收，违法经营额 5 万元以上的还可以并处 5 倍以下罚款。已经进了货才发现不对，立刻停售、封存，再联系品牌方或者市场监管部门。别继续卖，更别把货和账销毁。销毁证据正好落进上面「推定你明知是假货」的第五种情形。用别人的图案见第 21 条（图案要么自己做要么买授权）。有一种套路专门打这条：有人主动上门，说这批笔或者别的小商品白送给你，放店里卖了再分钱。过些天就有人来买走、当场取证，再按侵权来索赔。白给的货，免赔要的三个条件恰好全缺：没有采购合同和付款记录，说不出真实的提供者，价格明显不正常。「合法取得并说明提供者」一条都用不上。所以主动送货上门、不给票据、只留一个微信号的，一律不上架。真要做代销，就签书面的代销合同，留下对方的身份证和营业执照复印件，把货归谁、侵权了算谁的写进去。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">全国人大常委会 (2020). 刑法修正案（十一）（第十七、二十四项，即刑法第二百一十四、二百二十条）. <a href="https://www.spp.gov.cn/zdgz/202012/t20201227_503682.shtml" target="_blank" rel="noopener noreferrer">https://www.spp.gov.cn/zdgz/202012/t20201227_503682.shtml</a>；最高人民法院、最高人民检察院 (2025). 关于办理侵犯知识产权刑事案件适用法律若干问题的解释（法释〔2025〕5 号，2025 年 4 月 26 日起施行）. <a href="https://www.spp.gov.cn/xwfbh/wsfbt/202504/t20250424_693977.shtml" target="_blank" rel="noopener noreferrer">https://www.spp.gov.cn/xwfbh/wsfbt/202504/t20250424_693977.shtml</a>；全国人大常委会 (2019). 商标法（2019 年修正，第五十七、六十四条；2026 年 6 月 26 日修订后为第七十二、七十八条，自 2027 年 1 月 1 日起施行）. <a href="https://www.cnipa.gov.cn/art/2019/7/30/art_95_28179.html" target="_blank" rel="noopener noreferrer">https://www.cnipa.gov.cn/art/2019/7/30/art_95_28179.html</a>、<a href="https://www.cnipa.gov.cn/art/2026/6/26/art_95_206942.html" target="_blank" rel="noopener noreferrer">https://www.cnipa.gov.cn/art/2026/6/26/art_95_206942.html</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 12 章 · 创业与做生意</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/12-创业与做生意.md#20-进货一批留一批票据和上家信息进货价明显低于市场价的不进员工替公司进的假货算公司犯罪时老板也是被判的那个" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

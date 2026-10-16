@@ -11,289 +11,7 @@
 <meta property="og:title" content="导盲犬可以带进公共场所和公共交通，盲人免费坐市内公交">
 <meta property="og:description" content="法律写明，公共场所和公共交通要为带导盲犬、导听犬、辅助犬的残疾人提供便利。盲人凭有效证件免费坐市内公交、地铁和渡船，残疾人可以免费带随身必备的辅助器具。被拦下来时把这两条说出来，不行就投诉。">
 <meta property="og:url" content="https://life.daogong.cc/detail/33-12.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,20 +40,20 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge ">性价比 一般</span><span class="badge gain">换钱</span><span class="badge cost">成本 见下方</span></div>
 
-  <div class="detail-body" id="dBody"><p>法律写明，公共场所和公共交通要为带导盲犬、导听犬、辅助犬的残疾人提供便利。盲人凭有效证件免费坐市内公交、地铁和渡船，残疾人可以免费带随身必备的辅助器具。被拦下来时把这两条说出来，不行就投诉。</p><p><strong>换来什么：</strong>《无障碍环境建设法》第四十六条：「公共场所经营管理单位、交通运输设施和公共交通运输工具的运营单位应当为残疾人携带导盲犬、导听犬、辅助犬等服务犬提供便利。」同条第二款规定，残疾人带服务犬出入公共场所、乘坐公共交通，「应当遵守国家有关规定，为服务犬佩戴明显识别装备，并采取必要的防护措施」。第六十八条规定，负有公共服务职责的部门和单位未依法提供无障碍社会服务的，由本级人民政府或者上级主管部门责令限期改正；逾期未改正的，对直接负责的主管人员和其他直接责任人员依法给予处分。第三十五条规定，政务服务便民热线和报警求助、消防应急、交通事故、医疗急救等紧急呼叫系统，应当逐步具备语音、大字、盲文、一键呼叫等无障碍功能。第六十二条规定，任何组织和个人有权对违反本法规定的行为投诉、举报，主管部门应当及时处理并予以答复。《残疾人保障法》第五十条：「盲人持有效证件免费乘坐市内公共汽车、电车、地铁、渡船等公共交通工具。盲人读物邮件免费寄递。」同条还规定，县级以上人民政府对残疾人搭乘公共交通工具应当给予便利和优惠，残疾人可以免费携带随身必备的辅助器具（全国，无障碍环境建设法 2023 年 9 月 1 日起施行）</p><p><strong>要花什么：</strong>不花钱。被拦下来时要开口引法条，可能要僵持一会儿。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>法律写明，公共场所和公共交通要为带导盲犬、导听犬、辅助犬的残疾人提供便利。盲人凭有效证件免费坐市内公交、地铁和渡船，残疾人可以免费带随身必备的辅助器具。被拦下来时把这两条说出来，不行就投诉。</p><p><strong>换来什么：</strong>《无障碍环境建设法》第四十六条：「公共场所经营管理单位、交通运输设施和公共交通运输工具的运营单位应当为残疾人携带导盲犬、导听犬、辅助犬等服务犬提供便利。」同条第二款规定，残疾人带服务犬出入公共场所、乘坐公共交通，「应当遵守国家有关规定，为服务犬佩戴明显识别装备，并采取必要的防护措施」。第六十八条规定，负有公共服务职责的部门和单位未依法提供无障碍社会服务的，由本级人民政府或者上级主管部门责令限期改正；逾期未改正的，对直接负责的主管人员和其他直接责任人员依法给予处分。第三十五条规定，政务服务便民热线和报警求助、消防应急、交通事故、医疗急救等紧急呼叫系统，应当逐步具备语音、大字、盲文、一键呼叫等无障碍功能。第六十二条规定，任何组织和个人有权对违反本法规定的行为投诉、举报，主管部门应当及时处理并予以答复。《残疾人保障法》第五十条：「盲人持有效证件免费乘坐市内公共汽车、电车、地铁、渡船等公共交通工具。盲人读物邮件免费寄递。」同条还规定，县级以上人民政府对残疾人搭乘公共交通工具应当给予便利和优惠，残疾人可以免费携带随身必备的辅助器具（全国，无障碍环境建设法 2023 年 9 月 1 日起施行）</p><p><strong>要花什么：</strong>不花钱。被拦下来时要开口引法条，可能要僵持一会儿。</p><p class="gvl-note">本条涉及医疗健康信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
   <div class="meta-table" id="dMeta"><div class="meta-row"><span class="k">为什么</span><span class="v">法律写的是「提供便利」，没有罚款，第六十八条只管责令改正和处分责任人员，所以现场僵持时对方不一定立刻让步。手机里存一张法条截图，比背条号管用，这是作者经验。当场解决不了就按第六十二条投诉，主管部门要答复。法律同时要求给服务犬戴明显的识别装备、做好防护，出门前备齐。坐火车、坐飞机前先打客服问清对服务犬的要求。免费乘车认哪一种「有效证件」，去当地残联问清楚。</span></div><div class="meta-row"><span class="k">出处</span><span class="v">中华人民共和国无障碍环境建设法（第三十五条、第四十六条、第六十二条、第六十八条）. <a href="https://flk.npc.gov.cn/detail?id=ff80818188d7430b0189018493370940" target="_blank" rel="noopener noreferrer">https://flk.npc.gov.cn/detail?id=ff80818188d7430b0189018493370940</a>；中华人民共和国残疾人保障法（第五十条）. <a href="https://flk.npc.gov.cn/detail?id=ff8080816f135f46016f1d134c88132b" target="_blank" rel="noopener noreferrer">https://flk.npc.gov.cn/detail?id=ff8080816f135f46016f1d134c88132b</a></span></div><div class="meta-row"><span class="k">章节</span><span class="v">第 33 章 · 残疾之后怎么活</span></div></div>
 
   <!-- 相关条目 -->
-  <div class="related" id="dRelated" style="display:none"></div>
+  <div class="related hidden" id="dRelated"></div>
 
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/33-残疾之后怎么活.md#12-导盲犬可以带进公共场所和公共交通盲人免费坐市内公交" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>

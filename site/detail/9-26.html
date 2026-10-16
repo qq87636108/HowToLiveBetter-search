@@ -11,289 +11,7 @@
 <meta property="og:title" content="别为了防身买甩棍、电击器、匕首、辣椒水带在身上，放在车里也算携带">
 <meta property="og:description" content="匕首、弹簧刀这类管制刀具，带出门被查到，可以拘留 5 日以下。带进车站、商场、公交车，拘留 5 到 10 日。警棍只许警察持有，个人拿着的没收，还可能被拘留。真拿出来用也容易吃亏：有人被空手打了一拳，就拿事先藏好的刀捅人">
 <meta property="og:url" content="https://life.daogong.cc/detail/9-26.html">
-<style>
-  :root {
-    --blue: #4e6ef2;
-    --blue-hover: #4262e0;
-    --blue-title: #2440b3;
-    --text: #222;
-    --text-desc: #333;
-    --gray: #999;
-    --gray2: #bbb;
-    --line: #ececec;
-    --border: #c4c7ce;
-    --hl: #c00;
-    --ev-a: #2e7d32;
-    --ev-b: #b26a00;
-    --ev-c: #888;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
-    background: #fff;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ================== 顶部导航栏 ================== */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 24px;
-  }
-  .topbar .logo-sm {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--blue);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-  .topbar .sbox {
-    display: flex;
-    max-width: 480px;
-    height: 38px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-    background: #fff;
-  }
-  .topbar .sbox:focus-within { border-color: var(--blue); }
-  .topbar .sbox input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text);
-    background: transparent;
-  }
-  .topbar .sbox input::placeholder { color: var(--gray2); }
-  .topbar .sbox .btn {
-    width: 80px;
-    flex-shrink: 0;
-    border: none;
-    background: var(--blue);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .topbar .sbox .btn:hover { background: var(--blue-hover); }
-
-  /* ================== 面包屑 ================== */
-  .breadcrumb {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 20px 0;
-    font-size: 13px;
-    color: var(--gray);
-  }
-  .breadcrumb a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; color: var(--gray2); }
-  .breadcrumb .cur { color: var(--text); }
-
-  /* ================== 详情主体 ================== */
-  .detail-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 20px 80px;
-  }
-
-  /* 章节标记 */
-  .sec-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    color: var(--gray);
-    background: #f5f6f8;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-
-  /* 标题 */
-  .detail-title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-
-  /* 徽标行 */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 650;
-    padding: 3px 12px;
-    border-radius: 8px;
-    line-height: 1.7;
-    white-space: nowrap;
-  }
-  .badge.ev-a { background: #e8f5e9; color: var(--ev-a); }
-  .badge.ev-b { background: #fff8e1; color: var(--ev-b); }
-  .badge.ev-c { background: #f2f2f2; color: var(--ev-c); }
-  .badge.cp-top { background: #e3f2fd; color: #1565c0; }
-  .badge.cp-high { background: #e8f5e9; color: #2e7d32; }
-  .badge.gain { background: #f3e5f5; color: #6a1b9a; }
-  .badge.cost-zero { background: #e8f5e9; color: #2e7d32; }
-  .badge.cost { background: #fdecea; color: #c62828; }
-
-  /* 正文 */
-  .detail-body {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--text-desc);
-    margin-bottom: 28px;
-  }
-
-  /* 元信息表格 */
-  .meta-table {
-    border-top: 1px solid var(--line);
-    margin-bottom: 28px;
-  }
-  .meta-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-  }
-  .meta-row .k {
-    width: 72px;
-    flex-shrink: 0;
-    color: var(--gray);
-    font-size: 13.5px;
-  }
-  .meta-row .v {
-    flex: 1;
-    color: var(--text-desc);
-    line-height: 1.75;
-  }
-  .meta-row .v a {
-    color: var(--blue);
-    text-decoration: none;
-  }
-  .meta-row .v a:hover { text-decoration: underline; }
-
-  /* 相关条目 */
-  .related {
-    background: #fafbfc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 28px;
-  }
-  .related .rl-title {
-    font-size: 13px;
-    font-weight: 650;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .related .rl-item {
-    display: block;
-    font-size: 13.5px;
-    color: var(--blue-title);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.6;
-  }
-  .related .rl-item:hover { text-decoration: underline; }
-  .related .rl-item .rl-sec {
-    font-size: 11.5px;
-    color: var(--gray);
-    margin-left: 6px;
-  }
-
-  /* 底部操作 */
-  .actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .actions a, .actions button {
-    font-size: 13.5px;
-    font-family: inherit;
-    padding: 8px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .actions .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-  }
-  .actions .btn-primary:hover { background: var(--blue-hover); }
-  .actions .btn-secondary {
-    background: #fff;
-    color: var(--text-desc);
-    border: 1px solid var(--border);
-  }
-  .actions .btn-secondary:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-  }
-
-  /* ================== 页脚 ================== */
-  .foot {
-    text-align: center;
-    padding: 30px 20px 40px;
-    font-size: 12.5px;
-    color: var(--gray2);
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-  .foot-links { line-height: 2; }
-  .foot-links .sep { color: var(--gray2); margin: 0 10px; }
-  .foot-copy { color: var(--gray2); margin-top: 6px; line-height: 1.8; }
-  .foot a { color: var(--gray); text-decoration: none; }
-  .foot a:hover { color: var(--blue); }
-
-  /* ================== 响应式 ================== */
-  @media (max-width: 640px) {
-    .topbar { gap: 12px; padding: 10px 14px; }
-    .topbar .logo-sm { font-size: 18px; }
-    .topbar .sbox { height: 36px; }
-    .topbar .sbox input { font-size: 13px; padding: 0 10px; }
-    .topbar .sbox .btn { width: 60px; font-size: 13px; }
-    .breadcrumb { padding: 12px 14px 0; font-size: 12px; }
-    .detail-wrap { padding: 16px 14px 60px; }
-    .detail-title { font-size: 20px; }
-    .detail-body { font-size: 14px; }
-    .meta-row { flex-direction: column; gap: 4px; }
-    .meta-row .k { width: auto; }
-    .actions { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="/core/site-detail.css?v=e0d0ccb54c">
 </head>
 <body>
 
@@ -302,7 +20,7 @@
   <a class="logo-sm" href="index.html">高性价比人生</a>
   <div class="sbox">
     <input type="text" id="detailInput" placeholder="搜索其他场景…" autocomplete="off">
-    <button class="btn" onclick="searchFromDetail()">搜索</button>
+    <button class="btn" id="detailSearchBtn">搜索</button>
   </div>
 </div>
 
@@ -322,7 +40,7 @@
 
   <div class="badges" id="dBadges"><span class="badge ev-a">证据等级 A</span><span class="badge cp-top">性价比 极高</span><span class="badge gain">换人身自由</span><span class="badge cost-zero">成本 零</span></div>
 
-  <div class="detail-body" id="dBody"><p>匕首、弹簧刀这类管制刀具，带出门被查到，可以拘留 5 日以下。带进车站、商场、公交车，拘留 5 到 10 日。警棍只许警察持有，个人拿着的没收，还可能被拘留。真拿出来用也容易吃亏：有人被空手打了一拳，就拿事先藏好的刀捅人，按防卫过当判了 4 年。</p><p><strong>换来什么：</strong>先看治安管理处罚法第三十八条。非法携带弩、匕首等国家规定的管制器具的，拘留 5 日以下，可以再罚 1000 元以下。情节较轻的，警告或者罚 500 元以下。带进公共场所或者公共交通工具的，拘留 5 到 10 日，可以再罚 1000 元以下。刑法第一百三十条更重。非法携带管制刀具进入公共场所或者公共交通工具，危及公共安全、情节严重的，判 3 年以下。哪些刀算管制刀具，公安部 2007 年的认定标准列了五类。第一类是匕首：有刀柄、刀格和血槽，刀尖角度小于 60 度。第二类是三棱刮刀。第三类是带自锁装置的弹簧刀，俗称跳刀。第四类是刀尖角度小于 60 度、刀身超过 150 毫米的刀。第五类是刀尖角度大于 60 度、刀身超过 220 毫米的刀。没开刃、刀尖磨圆的武术和工艺礼品刀不算。警棍是警察的警械。人民警察法规定，警械只许警察持有和使用。别人持有的，没收，拘留 15 日以下或者警告，可以再按违法所得罚 5 倍以下。铁路的禁带目录把警棍、催泪器、电击器、防卫器都列为管制器具。坐火车时这些东西不许随身带，也不许托运。道路客运的禁带目录同样把催泪器、电击器列为管制器具，坐长途汽车也不许带。电击器平时能不能持有，上海市检察院 2013 年公布过一个案子。四个人在路口向司机兜售电击器，以非法买卖警用装备罪被判有期徒刑一年三个月至六个月不等。检察院引了公安部两份通告。依据这两份通告，「此种电击器属于国家管制器具，也是警用械具的一种」。检察院还写明，这类电击器「在国内属于违禁物品，禁止个人生产销售和持有」。检察官另说，高浓度的喷剂这类防身物品属于警用器材，一般市民也不能购买。车里放着一样会被查：有人开车带着管制刀具过检查站，被民警查获，行政拘留。真用了的账，看正当防卫指导意见。它把「是否使用或者准备使用凶器」列为区分防卫和互殴的情节之一。官方案例：杨某和人吵架，对方扬言找人报复，他回家把两把刀藏在身上。对方回来空手打了他脸一拳，他拿刀捅对方胸腹，对方死亡。法院认定他有防卫性质，但对方只是空手打，他捅的是要害，属于防卫过当。他以故意伤害罪被判 4 年（全国，治安管理处罚法 2026 年 1 月 1 日起施行）</p><p><strong>要花什么：</strong>不花钱。已经买了的留在家里，不带出门，也不放进车里。真遇到事，先退开报警，躲不掉再还手。</p><p style="font-size:12px;color:#999;border-left:3px solid #ececec;padding-left:10px;margin:16px 0">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
+  <div class="detail-body" id="dBody"><p>匕首、弹簧刀这类管制刀具，带出门被查到，可以拘留 5 日以下。带进车站、商场、公交车，拘留 5 到 10 日。警棍只许警察持有，个人拿着的没收，还可能被拘留。真拿出来用也容易吃亏：有人被空手打了一拳，就拿事先藏好的刀捅人，按防卫过当判了 4 年。</p><p><strong>换来什么：</strong>先看治安管理处罚法第三十八条。非法携带弩、匕首等国家规定的管制器具的，拘留 5 日以下，可以再罚 1000 元以下。情节较轻的，警告或者罚 500 元以下。带进公共场所或者公共交通工具的，拘留 5 到 10 日，可以再罚 1000 元以下。刑法第一百三十条更重。非法携带管制刀具进入公共场所或者公共交通工具，危及公共安全、情节严重的，判 3 年以下。哪些刀算管制刀具，公安部 2007 年的认定标准列了五类。第一类是匕首：有刀柄、刀格和血槽，刀尖角度小于 60 度。第二类是三棱刮刀。第三类是带自锁装置的弹簧刀，俗称跳刀。第四类是刀尖角度小于 60 度、刀身超过 150 毫米的刀。第五类是刀尖角度大于 60 度、刀身超过 220 毫米的刀。没开刃、刀尖磨圆的武术和工艺礼品刀不算。警棍是警察的警械。人民警察法规定，警械只许警察持有和使用。别人持有的，没收，拘留 15 日以下或者警告，可以再按违法所得罚 5 倍以下。铁路的禁带目录把警棍、催泪器、电击器、防卫器都列为管制器具。坐火车时这些东西不许随身带，也不许托运。道路客运的禁带目录同样把催泪器、电击器列为管制器具，坐长途汽车也不许带。电击器平时能不能持有，上海市检察院 2013 年公布过一个案子。四个人在路口向司机兜售电击器，以非法买卖警用装备罪被判有期徒刑一年三个月至六个月不等。检察院引了公安部两份通告。依据这两份通告，「此种电击器属于国家管制器具，也是警用械具的一种」。检察院还写明，这类电击器「在国内属于违禁物品，禁止个人生产销售和持有」。检察官另说，高浓度的喷剂这类防身物品属于警用器材，一般市民也不能购买。车里放着一样会被查：有人开车带着管制刀具过检查站，被民警查获，行政拘留。真用了的账，看正当防卫指导意见。它把「是否使用或者准备使用凶器」列为区分防卫和互殴的情节之一。官方案例：杨某和人吵架，对方扬言找人报复，他回家把两把刀藏在身上。对方回来空手打了他脸一拳，他拿刀捅对方胸腹，对方死亡。法院认定他有防卫性质，但对方只是空手打，他捅的是要害，属于防卫过当。他以故意伤害罪被判 4 年（全国，治安管理处罚法 2026 年 1 月 1 日起施行）</p><p><strong>要花什么：</strong>不花钱。已经买了的留在家里，不带出门，也不放进车里。真遇到事，先退开报警，躲不掉再还手。</p><p class="gvl-note">本条涉及法律权益信息，仅供参考，不构成专业意见；具体请咨询医生/律师或以官方机构为准。</p></div>
 
   <div class="ad-slot hidden" id="adDetail"></div>
 
@@ -334,8 +52,8 @@
   <!-- 底部操作 -->
   <div class="actions">
     <a class="btn-primary" id="btnGithub" href="https://github.com/eternity4719/HowToLiveBetter/blob/main/book/09-普通人容易踩的法律红线.md#26-别为了防身买甩棍电击器匕首辣椒水带在身上放在车里也算携带" target="_blank" rel="noopener noreferrer">在 GitHub 查看原文 ↗</a>
-    <button class="btn-secondary" onclick="goBack()">返回搜索结果</button>
-    <button class="btn-secondary" onclick="goHomeBtn()">返回首页</button>
+    <button class="btn-secondary" id="backResultsBtn">返回搜索结果</button>
+    <button class="btn-secondary" id="backHomeBtn">返回首页</button>
   </div>
 
 </div>
@@ -343,9 +61,9 @@
 <!-- ================== 页脚 ================== -->
 <div class="foot" id="pageFoot"></div>
 
-<script src="/core/ads-config.js"></script>
-<script src="/core/ads.js"></script>
-<script src="/core/detail.js"></script>
-<script src="/core/footer.js"></script>
+<script src="/core/ads-config.js?v=033908308b"></script>
+<script src="/core/ads.js?v=6b30a7928c"></script>
+<script src="/core/detail.js?v=c7b7d26932"></script>
+<script src="/core/footer.js?v=b416cb81d3"></script>
 </body>
 </html>
