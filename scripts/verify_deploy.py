@@ -198,6 +198,17 @@ def main():
         if 'src="core/' in t or 'href="core/' in t:
             rel_core.append(os.path.basename(p))
     check(not rel_core, "壳页无相对 core/ 引用（版本号口径盲区）", str(rel_core))
+    # ★预渲染页不得有相对 .html 链接（2026-10-16 用户实测：logo/面包屑 href="index.html"
+    # 在 /detail/ 子目录解析成 /detail/index.html 404）。JS 里的跳转由 bind_gate/人工管。
+    rel_html = []
+    for e in seen:
+        p = SITE + "/detail/" + e["id"] + ".html"
+        if not os.path.exists(p):
+            continue
+        t = open(p, encoding="utf-8").read()
+        for m in re.finditer(r'href="(?!/|#|http|mailto:)([^"]*\.html)', t):
+            rel_html.append(e["id"] + ":" + m.group(1)[:30])
+    check(not rel_html, "静态页无相对 .html 链接（子目录解析坑）", str(rel_html[:4]))
 
     check("detail.html?id=" not in sm, "sitemap 已改为静态 URL（不再 ?id=）", "")
 

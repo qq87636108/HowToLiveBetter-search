@@ -119,17 +119,17 @@
   function searchFromDetail() {
     var q = document.getElementById('detailInput').value.trim();
     if (!q) return;
-    window.location.href = 'index.html?q=' + encodeURIComponent(q);
+    window.location.href = '/index.html?q=' + encodeURIComponent(q);
   }
   // 返回搜索结果：带最近搜索词回结果视图（确定性；结果页是 index.html 内嵌视图，back 会重置为首页视图）
   function goBack() {
     var last = '';
     try { last = sessionStorage.getItem('gvl_last_q') || ''; } catch (e) {}
-    window.location.href = last ? ('index.html?q=' + encodeURIComponent(last)) : 'index.html';
+    window.location.href = last ? ('/index.html?q=' + encodeURIComponent(last)) : '/index.html';
   }
   // 返回首页：不带参数，回首页视图
   function goHomeBtn() {
-    window.location.href = 'index.html';
+    window.location.href = '/index.html';
   }
 
   // CSP 改造（2026-10-16）：按钮从内联 onclick 改为 JS 绑定（CSP 禁止内联事件）

@@ -86,6 +86,9 @@ def build_page(shell, e, site_url):
     # 脚本/CSS 一律改绝对路径：静态页位于 /detail/ 子目录，原先靠 <base href="/"> 兜。
     # 2026-10-16 专家复核：<base> 与将来 CSP 的 base-uri 'none' 冲突，去掉 base、路径写明。
     s = s.replace('src="core/', 'src="/core/').replace('href="core/', 'href="/core/')
+    # 页内跳转链接同样必须绝对（2026-10-16 用户实测：logo/面包屑 href="index.html"
+    # 在 /detail/ 子目录解析成 /detail/index.html 404）
+    s = s.replace('href="index.html', 'href="/index.html')
     crumb = esc(e.get("sec")) + " · 第 " + iid + " 条"
     s = s.replace('<span class="cur" id="crumbSec">条目详情</span>',
                   '<span class="cur" id="crumbSec">' + crumb + '</span>', 1)
